@@ -75,10 +75,10 @@ flutter_gen:
     outputs:
       package_parameter_enabled: true
       style: dot-delimiter
-      class_name: ReservasiRawatJalanAssets
+      class_name: RRJAssets
     exclude: [ ]
 
   fonts:
     enabled: true
     outputs:
-      class_name: ReservasiRawatJalanFonts
+      class_name: RRJFonts
