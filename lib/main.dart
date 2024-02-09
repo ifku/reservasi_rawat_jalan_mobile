@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/home_screen.dart';
 
 import 'core/gen/codegen_loader.g.dart';
@@ -29,10 +30,8 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       title: 'Reservasi Rawat Jalan',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: RRJThemeData.lightTheme,
+      darkTheme: RRJThemeData.darkTheme,
       home: const Homescreen(),
     );
   }

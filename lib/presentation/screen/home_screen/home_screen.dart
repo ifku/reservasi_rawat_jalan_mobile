@@ -12,10 +12,10 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Container(),
-      ),
-    ));
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Container(),
+          ),
+        ));
   }
 }

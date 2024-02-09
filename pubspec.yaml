@@ -39,26 +39,73 @@ flutter:
   fonts:
     - family: Lato
       fonts:
-        - asset: assets/fonts/Lato-Thin.ttf
+        - asset: assets/fonts/Lato/Lato-Thin.ttf
           weight: 100
-        - asset: assets/fonts/Lato-ThinItalic.ttf
+        - asset: assets/fonts/Lato/Lato-ThinItalic.ttf
           style: italic
           weight: 100
-        - asset: assets/fonts/Lato-Light.ttf
+        - asset: assets/fonts/Lato/Lato-Light.ttf
           weight: 300
-        - asset: assets/fonts/Lato-LightItalic.ttf
+        - asset: assets/fonts/Lato/Lato-LightItalic.ttf
           style: italic
           weight: 300
-        - asset: assets/fonts/Lato-Regular.ttf
+        - asset: assets/fonts/Lato/Lato-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Lato-Bold.ttf
+        - asset: assets/fonts/Lato/Lato-Bold.ttf
           weight: 700
-        - asset: assets/fonts/Lato-BoldItalic.ttf
+        - asset: assets/fonts/Lato/Lato-BoldItalic.ttf
           style: italic
           weight: 700
-        - asset: assets/fonts/Lato-Black.ttf
+        - asset: assets/fonts/Lato/Lato-Black.ttf
           weight: 900
-        - asset: assets/fonts/Lato-BlackItalic.ttf
+        - asset: assets/fonts/Lato/Lato-BlackItalic.ttf
+          style: italic
+          weight: 900
+    - family: Sf-Pro
+      fonts:
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Ultralight.otf
+          weight: 100
+        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-UltralightItalic.otf
+          style: italic
+          weight: 100
+        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-Thin.otf
+          weight: 200
+        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-ThinItalic.otf
+          style: italic
+          weight: 200
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Light.otf
+          weight: 300
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-LightItalic.otf
+          style: italic
+          weight: 300
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Regular.otf
+          weight: 400
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-RegularItalic.otf
+          style: italic
+          weight: 400
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-MediumItalic.otf
+          style: italic
+          weight: 500
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Semibold.otf
+          weight: 600
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-SemiboldItalic.otf
+          style: italic
+          weight: 600
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-BoldItalic.otf
+          style: italic
+          weight: 700
+        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-Black.otf
+          weight: 800
+        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-BlackItalic.otf
+          style: italic
+          weight: 800
+        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-Heavy.otf
+          weight: 900
+        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-HeavyItalic.otf
           style: italic
           weight: 900
 

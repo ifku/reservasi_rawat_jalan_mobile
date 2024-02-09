@@ -10,64 +10,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 
-class $AssetsFontsGen {
-  const $AssetsFontsGen();
-
-  /// File path: assets/fonts/Lato-Black.ttf
-  String get latoBlack =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-Black.ttf';
-
-  /// File path: assets/fonts/Lato-BlackItalic.ttf
-  String get latoBlackItalic =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-BlackItalic.ttf';
-
-  /// File path: assets/fonts/Lato-Bold.ttf
-  String get latoBold =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-Bold.ttf';
-
-  /// File path: assets/fonts/Lato-BoldItalic.ttf
-  String get latoBoldItalic =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-BoldItalic.ttf';
-
-  /// File path: assets/fonts/Lato-Italic.ttf
-  String get latoItalic =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-Italic.ttf';
-
-  /// File path: assets/fonts/Lato-Light.ttf
-  String get latoLight =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-Light.ttf';
-
-  /// File path: assets/fonts/Lato-LightItalic.ttf
-  String get latoLightItalic =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-LightItalic.ttf';
-
-  /// File path: assets/fonts/Lato-Regular.ttf
-  String get latoRegular =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-Regular.ttf';
-
-  /// File path: assets/fonts/Lato-Thin.ttf
-  String get latoThin =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-Thin.ttf';
-
-  /// File path: assets/fonts/Lato-ThinItalic.ttf
-  String get latoThinItalic =>
-      'packages/reservasi_rawat_jalan_mobile/assets/fonts/Lato-ThinItalic.ttf';
-
-  /// List of all assets
-  List<String> get values => [
-        latoBlack,
-        latoBlackItalic,
-        latoBold,
-        latoBoldItalic,
-        latoItalic,
-        latoLight,
-        latoLightItalic,
-        latoRegular,
-        latoThin,
-        latoThinItalic
-      ];
-}
-
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -110,7 +52,6 @@ class RRJAssets {
 
   static const String package = 'reservasi_rawat_jalan_mobile';
 
-  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLangsGen langs = $AssetsLangsGen();
   static const $AssetsRawGen raw = $AssetsRawGen();
