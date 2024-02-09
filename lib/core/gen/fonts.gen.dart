@@ -10,9 +10,6 @@
 class RRJFonts {
   RRJFonts._();
 
-  /// Font family: Lato
-  static const String lato = 'Lato';
-
   /// Font family: Sf-Pro
   static const String sfPro = 'Sf-Pro';
 }
