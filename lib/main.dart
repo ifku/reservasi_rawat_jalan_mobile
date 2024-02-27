@@ -31,9 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ClinicBloc(
-        locator(),
-      ),
+      create: (context) => ClinicBloc(),
       child: MaterialApp(
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,

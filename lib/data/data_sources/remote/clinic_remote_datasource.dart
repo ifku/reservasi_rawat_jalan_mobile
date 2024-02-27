@@ -7,11 +7,10 @@ import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/data_sources/clinic_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/model/api_response.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/model/clinic_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/locator.dart';
 
 class ClinicRemoteDatasource extends ClinicDataSource {
-  final AppHttpClient client;
-
-  ClinicRemoteDatasource({required this.client});
+  final AppHttpClient client = locator<AppHttpClient>();
 
   @override
   Future<Either<Exception, List<Clinic>>> getAllClinic() async {
@@ -21,7 +20,7 @@ class ClinicRemoteDatasource extends ClinicDataSource {
 
     return response.fold((error) => Left(error), (data) {
       final responseObject =
-      ApiListResponse<Clinic>.fromJson(data, Clinic.fromJson);
+          ApiListResponse<Clinic>.fromJson(data, Clinic.fromJson);
 
       log(responseObject.data.toString());
       return Right(responseObject.data ?? []);
