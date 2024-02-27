@@ -1,4 +1,63 @@
 {
-  "hello": "Hello world!",
-  "greeting": "Welcome from US"
+  "appbar": {
+    "account": "Account",
+    "activity": "Activity",
+    "home": "Home",
+    "history": "History"
+  },
+  "clinicScreen": {
+    "clinicList": "Available Clinics",
+    "findYourClinic": "Find the best clinic for your needs",
+    "generalClinic": "General Clinic",
+    "pulmonaryClinic": "Pulmonary Clinic",
+    "thtClinic": "ENT Clinic",
+    "skinAndGynecologyClinic": "Skin and Gynecology Clinic",
+    "eyeClinic": "Eye Clinic",
+    "obstreticsClinic": "Obstetrics",
+    "surgeryClinic": "Surgery Clinic",
+    "cardiacClinic": "Cardiac Clinic",
+    "neurologyClinic": "Neurology Clinic",
+    "dentalOralClinic": "Dental & Oral Clinic",
+    "beautyClinic": "Beauty Clinic",
+    "internalDiseaseClinic": "Internal Disease Clinic"
+  },
+  "homeScreen": {
+    "halo": "Hell",
+    "whatDoYouWantToDoToday": "What do you want to do today?",
+    "reservation": "Reservati",
+    "doctorSchedule": "Doctor Schedule",
+    "queue": "Queue",
+    "insurance": "Insurance",
+    "appointment": "Appointment",
+    "continueReading": "Continue Reading"
+  },
+  "chooseDoctorScreen": {
+    "clinic": "Clinic",
+    "findDoctor": "Find your preferred",
+    "below": "below!",
+    "findDoctorIn": "Find a doctor in",
+    "doctor": "Doctor",
+    "years": "Years old",
+    "doctorDetail": "Doctor Details",
+    "sipNumber": "SIP Number",
+    "strItem": "STR Number",
+    "paymentMethod": "Payment Method",
+    "chooseDoctor": "Choose Doctor"
+  },
+  "detailDoctorScreen": {},
+  "reservationScreen": {
+    "reservationDetail": "Reservation Detail",
+    "selectTheDay": "Choose a day and date for the Appointment",
+    "patient": "Patient",
+    "date": "Date",
+    "time": "Time",
+    "next": "Next"
+  },
+  "exception": {
+    "requestTimeOutException": "The connection has timed out, please try again.",
+    "requestCancelledException": "Request was cancelled.",
+    "noInternetException": "Please check your internet connection.",
+    "googleSignInException": "Sign in to Google unsuccessful.",
+    "generalErrorException": "Something is wrong, please try again later."
+  }
 }

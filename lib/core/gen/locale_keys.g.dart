@@ -1,7 +1,60 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
 abstract class  LocaleKeys {
-  static const hello = 'hello';
-  static const greeting = 'greeting';
+  static const appbar_account = 'appbar.account';
+  static const appbar_activity = 'appbar.activity';
+  static const appbar_home = 'appbar.home';
+  static const appbar_history = 'appbar.history';
+  static const appbar = 'appbar';
+  static const clinicScreen_clinicList = 'clinicScreen.clinicList';
+  static const clinicScreen_findYourClinic = 'clinicScreen.findYourClinic';
+  static const clinicScreen_generalClinic = 'clinicScreen.generalClinic';
+  static const clinicScreen_pulmonaryClinic = 'clinicScreen.pulmonaryClinic';
+  static const clinicScreen_thtClinic = 'clinicScreen.thtClinic';
+  static const clinicScreen_skinAndGynecologyClinic = 'clinicScreen.skinAndGynecologyClinic';
+  static const clinicScreen_eyeClinic = 'clinicScreen.eyeClinic';
+  static const clinicScreen_obstreticsClinic = 'clinicScreen.obstreticsClinic';
+  static const clinicScreen_surgeryClinic = 'clinicScreen.surgeryClinic';
+  static const clinicScreen_cardiacClinic = 'clinicScreen.cardiacClinic';
+  static const clinicScreen_neurologyClinic = 'clinicScreen.neurologyClinic';
+  static const clinicScreen_dentalOralClinic = 'clinicScreen.dentalOralClinic';
+  static const clinicScreen_beautyClinic = 'clinicScreen.beautyClinic';
+  static const clinicScreen_internalDiseaseClinic = 'clinicScreen.internalDiseaseClinic';
+  static const clinicScreen = 'clinicScreen';
+  static const homeScreen_halo = 'homeScreen.halo';
+  static const homeScreen_whatDoYouWantToDoToday = 'homeScreen.whatDoYouWantToDoToday';
+  static const homeScreen_reservation = 'homeScreen.reservation';
+  static const homeScreen_doctorSchedule = 'homeScreen.doctorSchedule';
+  static const homeScreen_queue = 'homeScreen.queue';
+  static const homeScreen_insurance = 'homeScreen.insurance';
+  static const homeScreen_appointment = 'homeScreen.appointment';
+  static const homeScreen_continueReading = 'homeScreen.continueReading';
+  static const homeScreen = 'homeScreen';
+  static const chooseDoctorScreen_clinic = 'chooseDoctorScreen.clinic';
+  static const chooseDoctorScreen_findDoctor = 'chooseDoctorScreen.findDoctor';
+  static const chooseDoctorScreen_below = 'chooseDoctorScreen.below';
+  static const chooseDoctorScreen_findDoctorIn = 'chooseDoctorScreen.findDoctorIn';
+  static const chooseDoctorScreen_doctor = 'chooseDoctorScreen.doctor';
+  static const chooseDoctorScreen_years = 'chooseDoctorScreen.years';
+  static const chooseDoctorScreen_doctorDetail = 'chooseDoctorScreen.doctorDetail';
+  static const chooseDoctorScreen_sipNumber = 'chooseDoctorScreen.sipNumber';
+  static const chooseDoctorScreen_strItem = 'chooseDoctorScreen.strItem';
+  static const chooseDoctorScreen_paymentMethod = 'chooseDoctorScreen.paymentMethod';
+  static const chooseDoctorScreen_chooseDoctor = 'chooseDoctorScreen.chooseDoctor';
+  static const chooseDoctorScreen = 'chooseDoctorScreen';
+  static const detailDoctorScreen = 'detailDoctorScreen';
+  static const reservationScreen_reservationDetail = 'reservationScreen.reservationDetail';
+  static const reservationScreen_selectTheDay = 'reservationScreen.selectTheDay';
+  static const reservationScreen_patient = 'reservationScreen.patient';
+  static const reservationScreen_date = 'reservationScreen.date';
+  static const reservationScreen_time = 'reservationScreen.time';
+  static const reservationScreen_next = 'reservationScreen.next';
+  static const reservationScreen = 'reservationScreen';
+  static const exception_requestTimeOutException = 'exception.requestTimeOutException';
+  static const exception_requestCancelledException = 'exception.requestCancelledException';
+  static const exception_noInternetException = 'exception.noInternetException';
+  static const exception_googleSignInException = 'exception.googleSignInException';
+  static const exception_generalErrorException = 'exception.generalErrorException';
+  static const exception = 'exception';
 
 }

@@ -4,7 +4,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
 class RRJPrimaryButton extends ElevatedButton {
   RRJPrimaryButton(
       {super.key,
-      super.onPressed,
+      required super.onPressed,
       required super.child,
       Color? backgroundColor,
       Color? foregroundColor,

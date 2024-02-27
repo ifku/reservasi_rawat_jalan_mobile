@@ -138,7 +138,7 @@ TextTheme textTheme() {
       fontFamily: RRJFonts.sfPro,
     ),
     titleLarge: TextStyle(
-      fontSize: 22,
+      fontSize: 20,
       fontWeight: FontWeight.w700,
       fontFamily: RRJFonts.sfPro,
     ),
@@ -148,7 +148,7 @@ TextTheme textTheme() {
       fontFamily: RRJFonts.sfPro,
     ),
     titleSmall: TextStyle(
-      fontSize: 14,
+      fontSize: 12,
       fontWeight: FontWeight.w700,
       fontFamily: RRJFonts.sfPro,
     ),
@@ -169,17 +169,17 @@ TextTheme textTheme() {
     ),
     bodyLarge: TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       fontFamily: RRJFonts.sfPro,
     ),
     bodyMedium: TextStyle(
       fontSize: 14,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       fontFamily: RRJFonts.sfPro,
     ),
     bodySmall: TextStyle(
       fontSize: 12,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       fontFamily: RRJFonts.sfPro,
     ),
   );

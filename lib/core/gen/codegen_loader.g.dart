@@ -15,12 +15,130 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en_US = {
-  "hello": "Hello world!",
-  "greeting": "Welcome from US"
+  "appbar": {
+    "account": "Account",
+    "activity": "Activity",
+    "home": "Home",
+    "history": "History"
+  },
+  "clinicScreen": {
+    "clinicList": "Available Clinics",
+    "findYourClinic": "Find the best clinic for your needs",
+    "generalClinic": "General Clinic",
+    "pulmonaryClinic": "Pulmonary Clinic",
+    "thtClinic": "ENT Clinic",
+    "skinAndGynecologyClinic": "Skin and Gynecology Clinic",
+    "eyeClinic": "Eye Clinic",
+    "obstreticsClinic": "Obstetrics",
+    "surgeryClinic": "Surgery Clinic",
+    "cardiacClinic": "Cardiac Clinic",
+    "neurologyClinic": "Neurology Clinic",
+    "dentalOralClinic": "Dental & Oral Clinic",
+    "beautyClinic": "Beauty Clinic",
+    "internalDiseaseClinic": "Internal Disease Clinic"
+  },
+  "homeScreen": {
+    "halo": "Hell",
+    "whatDoYouWantToDoToday": "What do you want to do today?",
+    "reservation": "Reservati",
+    "doctorSchedule": "Doctor Schedule",
+    "queue": "Queue",
+    "insurance": "Insurance",
+    "appointment": "Appointment",
+    "continueReading": "Continue Reading"
+  },
+  "chooseDoctorScreen": {
+    "clinic": "Clinic",
+    "findDoctor": "Find your preferred",
+    "below": "below!",
+    "findDoctorIn": "Find a doctor in",
+    "doctor": "Doctor",
+    "years": "Years old",
+    "doctorDetail": "Doctor Details",
+    "sipNumber": "SIP Number",
+    "strItem": "STR Number",
+    "paymentMethod": "Payment Method",
+    "chooseDoctor": "Choose Doctor"
+  },
+  "detailDoctorScreen": {},
+  "reservationScreen": {
+    "reservationDetail": "Reservation Detail",
+    "selectTheDay": "Choose a day and date for the Appointment",
+    "patient": "Patient",
+    "date": "Date",
+    "time": "Time",
+    "next": "Next"
+  },
+  "exception": {
+    "requestTimeOutException": "The connection has timed out, please try again.",
+    "requestCancelledException": "Request was cancelled.",
+    "noInternetException": "Please check your internet connection.",
+    "googleSignInException": "Sign in to Google unsuccessful.",
+    "generalErrorException": "Something is wrong, please try again later."
+  }
 };
 static const Map<String,dynamic> id_ID = {
-  "hello": "Halo dunia!",
-  "greeting": "Halo dari Indonesia"
+  "appbar": {
+    "account": "Akun",
+    "activity": "Aktivitas",
+    "home": " Beranda",
+    "history": "Riwayat"
+  },
+  "clinicScreen": {
+    "clinicList": "Daftar Klinik",
+    "findYourClinic": "Temukan klinik terbaik sesuai kebutuhanmu",
+    "generalClinic": "Klinik Umum",
+    "pulmonaryClinic": "Klinik Paru",
+    "thtClinic": "Klinik THT",
+    "skinAndGynecologyClinic": "Klinik Kulit dan Kelamin",
+    "eyeClinic": "Klinik Mata",
+    "obstreticsClinic": "Klinik Kandungan",
+    "surgeryClinic": "Klinik Bedah",
+    "cardiacClinic": "Klinik Jantung",
+    "neurologyClinic": "Klinik Syaraf",
+    "dentalOralClinic": "Klinik Gigi dan Mulut",
+    "beautyClinic": "Klinik Kecantikan",
+    "internalDiseaseClinic": "Klinik Penyakit Dalam"
+  },
+  "homeScreen": {
+    "halo": "Halo",
+    "whatDoYouWantToDoToday": " Apa yang ingin kamu lakukan hari ini?",
+    "reservation": "Reservasi",
+    "doctorSchedule": "Jadwal Dokter",
+    "queue": "Antrian",
+    "insurance": "Asuransi",
+    "appointment": "Janji Temu",
+    "continueReading": "Lanjut Membaca"
+  },
+  "chooseDoctorScreen": {
+    "clinic": "Klinik",
+    "findDoctor": "Temukan Dokter",
+    "below": "dibawah ini!",
+    "findDoctorIn": "Cari Dokter",
+    "doctor": "Dokter",
+    "years": "Tahun",
+    "doctorDetail": "Detail Dokter",
+    "sipNumber": "Nomor SIP",
+    "strItem": "Nomor STR",
+    "paymentMethod": "Pembayaran",
+    "chooseDoctor": "Pilih Dokter"
+  },
+  "detailDoctorScreen": {},
+  "reservationScreen": {
+    "reservationDetail": "Detail Reservasi",
+    "selectTheDay": "Pilih hari dan tanggal untuk Janji Temu",
+    "patient": "Pasien",
+    "date": "Tanggal",
+    "time": "Waktu",
+    "next": "Selanjutnya"
+  },
+  "exception": {
+    "requestTimeOutException": "Sambungan terputus, silakan coba lagi.",
+    "requestCancelledException": "Permintaan dibatalkan.",
+    "noInternetException": "Silakan periksa koneksi internet Anda.",
+    "googleSignInException": "Masuk ke Google tidak berhasil.",
+    "generalErrorException": "Terdapat kesalahan, silakan coba lagi nanti."
+  }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};
 }
