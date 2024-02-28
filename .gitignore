@@ -9,6 +9,8 @@
 .history
 .svn/
 migrate_working_dir/
+#ENV
+.env
 
 # IntelliJ related
 *.iml
@@ -43,5 +45,4 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-#ENV
-.env
+
