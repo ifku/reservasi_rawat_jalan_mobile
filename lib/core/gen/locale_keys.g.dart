@@ -29,6 +29,10 @@ abstract class  LocaleKeys {
   static const homeScreen_insurance = 'homeScreen.insurance';
   static const homeScreen_appointment = 'homeScreen.appointment';
   static const homeScreen_continueReading = 'homeScreen.continueReading';
+  static const homeScreen_doReservationHere = 'homeScreen.doReservationHere';
+  static const homeScreen_seeDoctorSchedule = 'homeScreen.seeDoctorSchedule';
+  static const homeScreen_seeQueueHere = 'homeScreen.seeQueueHere';
+  static const homeScreen_paymentMethod = 'homeScreen.paymentMethod';
   static const homeScreen = 'homeScreen';
   static const chooseDoctorScreen_clinic = 'chooseDoctorScreen.clinic';
   static const chooseDoctorScreen_findDoctor = 'chooseDoctorScreen.findDoctor';

@@ -16,4 +16,5 @@ Future<void> setupServiceLocator() async {
   /*Clinic*/
   locator.registerSingleton<ClinicDataSource>(ClinicRemoteDatasource());
   locator.registerSingleton<ClinicRepository>(ClinicRepositoryImpl());
+
 }

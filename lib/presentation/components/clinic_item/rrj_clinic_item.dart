@@ -22,11 +22,11 @@ class RRJClinicItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 80,
+        height: 70,
         width: 160,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: containerColor ?? RRJColors.blue200,
+          borderRadius: BorderRadius.circular(14.0),
+          color: containerColor ?? RRJColors.azure200,
         ),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -36,10 +36,8 @@ class RRJClinicItem extends StatelessWidget {
               Container(
                 height: 37,
                 width: 37,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
-                ),
+                decoration: const BoxDecoration(
+                    color: RRJColors.white, shape: BoxShape.circle),
                 child: Center(
                   child: SvgPicture.asset(
                     icon,

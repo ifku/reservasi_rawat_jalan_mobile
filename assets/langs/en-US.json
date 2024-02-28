@@ -24,12 +24,16 @@
   "homeScreen": {
     "halo": "Hell",
     "whatDoYouWantToDoToday": "What do you want to do today?",
-    "reservation": "Reservati",
+    "reservation": "Reservation",
     "doctorSchedule": "Doctor Schedule",
     "queue": "Queue",
     "insurance": "Insurance",
     "appointment": "Appointment",
-    "continueReading": "Continue Reading"
+    "continueReading": "Continue Reading",
+    "doReservationHere": "Make your reservation here",
+    "seeDoctorSchedule": "See doctors schedule",
+    "seeQueueHere": "See current queue",
+    "paymentMethod": "Payment method"
   },
   "chooseDoctorScreen": {
     "clinic": "Clinic",

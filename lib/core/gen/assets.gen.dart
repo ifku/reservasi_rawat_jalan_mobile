@@ -129,6 +129,9 @@ class $AssetsIconsGen {
   SvgGenImage get iconSkincare =>
       const SvgGenImage('assets/icons/icon_skincare.svg');
 
+  /// File path: assets/icons/icon_star.svg
+  SvgGenImage get iconStar => const SvgGenImage('assets/icons/icon_star.svg');
+
   /// File path: assets/icons/icon_sthetoscope.svg
   SvgGenImage get iconSthetoscope =>
       const SvgGenImage('assets/icons/icon_sthetoscope.svg');
@@ -184,6 +187,7 @@ class $AssetsIconsGen {
         iconPerson2,
         iconPriceTag,
         iconSkincare,
+        iconStar,
         iconSthetoscope,
         iconSurgeon,
         iconTeeth,
@@ -196,12 +200,16 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/image_doctor_example.png
+  AssetGenImage get imageDoctorExample =>
+      const AssetGenImage('assets/images/image_doctor_example.png');
+
   /// File path: assets/images/image_example.png
   AssetGenImage get imageExample =>
       const AssetGenImage('assets/images/image_example.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [imageExample];
+  List<AssetGenImage> get values => [imageDoctorExample, imageExample];
 }
 
 class $AssetsLangsGen {

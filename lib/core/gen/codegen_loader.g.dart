@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_single_quotes, avoid_renaming_method_parameters
 
 import 'dart:ui';
 
@@ -40,12 +40,16 @@ class CodegenLoader extends AssetLoader{
   "homeScreen": {
     "halo": "Hell",
     "whatDoYouWantToDoToday": "What do you want to do today?",
-    "reservation": "Reservati",
+    "reservation": "Reservation",
     "doctorSchedule": "Doctor Schedule",
     "queue": "Queue",
     "insurance": "Insurance",
     "appointment": "Appointment",
-    "continueReading": "Continue Reading"
+    "continueReading": "Continue Reading",
+    "doReservationHere": "Make your reservation here",
+    "seeDoctorSchedule": "See doctors schedule",
+    "seeQueueHere": "See current queue",
+    "paymentMethod": "Payment method"
   },
   "chooseDoctorScreen": {
     "clinic": "Clinic",
@@ -108,7 +112,11 @@ static const Map<String,dynamic> id_ID = {
     "queue": "Antrian",
     "insurance": "Asuransi",
     "appointment": "Janji Temu",
-    "continueReading": "Lanjut Membaca"
+    "continueReading": "Lanjut Membaca",
+    "doReservationHere": "Lakukan reservasi disini",
+    "seeDoctorSchedule": "Lihat jadwal dokter",
+    "seeQueueHere": "Lihat antrian saat ini",
+    "paymentMethod": "Metode pembayaran"
   },
   "chooseDoctorScreen": {
     "clinic": "Klinik",

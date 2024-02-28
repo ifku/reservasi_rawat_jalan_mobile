@@ -1,11 +1,14 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/bloc/clinic_bloc.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/clinic_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/locator.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/bloc/clinic_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/home_screen.dart';
 
 import 'core/gen/codegen_loader.g.dart';
 
@@ -14,6 +17,7 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
   await setupServiceLocator();
   await dotenv.load(fileName: ".env");
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(EasyLocalization(
       path: 'assets/langs',
       supportedLocales: const [
@@ -22,7 +26,11 @@ Future<void> main() async {
       ],
       fallbackLocale: const Locale('id', 'ID'),
       assetLoader: const CodegenLoader(),
-      child: const MyApp()));
+      child: DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => const MyApp(),
+      )));
+  // child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -40,7 +48,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: RRJThemeData.lightTheme,
         darkTheme: RRJThemeData.darkTheme,
-        home: const ClinicScreen(),
+        home: const Homescreen(),
       ),
     );
   }

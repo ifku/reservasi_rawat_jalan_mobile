@@ -53,7 +53,7 @@ class RRJColors {
   static const Color rose800 = Color(0xFF94124E);
   static const Color rose900 = Color(0xFF700940);
 
-  static const Color grey100 = Color(0xFFFAFCFF);
+  static const Color grey100 = Color(0xFFE3E3E3);
   static const Color grey200 = Color(0xFFB5B5B5);
   static const Color grey300 = Color(0xFFAFAFAF);
   static const Color grey400 = Color(0xFF8F8F8F);
@@ -62,4 +62,10 @@ class RRJColors {
   static const Color grey700 = Color(0xFF474747);
   static const Color grey800 = Color(0xFF2F2F2F);
   static const Color grey900 = Color(0xFF070707);
+
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
+
+  static const Color background = Color(0xFFF9FCFF);
+  static const Color backgroundDark = Color(0xFF041738);
 }

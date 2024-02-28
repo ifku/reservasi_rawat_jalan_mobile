@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/bloc/clinic_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/widget/clinic_item_card_color.dart';
 
 import '../../../core/gen/assets.gen.dart';
-import '../../../core/style/color.dart';
 import '../../components/clinic_item/rrj_clinic_item.dart';
 
 class ClinicScreen extends StatefulWidget {
@@ -60,7 +60,7 @@ class _ClinicScreenState extends State<ClinicScreen> {
                               const SliverGridDelegateWithMaxCrossAxisExtent(
                                   crossAxisSpacing: 16,
                                   mainAxisSpacing: 16,
-                                  childAspectRatio: 1.5,
+                                  childAspectRatio: 2,
                                   maxCrossAxisExtent: 200),
                           itemCount: state.clinics.length,
                           itemBuilder: (context, index) {
@@ -68,7 +68,8 @@ class _ClinicScreenState extends State<ClinicScreen> {
                               onTap: () {},
                               icon: RRJAssets.icons.iconFetus.path,
                               label: state.clinics.elementAt(index).clinicName,
-                              containerColor: RRJColors.azure200,
+                              containerColor:
+                                  ClinicItemCardColor.getRandomColor(),
                             );
                           }),
                     );

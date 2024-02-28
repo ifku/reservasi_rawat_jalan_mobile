@@ -29,7 +29,11 @@
     "queue": "Antrian",
     "insurance": "Asuransi",
     "appointment": "Janji Temu",
-    "continueReading": "Lanjut Membaca"
+    "continueReading": "Lanjut Membaca",
+    "doReservationHere": "Lakukan reservasi disini",
+    "seeDoctorSchedule": "Lihat jadwal dokter",
+    "seeQueueHere": "Lihat antrian saat ini",
+    "paymentMethod": "Metode pembayaran"
   },
   "chooseDoctorScreen": {
     "clinic": "Klinik",
