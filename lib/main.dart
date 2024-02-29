@@ -8,7 +8,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
 import 'package:reservasi_rawat_jalan_mobile/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/bloc/clinic_bloc.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/home_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/dummy_page.dart';
 
 import 'core/gen/codegen_loader.g.dart';
 
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: RRJThemeData.lightTheme,
         darkTheme: RRJThemeData.darkTheme,
-        home: const Homescreen(),
+        home: const DummyPage(),
       ),
     );
   }

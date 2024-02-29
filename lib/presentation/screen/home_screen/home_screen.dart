@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/card/rrj_menu_item_card.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/widget/home_menu_item_data.dart';
 
@@ -23,10 +25,10 @@ class _HomescreenState extends State<Homescreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Halo, Ifku Syoba!"),
-              SizedBox(height: 12),
-              Text("Apa yang ingin kamu lakukan hari ini? "),
-              SizedBox(height: 12),
+              Text("${LocaleKeys.homeScreen_halo.tr()}, Ifku Syoba!"),
+              const SizedBox(height: 12),
+              Text(LocaleKeys.homeScreen_whatDoYouWantToDoToday.tr()),
+              const SizedBox(height: 12),
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),

@@ -22,7 +22,7 @@
     "internalDiseaseClinic": "Internal Disease Clinic"
   },
   "homeScreen": {
-    "halo": "Hell",
+    "halo": "Hello",
     "whatDoYouWantToDoToday": "What do you want to do today?",
     "reservation": "Reservation",
     "doctorSchedule": "Doctor Schedule",
