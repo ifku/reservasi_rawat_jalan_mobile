@@ -38,7 +38,7 @@ class CodegenLoader extends AssetLoader{
     "internalDiseaseClinic": "Internal Disease Clinic"
   },
   "homeScreen": {
-    "halo": "Hell",
+    "halo": "Hello",
     "whatDoYouWantToDoToday": "What do you want to do today?",
     "reservation": "Reservation",
     "doctorSchedule": "Doctor Schedule",
@@ -49,7 +49,10 @@ class CodegenLoader extends AssetLoader{
     "doReservationHere": "Make your reservation here",
     "seeDoctorSchedule": "See doctors schedule",
     "seeQueueHere": "See current queue",
-    "paymentMethod": "Payment method"
+    "paymentMethod": "Payment method",
+    "latestInformation": "Latest Information",
+    "upcomingSchedule": "Upcoming Schedule",
+    "continueRead": "Continue Read"
   },
   "chooseDoctorScreen": {
     "clinic": "Clinic",
@@ -116,7 +119,10 @@ static const Map<String,dynamic> id_ID = {
     "doReservationHere": "Lakukan reservasi disini",
     "seeDoctorSchedule": "Lihat jadwal dokter",
     "seeQueueHere": "Lihat antrian saat ini",
-    "paymentMethod": "Metode pembayaran"
+    "paymentMethod": "Metode pembayaran",
+    "latestInformation": "Informasi Terkini",
+    "upcomingSchedule": "Jadwal Mendatang",
+    "continueRead": "Lanjutkan Membaca"
   },
   "chooseDoctorScreen": {
     "clinic": "Klinik",

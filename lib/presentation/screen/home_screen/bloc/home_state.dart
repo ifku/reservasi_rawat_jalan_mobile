@@ -9,16 +9,21 @@ class HomeLoading extends HomeState {
   List<Object> get props => [];
 }
 
-class HomeSuccess extends HomeState{
+class HomeSuccess extends HomeState {
   final List<NewsModel> news;
+  final List<UpcomingScheduleModel> upcomingSchedule;
 
-  const HomeSuccess({required this.news});
+  const HomeSuccess({required this.news, required this.upcomingSchedule});
+
   @override
-  List<Object> get props => [news];
+  List<Object> get props => [news, upcomingSchedule];
 }
-class HomeFailure extends HomeState{
+
+class HomeFailure extends HomeState {
   final String message;
+
   const HomeFailure({required this.message});
+
   @override
   List<Object> get props => [message];
 }

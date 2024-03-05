@@ -28,6 +28,7 @@ dependencies:
   json_annotation: ^4.8.1
   lottie: ^3.0.0
   package_info_plus: ^5.0.1
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

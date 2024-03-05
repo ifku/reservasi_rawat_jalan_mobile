@@ -35,7 +35,8 @@
     "seeQueueHere": "See current queue",
     "paymentMethod": "Payment method",
     "latestInformation": "Latest Information",
-    "upcomingSchedule": "Upcoming Schedule"
+    "upcomingSchedule": "Upcoming Schedule",
+    "continueRead": "Continue Read"
   },
   "chooseDoctorScreen": {
     "clinic": "Clinic",

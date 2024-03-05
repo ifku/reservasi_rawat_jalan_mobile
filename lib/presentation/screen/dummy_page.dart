@@ -10,6 +10,11 @@ class DummyPage extends StatefulWidget {
 class _DummyPageState extends State<DummyPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center());
+    return Scaffold(
+        body: Container(
+            color: Theme.of(context).colorScheme.background,
+            child: Center(
+              child: Container(),
+            )));
   }
 }

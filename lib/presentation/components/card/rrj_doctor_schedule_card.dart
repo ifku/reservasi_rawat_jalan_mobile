@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
 
 import '../../../core/gen/assets.gen.dart';
 import '../../../core/style/color.dart';
@@ -12,13 +13,11 @@ class RRJDoctorScheduleCard extends StatelessWidget {
       {super.key,
       required this.doctorName,
       required this.doctorSchedule,
-      required this.doctorTime,
       this.doctorImage,
       this.onTap});
 
   final String doctorName;
-  final String doctorSchedule;
-  final String doctorTime;
+  final DateTime doctorSchedule;
   final String? doctorImage;
   final void Function()? onTap;
 
@@ -27,7 +26,6 @@ class RRJDoctorScheduleCard extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.all(12.0),
         height: 120,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
@@ -79,7 +77,8 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         RRJAssets.icons.iconPerson2.path,
-                        color: RRJColors.grey200,
+                        colorFilter: const ColorFilter.mode(
+                            RRJColors.grey200, BlendMode.srcIn),
                         height: 12,
                       ),
                       const SizedBox(width: 6.0),
@@ -106,7 +105,8 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         RRJAssets.icons.iconCalendar.path,
-                        color: RRJColors.grey200,
+                        colorFilter: const ColorFilter.mode(
+                            RRJColors.grey200, BlendMode.srcIn),
                         height: 12,
                       ),
                       const SizedBox(width: 6.0),
@@ -114,7 +114,7 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                         TextSpan(
                           children: [
                             TextSpan(
-                              text: doctorSchedule,
+                              text: DateFormatter.formatDateTime(doctorSchedule),
                               style: Theme.of(context)
                                   .textTheme
                                   .bodySmall
@@ -133,7 +133,8 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         RRJAssets.icons.iconClock.path,
-                        color: RRJColors.grey200,
+                        colorFilter: const ColorFilter.mode(
+                            RRJColors.grey200, BlendMode.srcIn),
                         height: 12,
                       ),
                       const SizedBox(width: 6.0),
@@ -141,7 +142,7 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                         TextSpan(
                           children: [
                             TextSpan(
-                              text: doctorTime,
+                              text: DateFormatter.formatHour(doctorSchedule),
                               style: Theme.of(context)
                                   .textTheme
                                   .bodySmall

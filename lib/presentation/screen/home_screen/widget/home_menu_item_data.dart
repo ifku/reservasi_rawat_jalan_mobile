@@ -9,25 +9,25 @@ import '../../../../core/gen/assets.gen.dart';
 class HomeMenuItemData {
   static final List<Map<String, dynamic>> _homeMenuItemData = [
     {
-      'color': RRJColors.rose400,
+      'color': RRJColors.rose400.withOpacity(0.8),
       'icon': RRJAssets.icons.iconAppointment1.path,
       'label': LocaleKeys.homeScreen_appointment.tr(),
       'description': LocaleKeys.homeScreen_doReservationHere.tr(),
     },
     {
-      'color': RRJColors.yellow400,
+      'color': RRJColors.yellow400.withOpacity(0.8),
       'icon': RRJAssets.icons.iconAppointment2.path,
       'label': LocaleKeys.homeScreen_doctorSchedule.tr(),
       'description': LocaleKeys.homeScreen_seeDoctorSchedule.tr(),
     },
     {
-      'color': RRJColors.teal400,
+      'color': RRJColors.teal400.withOpacity(0.8),
       'icon': RRJAssets.icons.iconMeeting.path,
       'label': LocaleKeys.homeScreen_queue.tr(),
       'description': LocaleKeys.homeScreen_seeQueueHere.tr(),
     },
     {
-      'color': RRJColors.azure400,
+      'color': RRJColors.azure400.withOpacity(0.8),
       'icon': RRJAssets.icons.iconIdcard.path,
       'label': LocaleKeys.homeScreen_insurance.tr(),
       'description': LocaleKeys.chooseDoctorScreen_paymentMethod.tr(),

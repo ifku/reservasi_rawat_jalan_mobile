@@ -1,15 +1,26 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/button/rrj_outlined_button.dart';
 
 class RRJNewsCard extends StatelessWidget {
-  const RRJNewsCard({super.key});
+  const RRJNewsCard(
+      {super.key,
+      required this.newsTitle,
+      required this.newsDate,
+      required this.newsImageUrl});
+
+  final String newsTitle;
+  final DateTime newsDate;
+  final String newsImageUrl;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200.0,
-      width: 180.0,
+      height: 250.0,
+      width: 200.0,
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(10.0),
@@ -24,14 +35,14 @@ class RRJNewsCard extends StatelessWidget {
         children: [
           SizedBox(
             height: 60.0,
-            width: 180.0,
+            width: 250.0,
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
               ),
-              child: Image.asset(
-                RRJAssets.images.imageExample.path,
+              child: CachedNetworkImage(
+                imageUrl: newsImageUrl,
                 fit: BoxFit.cover,
               ),
             ),
@@ -42,13 +53,15 @@ class RRJNewsCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "December 20, 2023",
+                Text(
+                  DateFormatter.formatDateTime(newsDate),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.start,
                 ),
                 const SizedBox(height: 8.0),
-                const Text(
-                  "Bahaya Kurang Air Putih, Dehidrasi sampai Picu Penyakit",
+                Text(
+                  newsTitle,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.justify,
@@ -64,7 +77,7 @@ class RRJNewsCard extends StatelessWidget {
                   ),
                   borderColor: Theme.of(context).colorScheme.primary,
                   child: Text(
-                    "Lanjut membaca",
+                    LocaleKeys.homeScreen_continueReading.tr(),
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                           color: Theme.of(context).colorScheme.primary,
                           fontWeight: FontWeight.bold,

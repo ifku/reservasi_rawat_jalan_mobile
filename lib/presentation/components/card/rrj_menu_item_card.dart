@@ -30,7 +30,7 @@ class RRJMenuItemCard extends StatelessWidget {
           height: 90.0,
           width: MediaQuery.of(context).size.width * 0.5,
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
@@ -64,7 +64,7 @@ class RRJMenuItemCard extends StatelessWidget {
                       menuLabel,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
                             fontSize: 14,
                             color: Theme.of(context)
                                 .colorScheme

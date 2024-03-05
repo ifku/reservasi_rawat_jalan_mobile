@@ -35,7 +35,8 @@
     "seeQueueHere": "Lihat antrian saat ini",
     "paymentMethod": "Metode pembayaran",
     "latestInformation": "Informasi Terkini",
-    "upcomingSchedule": "Jadwal Mendatang"
+    "upcomingSchedule": "Jadwal Mendatang",
+    "continueRead": "Lanjutkan Membaca"
   },
   "chooseDoctorScreen": {
     "clinic": "Klinik",

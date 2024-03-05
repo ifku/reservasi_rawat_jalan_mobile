@@ -9,7 +9,7 @@ import 'package:reservasi_rawat_jalan_mobile/locator.dart';
 class NewsRepositoryImpl extends NewsRepository{
     final NewsDataSource _newsDataSource = locator<NewsDataSource>();
   @override
-  Future<Either<Exception, List<NewsModel>>> getNews() {
-    return _newsDataSource.getNews();
+  Future<Either<Exception, List<NewsModel>>> getNews() async {
+    return await _newsDataSource.getNews();
   }
 }
