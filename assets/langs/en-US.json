@@ -33,7 +33,9 @@
     "doReservationHere": "Make your reservation here",
     "seeDoctorSchedule": "See doctors schedule",
     "seeQueueHere": "See current queue",
-    "paymentMethod": "Payment method"
+    "paymentMethod": "Payment method",
+    "latestInformation": "Latest Information",
+    "upcomingSchedule": "Upcoming Schedule"
   },
   "chooseDoctorScreen": {
     "clinic": "Clinic",

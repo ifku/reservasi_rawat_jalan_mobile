@@ -2,8 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/card/rrj_menu_item_card.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/bloc/home_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/widget/home_menu_item_data.dart';
 
 class Homescreen extends StatefulWidget {
@@ -47,11 +49,17 @@ class _HomescreenState extends State<Homescreen> {
                       iconContainerColor: HomeMenuItemData.getColor(index),
                       onTap: () {});
                 },
-              )
+              ),
             ],
           ),
         ),
       ),
     ));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<HomeBloc>().add(FetchHomeData());
   }
 }

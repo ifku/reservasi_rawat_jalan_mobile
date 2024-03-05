@@ -33,7 +33,9 @@
     "doReservationHere": "Lakukan reservasi disini",
     "seeDoctorSchedule": "Lihat jadwal dokter",
     "seeQueueHere": "Lihat antrian saat ini",
-    "paymentMethod": "Metode pembayaran"
+    "paymentMethod": "Metode pembayaran",
+    "latestInformation": "Informasi Terkini",
+    "upcomingSchedule": "Jadwal Mendatang"
   },
   "chooseDoctorScreen": {
     "clinic": "Klinik",

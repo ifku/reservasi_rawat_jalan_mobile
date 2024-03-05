@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:reservasi_rawat_jalan_mobile/bloc_providers.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
 import 'package:reservasi_rawat_jalan_mobile/locator.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/bloc/clinic_bloc.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/dummy_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/home_screen.dart';
 
 import 'core/gen/codegen_loader.g.dart';
 
@@ -18,7 +18,8 @@ Future<void> main() async {
   await setupServiceLocator();
   await dotenv.load(fileName: ".env");
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(EasyLocalization(
+  runApp(
+    EasyLocalization(
       path: 'assets/langs',
       supportedLocales: const [
         Locale('en', 'US'),
@@ -28,8 +29,13 @@ Future<void> main() async {
       assetLoader: const CodegenLoader(),
       child: DevicePreview(
         enabled: !kReleaseMode,
-        builder: (context) => const MyApp(),
-      )));
+        builder: (context) => MultiBlocProvider(
+          providers: BlocProviders.getBlocProviders(),
+          child: const MyApp(),
+        ),
+      ),
+    ),
+  );
   // child: const MyApp()));
 }
 
@@ -38,18 +44,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ClinicBloc(),
-      child: MaterialApp(
-        supportedLocales: context.supportedLocales,
-        localizationsDelegates: context.localizationDelegates,
-        locale: context.locale,
-        title: 'Reservasi Rawat Jalan',
-        debugShowCheckedModeBanner: false,
-        theme: RRJThemeData.lightTheme,
-        darkTheme: RRJThemeData.darkTheme,
-        home: const DummyPage(),
-      ),
+    return MaterialApp(
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
+      locale: context.locale,
+      title: 'Reservasi Rawat Jalan',
+      debugShowCheckedModeBanner: false,
+      theme: RRJThemeData.lightTheme,
+      darkTheme: RRJThemeData.darkTheme,
+      home: const Homescreen(),
     );
   }
 }

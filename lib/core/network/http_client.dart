@@ -1,5 +1,5 @@
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:either_dart/either.dart';
 
 class AppHttpClient {
   final Dio _dio;

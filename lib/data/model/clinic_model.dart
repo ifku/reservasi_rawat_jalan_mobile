@@ -4,20 +4,20 @@
 
 
 
-class Clinic {
+class ClinicModel {
   final String idClinic;
   final String clinicName;
   final DateTime createdAt;
   final DateTime updatedAt;
 
-  Clinic({
+  ClinicModel({
     required this.idClinic,
     required this.clinicName,
     required this.createdAt,
     required this.updatedAt,
   });
 
-  factory Clinic.fromJson(Map<String, dynamic> json) => Clinic(
+  factory ClinicModel.fromJson(Map<String, dynamic> json) => ClinicModel(
         idClinic: json["id_clinic"],
         clinicName: json["clinic_name"],
         createdAt: DateTime.parse(json["created_at"]),
