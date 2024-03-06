@@ -67,7 +67,13 @@ class CodegenLoader extends AssetLoader{
     "paymentMethod": "Payment Method",
     "chooseDoctor": "Choose Doctor"
   },
-  "detailDoctorScreen": {},
+  "detailDoctorScreen": {
+    "detailDoctor": "Doctor Detail",
+    "sipNumber": "SIP Number",
+    "strNumber": "STR Number",
+    "paymentMethod": "Payment Method",
+    "chooseDoctor": "CHOOSE DOCTOR"
+  },
   "reservationScreen": {
     "reservationDetail": "Reservation Detail",
     "selectTheDay": "Choose a day and date for the Appointment",
@@ -137,7 +143,13 @@ static const Map<String,dynamic> id_ID = {
     "paymentMethod": "Pembayaran",
     "chooseDoctor": "Pilih Dokter"
   },
-  "detailDoctorScreen": {},
+  "detailDoctorScreen": {
+    "detailDoctor": "Detail Dokter",
+    "sipNumber": "Nomor SIP",
+    "strNumber": "Nomor STR",
+    "paymentMethod": "Metode Pembayaran",
+    "chooseDoctor": "PILIH DOKTER"
+  },
   "reservationScreen": {
     "reservationDetail": "Detail Reservasi",
     "selectTheDay": "Pilih hari dan tanggal untuk Janji Temu",

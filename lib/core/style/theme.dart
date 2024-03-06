@@ -82,7 +82,7 @@ class RRJThemeData {
       /*Primary*/
       primary: RRJColors.blue500,
       onPrimary: RRJColors.grey200,
-      primaryContainer: RRJColors.grey700,
+      primaryContainer: RRJColors.grey200,
       onPrimaryContainer: RRJColors.grey200,
       inversePrimary: RRJColors.grey500,
       /*Secondary*/

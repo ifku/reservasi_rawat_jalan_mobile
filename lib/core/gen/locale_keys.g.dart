@@ -49,6 +49,11 @@ abstract class  LocaleKeys {
   static const chooseDoctorScreen_paymentMethod = 'chooseDoctorScreen.paymentMethod';
   static const chooseDoctorScreen_chooseDoctor = 'chooseDoctorScreen.chooseDoctor';
   static const chooseDoctorScreen = 'chooseDoctorScreen';
+  static const detailDoctorScreen_detailDoctor = 'detailDoctorScreen.detailDoctor';
+  static const detailDoctorScreen_sipNumber = 'detailDoctorScreen.sipNumber';
+  static const detailDoctorScreen_strNumber = 'detailDoctorScreen.strNumber';
+  static const detailDoctorScreen_paymentMethod = 'detailDoctorScreen.paymentMethod';
+  static const detailDoctorScreen_chooseDoctor = 'detailDoctorScreen.chooseDoctor';
   static const detailDoctorScreen = 'detailDoctorScreen';
   static const reservationScreen_reservationDetail = 'reservationScreen.reservationDetail';
   static const reservationScreen_selectTheDay = 'reservationScreen.selectTheDay';

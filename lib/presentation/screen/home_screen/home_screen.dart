@@ -12,14 +12,14 @@ import 'package:reservasi_rawat_jalan_mobile/presentation/components/card/rrj_ne
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/bloc/home_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/widget/home_menu_item_data.dart';
 
-class Homescreen extends StatefulWidget {
-  const Homescreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<Homescreen> createState() => _HomescreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomescreenState extends State<Homescreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,8 +145,7 @@ class _HomescreenState extends State<Homescreen> {
                             return Container(
                               height: 120,
                               width: MediaQuery.of(context).size.width,
-                              margin: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 12),
+                              margin: const EdgeInsets.symmetric(vertical: 12),
                               decoration: BoxDecoration(
                                 color: RRJColors.grey200,
                                 borderRadius: BorderRadius.circular(12),

@@ -51,7 +51,13 @@
     "paymentMethod": "Payment Method",
     "chooseDoctor": "Choose Doctor"
   },
-  "detailDoctorScreen": {},
+  "detailDoctorScreen": {
+    "detailDoctor": "Doctor Detail",
+    "sipNumber": "SIP Number",
+    "strNumber": "STR Number",
+    "paymentMethod": "Payment Method",
+    "chooseDoctor": "CHOOSE DOCTOR"
+  },
   "reservationScreen": {
     "reservationDetail": "Reservation Detail",
     "selectTheDay": "Choose a day and date for the Appointment",

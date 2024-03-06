@@ -51,7 +51,13 @@
     "paymentMethod": "Pembayaran",
     "chooseDoctor": "Pilih Dokter"
   },
-  "detailDoctorScreen": {},
+  "detailDoctorScreen": {
+    "detailDoctor": "Detail Dokter",
+    "sipNumber": "Nomor SIP",
+    "strNumber": "Nomor STR",
+    "paymentMethod": "Metode Pembayaran",
+    "chooseDoctor": "PILIH DOKTER"
+  },
   "reservationScreen": {
     "reservationDetail": "Detail Reservasi",
     "selectTheDay": "Pilih hari dan tanggal untuk Janji Temu",

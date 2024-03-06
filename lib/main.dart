@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: RRJThemeData.lightTheme,
       darkTheme: RRJThemeData.darkTheme,
-      home: const Homescreen(),
+      home: const HomeScreen(),
     );
   }
 }
