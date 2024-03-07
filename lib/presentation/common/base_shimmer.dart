@@ -13,7 +13,7 @@ class BaseShimmer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
       baseColor: Theme.of(context).colorScheme.surfaceVariant,
-      highlightColor: Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
+      highlightColor: Theme.of(context).colorScheme.surface,
       child: child,
     );
   }

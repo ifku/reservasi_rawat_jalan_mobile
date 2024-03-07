@@ -1,7 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
@@ -44,7 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ?.copyWith(fontWeight: FontWeight.w600, fontSize: 18.0),
                 ),
                 const SizedBox(height: 12.0),
-                Text(LocaleKeys.homeScreen_whatDoYouWantToDoToday.tr()),
+                Text(
+                  LocaleKeys.homeScreen_whatDoYouWantToDoToday.tr(),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+                  ),
+                ),
                 const SizedBox(height: 12.0),
                 GridView.builder(
                   shrinkWrap: true,

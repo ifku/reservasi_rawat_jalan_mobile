@@ -80,7 +80,6 @@ class RRJNewsCard extends StatelessWidget {
                     LocaleKeys.homeScreen_continueReading.tr(),
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                           color: Theme.of(context).colorScheme.primary,
-                          fontWeight: FontWeight.bold,
                         ),
                   ),
                 ),
