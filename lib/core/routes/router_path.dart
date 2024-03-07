@@ -8,7 +8,7 @@ class RoutePath {
   static const String activity = '/activity';
   static const String account = '/account';
 
-  static const String clinicList = '/clinic';
+  static const String clinicList = 'clinic';
   static const String clinicDoctorList = 'clinic_doctor';
   static const String doctorDetail = 'doctor_detail';
 

@@ -11,7 +11,7 @@ class UpcomingScheduleFakeDataSource extends UpcomingScheduleDatasource {
       UpcomingScheduleModel(
         doctorName: 'dr. Ifku Syoba',
         doctorSchedule: DateTime.parse('2022-12-12'),
-        doctorImage: null,
+        doctorImage: "https://plus.unsplash.com/premium_photo-1661764878654-3d0fc2eefcca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ),
       UpcomingScheduleModel(
         doctorName: 'dr. Navis Nasrullah',
@@ -21,7 +21,7 @@ class UpcomingScheduleFakeDataSource extends UpcomingScheduleDatasource {
       UpcomingScheduleModel(
         doctorName: 'dr. Yoga Aditya',
         doctorSchedule: DateTime.parse('2022-12-12'),
-        doctorImage: null,
+        doctorImage: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ),
     ]);
   }

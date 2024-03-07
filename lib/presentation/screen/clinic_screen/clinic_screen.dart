@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/bloc/clinic_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/widget/clinic_item_card_color.dart';
@@ -43,9 +44,8 @@ class _ClinicScreenState extends State<ClinicScreen> {
                 builder: (context, state) {
                   log(state.toString());
                   if (state is GetClinicLoading) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
+                    return Center(
+                        child: Lottie.asset(RRJAssets.raw.loadingAnim.path));
                   }
                   if (state is GetClinicFailure) {
                     return Center(
@@ -56,6 +56,7 @@ class _ClinicScreenState extends State<ClinicScreen> {
                     return Expanded(
                       child: GridView.builder(
                           shrinkWrap: true,
+                          physics: const BouncingScrollPhysics(),
                           gridDelegate:
                               const SliverGridDelegateWithMaxCrossAxisExtent(
                                   crossAxisSpacing: 16,
@@ -66,7 +67,7 @@ class _ClinicScreenState extends State<ClinicScreen> {
                           itemBuilder: (context, index) {
                             return RRJClinicItem(
                               onTap: () {},
-                              icon: RRJAssets.icons.iconFetus.path,
+                              icon: state.clinics.elementAt(index).clinicIcon,
                               label: state.clinics.elementAt(index).clinicName,
                               containerColor:
                                   ClinicItemCardColor.getRandomColor(),

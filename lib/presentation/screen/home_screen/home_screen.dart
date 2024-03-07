@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/common/base_shimmer.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/card/rrj_doctor_schedule_card.dart';
@@ -45,8 +47,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   LocaleKeys.homeScreen_whatDoYouWantToDoToday.tr(),
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
-                  ),
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSurface
+                            .withOpacity(0.5),
+                      ),
                 ),
                 const SizedBox(height: 12.0),
                 GridView.builder(
@@ -65,7 +70,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         menuDescription: HomeMenuItemData.getDescription(index),
                         menuIcon: HomeMenuItemData.getIcon(index),
                         iconContainerColor: HomeMenuItemData.getColor(index),
-                        onTap: () {});
+                        onTap: () {
+                          switch (index) {
+                            case 0:
+                              context.goNamed(RouteName.clinicList);
+                          }
+                        });
                   },
                 ),
                 const SizedBox(height: 18.0),

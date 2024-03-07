@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/const/api_constants.dart';
@@ -21,8 +19,6 @@ class ClinicRemoteDatasource extends ClinicDataSource {
     return response.fold((error) => Left(error), (data) {
       final responseObject =
           ApiListResponse<ClinicModel>.fromJson(data, ClinicModel.fromJson);
-
-      log(responseObject.data.toString());
       return Right(responseObject.data ?? []);
     });
   }

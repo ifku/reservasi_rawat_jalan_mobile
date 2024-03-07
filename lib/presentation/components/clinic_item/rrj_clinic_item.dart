@@ -39,7 +39,7 @@ class RRJClinicItem extends StatelessWidget {
                 decoration: const BoxDecoration(
                     color: RRJColors.white, shape: BoxShape.circle),
                 child: Center(
-                  child: SvgPicture.asset(
+                  child: SvgPicture.network(
                     icon,
                     height: 28,
                     width: 28,
@@ -54,7 +54,9 @@ class RRJClinicItem extends StatelessWidget {
                 child: Text(
                   label,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.labelMedium,
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
               )
             ],

@@ -74,7 +74,7 @@ class RRJThemeData {
       /*Surface*/
       surface: RRJColors.grey700,
       onSurface: RRJColors.white,
-      surfaceVariant: RRJColors.grey700,
+      surfaceVariant: RRJColors.grey600,
       surfaceTint: RRJColors.grey200,
       inverseSurface: RRJColors.grey300,
       onInverseSurface: RRJColors.grey900,
