@@ -15,13 +15,14 @@ import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/hom
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/splash_screen/splash_screen.dart';
 
 class AppRouter {
-  static GoRouter createRouter() {
-    return GoRouter(
-      initialLocation: RoutePath.splash,
-      debugLogDiagnostics: !kReleaseMode,
-      routes: routes,
-    );
-  }
+  static final _rootNavigatorKey = GlobalKey<NavigatorState>();
+
+  static final GoRouter router = GoRouter(
+    initialLocation: RoutePath.splash,
+    debugLogDiagnostics: !kReleaseMode,
+    routes: routes,
+    navigatorKey: _rootNavigatorKey,
+  );
 
   static final routes = [
     StatefulShellRoute.indexedStack(

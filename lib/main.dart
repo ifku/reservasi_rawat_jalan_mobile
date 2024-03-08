@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       locale: context.locale,
-      routerConfig: AppRouter.createRouter(),
+      routerConfig: AppRouter.router,
       title: 'Reservasi Rawat Jalan',
       debugShowCheckedModeBanner: false,
       theme: RRJThemeData.lightTheme,
