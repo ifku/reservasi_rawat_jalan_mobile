@@ -56,7 +56,7 @@ class CodegenLoader extends AssetLoader{
   },
   "chooseDoctorScreen": {
     "clinic": "Clinic",
-    "findDoctor": "Find your preferred",
+    "findDoctor": "Find your preferred doctor below.",
     "below": "below!",
     "findDoctorIn": "Find a doctor in",
     "doctor": "Doctor",
@@ -132,7 +132,7 @@ static const Map<String,dynamic> id_ID = {
   },
   "chooseDoctorScreen": {
     "clinic": "Klinik",
-    "findDoctor": "Temukan Dokter",
+    "findDoctor": "Temukan dokter pilihanmu dibawah ini.",
     "below": "dibawah ini!",
     "findDoctorIn": "Cari Dokter",
     "doctor": "Dokter",

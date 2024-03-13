@@ -3,10 +3,11 @@ import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/bloc/clinic_bloc.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/widget/clinic_item_card_color.dart';
 
 import '../../../core/gen/assets.gen.dart';
 import '../../components/clinic_item/rrj_clinic_item.dart';
@@ -31,7 +32,9 @@ class _ClinicScreenState extends State<ClinicScreen> {
             children: [
               Text(
                 LocaleKeys.clinicScreen_clinicList.tr(),
-                style: Theme.of(context).textTheme.labelLarge,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
               ),
               const SizedBox(height: 8),
               Text(
@@ -44,7 +47,7 @@ class _ClinicScreenState extends State<ClinicScreen> {
                 builder: (context, state) {
                   log(state.toString());
                   if (state is GetClinicLoading) {
-                    return Center(
+                    return Expanded(
                         child: Lottie.asset(RRJAssets.raw.loadingAnim.path));
                   }
                   if (state is GetClinicFailure) {
@@ -66,11 +69,16 @@ class _ClinicScreenState extends State<ClinicScreen> {
                           itemCount: state.clinics.length,
                           itemBuilder: (context, index) {
                             return RRJClinicItem(
-                              onTap: () {},
+                              onTap: () {
+                                context.goNamed(RouteName.clinicDoctorList,
+                                    extra: state.clinics
+                                        .elementAt(index)
+                                        .idClinic);
+                              },
                               icon: state.clinics.elementAt(index).clinicIcon,
                               label: state.clinics.elementAt(index).clinicName,
                               containerColor:
-                                  ClinicItemCardColor.getRandomColor(),
+                                  Theme.of(context).colorScheme.surface,
                             );
                           }),
                     );

@@ -41,6 +41,7 @@ class RRJDoctorInfoCard extends StatelessWidget {
                         .textTheme
                         .bodySmall
                         ?.copyWith(fontWeight: FontWeight.w400)),
+                const SizedBox(height: 4.0),
                 Text(content, style: Theme.of(context).textTheme.bodyMedium)
               ],
             )

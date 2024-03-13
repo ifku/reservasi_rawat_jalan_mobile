@@ -117,7 +117,10 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
               onPressed: () {},
               height: MediaQuery.of(context).size.height * 0.05,
               width: MediaQuery.of(context).size.width,
-              child: Text(LocaleKeys.detailDoctorScreen_chooseDoctor.tr()),
+              child: Text(LocaleKeys.detailDoctorScreen_chooseDoctor.tr(),
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      )),
             ),
           ],
         ),

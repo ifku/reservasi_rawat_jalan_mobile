@@ -9,6 +9,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/routes/router_path.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/navigation/navigation.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/account_screen/account_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/activity_screen/activity_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/choose_doctor_screen/choose_doctor_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/clinic_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/history_screen/history_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/home_screen.dart';
@@ -55,6 +56,19 @@ class AppRouter {
                     state: state,
                   );
                 },
+                routes: [
+                  GoRoute(
+                    path: RoutePath.clinicDoctorList,
+                    name: RouteName.clinicDoctorList,
+                    pageBuilder: (context, state) {
+                      return canvas(
+                        child:
+                            ChooseDoctorScreen(clinicId: state.extra as String),
+                        state: state,
+                      );
+                    },
+                  ),
+                ],
               ),
             ],
           ),

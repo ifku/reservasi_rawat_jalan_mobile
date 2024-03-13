@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 
 import '../../../core/gen/assets.gen.dart';
 import '../../../core/style/color.dart';
@@ -13,21 +15,25 @@ class RRJDoctorCard extends StatelessWidget {
       required this.doctorAge,
       required this.doctorRating,
       this.doctorImage,
-      this.onTap});
+      this.onTap,
+      this.margin});
 
   final String doctorName;
   final String doctorClinic;
   final int doctorAge;
   final double doctorRating;
   final String? doctorImage;
+  final EdgeInsetsGeometry? margin;
   final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      splashColor: Colors.transparent,
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
       child: Container(
-        margin: const EdgeInsets.all(12.0),
+        margin: margin,
         height: 120,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
@@ -36,7 +42,7 @@ class RRJDoctorCard extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Theme.of(context).colorScheme.shadow.withOpacity(0.1),
-                blurRadius: 10,
+                blurRadius: 0.1,
                 blurStyle: BlurStyle.outer,
                 offset: const Offset(0, 4),
               ),
@@ -87,7 +93,7 @@ class RRJDoctorCard extends StatelessWidget {
                                   fontWeight: FontWeight.w400),
                         ),
                         TextSpan(
-                          text: "|",
+                          text: "  |  ",
                           style: Theme.of(context)
                               .textTheme
                               .bodySmall
@@ -96,7 +102,7 @@ class RRJDoctorCard extends StatelessWidget {
                                   fontWeight: FontWeight.w400),
                         ),
                         TextSpan(
-                          text: "$doctorRating Tahun",
+                          text: "$doctorAge ${LocaleKeys.chooseDoctorScreen_years.tr()}",
                           style: Theme.of(context)
                               .textTheme
                               .bodySmall
@@ -114,7 +120,8 @@ class RRJDoctorCard extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         RRJAssets.icons.iconStar.path,
-                        color: RRJColors.yellow500,
+                        colorFilter: const ColorFilter.mode(
+                            RRJColors.yellow500, BlendMode.srcIn),
                         height: 18,
                       ),
                       const SizedBox(width: 4.0),

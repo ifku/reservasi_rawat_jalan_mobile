@@ -2,21 +2,23 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:reservasi_rawat_jalan_mobile/domain/usecases/clinic/get_all_clinic_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/locator.dart';
 
 import '../../../../data/model/clinic_model.dart';
-import '../../../../domain/repository/clinic_repository.dart';
 
 part 'clinic_event.dart';
 part 'clinic_state.dart';
 
 class ClinicBloc extends Bloc<ClinicEvent, ClinicState> {
-    final ClinicRepository clinicRepository = locator<ClinicRepository>();
+  final GetAllClinicUseCase getAllClinicUseCase =
+      locator<GetAllClinicUseCase>();
+
   ClinicBloc() : super(GetClinicLoading()) {
     on<GetAllClinic>((event, emit) async {
       emit(GetClinicLoading());
       try {
-        final result = await clinicRepository.getAllClinic();
+        final result = await getAllClinicUseCase.call(null);
         result.fold(
           (l) => emit(GetClinicFailure(message: l.toString())),
           (r) => emit(GetClinicSuccess(clinics: r)),

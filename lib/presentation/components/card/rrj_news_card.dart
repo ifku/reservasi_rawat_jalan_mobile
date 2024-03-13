@@ -19,7 +19,7 @@ class RRJNewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250.0,
+      height: 200.0,
       width: 200.0,
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.surface,

@@ -9,7 +9,7 @@ class ClinicRepositoryImpl extends ClinicRepository {
   final ClinicDataSource _clinicDataSource = locator<ClinicDataSource>();
 
   @override
-  Future<Either<Exception, List<ClinicModel>>> getAllClinic() {
-    return _clinicDataSource.getAllClinic();
+  Future<Either<Exception, List<ClinicModel>>> getAllClinic() async {
+    return await _clinicDataSource.getAllClinic();
   }
 }

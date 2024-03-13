@@ -115,23 +115,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     }
                     if (state is HomeSuccess) {
-                      return SizedBox(
-                        height: 200.0,
-                        child: ListView.builder(
-                            shrinkWrap: true,
-                            physics: const BouncingScrollPhysics(),
-                            scrollDirection: Axis.horizontal,
-                            itemCount: state.news.length,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.only(right: 12.0),
-                                child: RRJNewsCard(
-                                  newsTitle: state.news[index].title,
-                                  newsImageUrl: state.news[index].urlToImage,
-                                  newsDate: state.news[index].publishedAt,
-                                ),
-                              );
-                            }),
+                      return SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: state.news.map((news) {
+                            return Padding(
+                              padding: const EdgeInsets.only(right: 12.0),
+                              child: RRJNewsCard(
+                                newsTitle: news.title,
+                                newsImageUrl: news.urlToImage,
+                                newsDate: news.publishedAt,
+                              ),
+                            );
+                          }).toList(),
+                        ),
                       );
                     }
                     return const SizedBox.shrink();
