@@ -25,6 +25,8 @@ class RRJMenuItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      splashColor: Colors.transparent,
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
       child: Container(
           padding: const EdgeInsets.all(12.0),
           height: 90.0,

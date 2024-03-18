@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/data_sources/clinic_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/data_sources/doctor_datasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/data/data_sources/fake/choose_doctor_fake_datasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/data/data_sources/fake/clinic_fake_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/data_sources/fake/news_fake_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/data_sources/fake/upcoming_schedule_fake_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/data_sources/news_datasource.dart';
@@ -30,7 +32,8 @@ Future<void> setupServiceLocator() async {
   locator.registerSingleton<Dio>(Dio());
   locator.registerSingleton<AppHttpClient>(AppHttpClient(dio: locator<Dio>()));
   /*Clinic*/
-  locator.registerSingleton<ClinicDataSource>(ClinicRemoteDatasource());
+  // locator.registerSingleton<ClinicDataSource>(ClinicRemoteDatasource());
+  locator.registerSingleton<ClinicDataSource>(ClinicFakeDataSource());
   locator.registerSingleton<ClinicRepository>(ClinicRepositoryImpl());
   locator.registerSingleton<GetAllClinicUseCase>(GetAllClinicUseCase());
 
@@ -42,7 +45,8 @@ Future<void> setupServiceLocator() async {
   locator.registerSingleton<UpcomingScheduleRepository>(UpcomingScheduleRepositoryImpl());
   locator.registerSingleton<GetUpcomingScheduleUseCase>(GetUpcomingScheduleUseCase());
 
-  locator.registerSingleton<DoctorDatasource>(DoctorRemoteDataSource());
+  // locator.registerSingleton<DoctorDatasource>(DoctorRemoteDataSource());
+  locator.registerSingleton<DoctorDatasource>(ChooseDoctorFakeDatasource());
   locator.registerSingleton<DoctorRepository>(DoctorRepositoryImpl());
   locator.registerSingleton<GetDoctorByClinicIdUseCase>(GetDoctorByClinicIdUseCase());
 }

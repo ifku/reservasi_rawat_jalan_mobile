@@ -48,6 +48,7 @@ abstract class  LocaleKeys {
   static const chooseDoctorScreen_strItem = 'chooseDoctorScreen.strItem';
   static const chooseDoctorScreen_paymentMethod = 'chooseDoctorScreen.paymentMethod';
   static const chooseDoctorScreen_chooseDoctor = 'chooseDoctorScreen.chooseDoctor';
+  static const chooseDoctorScreen_doctorNotFound = 'chooseDoctorScreen.doctorNotFound';
   static const chooseDoctorScreen = 'chooseDoctorScreen';
   static const detailDoctorScreen_detailDoctor = 'detailDoctorScreen.detailDoctor';
   static const detailDoctorScreen_sipNumber = 'detailDoctorScreen.sipNumber';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/components/bottom_sheet/show_rrj_bottom_sheet.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/components/bottom_sheet/rrj_choose_doctor_bottom_sheet.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 
 class DummyPage extends StatefulWidget {
   const DummyPage({Key? key}) : super(key: key);
@@ -16,24 +16,36 @@ class _DummyPageState extends State<DummyPage> {
       body: Container(
         color: Theme.of(context).colorScheme.background,
         child: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              showRRJBottomSheet(
-                context,
-                showDragHandle: false,
-                child: const RRJChooseDoctorBottomSheet(
-                  doctorName: 'dr. Navis Nasrullah',
-                  doctorSpecialist: 'General Doctor',
-                  doctorSIP: '64822947393297',
-                  doctorSTR: '320374527291',
-                  doctorImage: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                  doctorPayment: 'Umum, Asuransi, BPJS',
-                ),
-              );
-            },
-            child: const Text("Show bottom sheet"),
+            child: Container(
+          height: MediaQuery.of(context).size.height * 0.5,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surface,
           ),
-        ),
+          child: Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text("NIK"),
+                    SvgPicture.asset(
+                      RRJAssets.icons.iconEdit.path,
+                      height: 24.0,
+                      width: 24.0,
+                      fit: BoxFit.contain,
+                      colorFilter: ColorFilter.mode(
+                          Theme.of(context).colorScheme.primary,
+                          BlendMode.srcIn),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        )),
       ),
     );
   }

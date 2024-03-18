@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/button/rrj_primary_button.dart';
@@ -14,6 +15,7 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
     required this.doctorSIP,
     required this.doctorSTR,
     required this.doctorPayment,
+    required this.isAvailable,
     this.doctorImage,
     this.onChooseDoctor,
   });
@@ -24,6 +26,7 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
   final String doctorSTR;
   final String doctorPayment;
   final String? doctorImage;
+  final bool isAvailable;
   final void Function()? onChooseDoctor;
 
   @override
@@ -41,7 +44,9 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pop();
+                      },
                       splashColor: Colors.transparent,
                       constraints: const BoxConstraints(),
                       padding: EdgeInsets.zero,
@@ -113,15 +118,24 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
               content: doctorPayment,
             ),
             const SizedBox(height: 24.0),
-            RRJPrimaryButton(
-              onPressed: () {},
-              height: MediaQuery.of(context).size.height * 0.05,
-              width: MediaQuery.of(context).size.width,
-              child: Text(LocaleKeys.detailDoctorScreen_chooseDoctor.tr(),
-                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                        color: Theme.of(context).colorScheme.onPrimary,
-                      )),
-            ),
+            isAvailable
+                ? RRJPrimaryButton(
+                    onPressed: () {},
+                    height: MediaQuery.of(context).size.height * 0.05,
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(LocaleKeys.detailDoctorScreen_chooseDoctor.tr(),
+                        style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                              color: Theme.of(context).colorScheme.onPrimary,
+                            )),
+                  )
+                : RRJPrimaryButton(
+                    height: MediaQuery.of(context).size.height * 0.05,
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(LocaleKeys.detailDoctorScreen_chooseDoctor.tr(),
+                        style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                              color: Theme.of(context).colorScheme.onPrimary,
+                            )),
+                  )
           ],
         ),
       ),

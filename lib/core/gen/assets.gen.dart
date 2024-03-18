@@ -52,6 +52,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icon_ear.svg
   SvgGenImage get iconEar => const SvgGenImage('assets/icons/icon_ear.svg');
 
+  /// File path: assets/icons/icon_edit.svg
+  SvgGenImage get iconEdit => const SvgGenImage('assets/icons/icon_edit.svg');
+
   /// File path: assets/icons/icon_example.svg
   SvgGenImage get iconExample =>
       const SvgGenImage('assets/icons/icon_example.svg');
@@ -166,6 +169,7 @@ class $AssetsIconsGen {
         iconCreditCard,
         iconDate,
         iconEar,
+        iconEdit,
         iconExample,
         iconEye,
         iconFetus,

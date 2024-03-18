@@ -21,6 +21,8 @@ class RRJClinicItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      splashColor: Colors.transparent,
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
       child: Container(
         height: 70,
         width: 160,

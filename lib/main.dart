@@ -54,5 +54,14 @@ class MyApp extends StatelessWidget {
       theme: RRJThemeData.lightTheme,
       darkTheme: RRJThemeData.darkTheme,
     );
+
+    // return MaterialApp(
+    //   supportedLocales: context.supportedLocales,
+    //   localizationsDelegates: context.localizationDelegates,
+    //   locale: context.locale,
+    //   theme: RRJThemeData.lightTheme,
+    //   debugShowCheckedModeBanner: false,
+    //   home: const DummyPage(),
+    // );
   }
 }

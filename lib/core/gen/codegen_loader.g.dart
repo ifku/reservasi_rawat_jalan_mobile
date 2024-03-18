@@ -65,7 +65,8 @@ class CodegenLoader extends AssetLoader{
     "sipNumber": "SIP Number",
     "strItem": "STR Number",
     "paymentMethod": "Payment Method",
-    "chooseDoctor": "Choose Doctor"
+    "chooseDoctor": "Choose Doctor",
+    "doctorNotFound": "Doctor not found."
   },
   "detailDoctorScreen": {
     "detailDoctor": "Doctor Detail",
@@ -141,7 +142,8 @@ static const Map<String,dynamic> id_ID = {
     "sipNumber": "Nomor SIP",
     "strItem": "Nomor STR",
     "paymentMethod": "Pembayaran",
-    "chooseDoctor": "Pilih Dokter"
+    "chooseDoctor": "Pilih Dokter",
+    "doctorNotFound": "Dokter tidak ditemukan."
   },
   "detailDoctorScreen": {
     "detailDoctor": "Detail Dokter",

@@ -7,8 +7,10 @@ class DoctorModel {
   final String doctorStr;
   final int doctorAge;
   final String doctorRating;
-  final String doctorImage;
+  final String? doctorImage;
   final String clinicId;
+
+  final bool isAvailable;
 
   final String clinicName;
   final DateTime? createdAt;
@@ -24,6 +26,7 @@ class DoctorModel {
     required this.doctorRating,
     required this.doctorImage,
     required this.clinicId,
+    required this.isAvailable,
     required this.clinicName,
     required this.createdAt,
     required this.updatedAt,
@@ -41,8 +44,9 @@ class DoctorModel {
         doctorStr: json["doctor_str"] ?? "",
         doctorAge: json["doctor_age"] ?? "",
         doctorRating: json["doctor_rating"] ?? "",
-        doctorImage: json["doctor_image"] ?? "",
+        doctorImage: json["doctor_image"],
         clinicId: json["clinic_id"] ?? "",
+        isAvailable: json["is_available"] ?? false,
         clinicName: json["clinic_name"] ?? "",
         createdAt: json["created_at"] == null
             ? null
@@ -61,6 +65,7 @@ class DoctorModel {
         "doctor_rating": doctorRating,
         "doctor_image": doctorImage,
         "clinic_id": clinicId,
+        "is_available": isAvailable,
         "clinic_name": clinicName,
         "created_at": createdAt?.toIso8601String(),
         "updated_at": updatedAt?.toIso8601String(),

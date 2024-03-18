@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,7 +43,6 @@ class _ClinicScreenState extends State<ClinicScreen> {
               const SizedBox(height: 18),
               BlocBuilder<ClinicBloc, ClinicState>(
                 builder: (context, state) {
-                  log(state.toString());
                   if (state is GetClinicLoading) {
                     return Expanded(
                         child: Lottie.asset(RRJAssets.raw.loadingAnim.path));
