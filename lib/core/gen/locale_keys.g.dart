@@ -80,5 +80,9 @@ abstract class  LocaleKeys {
   static const detailProfileScreen_completeInformation = 'detailProfileScreen.completeInformation';
   static const detailProfileScreen_save = 'detailProfileScreen.save';
   static const detailProfileScreen = 'detailProfileScreen';
+  static const familyScreen_familyList = 'familyScreen.familyList';
+  static const familyScreen_addFamilyMember = 'familyScreen.addFamilyMember';
+  static const familyScreen_addMember = 'familyScreen.addMember';
+  static const familyScreen = 'familyScreen';
 
 }

@@ -87,5 +87,10 @@
     "occupation": "Pekerjaan",
     "completeInformation": "Lengkapi informasi diri anda di bawah ini untuk membuat profil lebih informatif untuk pengalaman pengguna yang lebih baik.",
     "save": "Simpan"
+  },
+  "familyScreen": {
+    "familyList": "Daftar Keluarga",
+    "addFamilyMember": "Tambahkan Anggota Keluarga Anda untuk membuat pelayanan lebih mudah dan memberikan pengalaman yang lebih baik.",
+    "addMember": "Tambah Anggota"
   }
 }

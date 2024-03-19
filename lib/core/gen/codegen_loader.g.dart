@@ -103,6 +103,11 @@ class CodegenLoader extends AssetLoader{
     "occupation": "Occupation",
     "completeInformation": "Complete your personal information below to make your profile more informative for a better user experience.",
     "save": "Save"
+  },
+  "familyScreen": {
+    "familyList": "Family List",
+    "addFamilyMember": "Add your Family Members to make service easier and provide a better experience.",
+    "addMember": "Add Member"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -194,6 +199,11 @@ static const Map<String,dynamic> id_ID = {
     "occupation": "Pekerjaan",
     "completeInformation": "Lengkapi informasi diri anda di bawah ini untuk membuat profil lebih informatif untuk pengalaman pengguna yang lebih baik.",
     "save": "Simpan"
+  },
+  "familyScreen": {
+    "familyList": "Daftar Keluarga",
+    "addFamilyMember": "Tambahkan Anggota Keluarga Anda untuk membuat pelayanan lebih mudah dan memberikan pengalaman yang lebih baik.",
+    "addMember": "Tambah Anggota"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

@@ -13,9 +13,7 @@ class _DummyPageState extends State<DummyPage> {
     return Scaffold(
       body: Container(
         color: Theme.of(context).colorScheme.background,
-        child: Center(
-          child: Container()
-        ),
+        child: Center(child: Container()),
       ),
     );
   }

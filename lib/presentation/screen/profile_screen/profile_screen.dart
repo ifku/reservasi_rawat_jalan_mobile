@@ -32,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       BlendMode.srcIn,
                     ),
                   ),
-                  const SizedBox(width: 18.0),
+                  const SizedBox(width: 14.0),
                   Expanded(
                     child: Text(
                       LocaleKeys.detailProfileScreen_completeInformation.tr(),

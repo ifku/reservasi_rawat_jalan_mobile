@@ -87,5 +87,10 @@
     "occupation": "Occupation",
     "completeInformation": "Complete your personal information below to make your profile more informative for a better user experience.",
     "save": "Save"
+  },
+  "familyScreen": {
+    "familyList": "Family List",
+    "addFamilyMember": "Add your Family Members to make service easier and provide a better experience.",
+    "addMember": "Add Member"
   }
 }
