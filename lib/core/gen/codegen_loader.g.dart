@@ -89,6 +89,20 @@ class CodegenLoader extends AssetLoader{
     "noInternetException": "Please check your internet connection.",
     "googleSignInException": "Sign in to Google unsuccessful.",
     "generalErrorException": "Something is wrong, please try again later."
+  },
+  "detailProfileScreen": {
+    "idNumber": "ID Number",
+    "fullName": "Fullname",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "dateOfBirth": "Date of Birth",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "address": "Address",
+    "occupation": "Occupation",
+    "completeInformation": "Complete your personal information below to make your profile more informative for a better user experience.",
+    "save": "Save"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -166,6 +180,20 @@ static const Map<String,dynamic> id_ID = {
     "noInternetException": "Silakan periksa koneksi internet Anda.",
     "googleSignInException": "Masuk ke Google tidak berhasil.",
     "generalErrorException": "Terdapat kesalahan, silakan coba lagi nanti."
+  },
+  "detailProfileScreen": {
+    "idNumber": "NIK",
+    "fullName": "Nama Lengkap",
+    "email": "Alamat Surel",
+    "phoneNumber": "Nomor Telepon",
+    "dateOfBirth": "Tanggal Lahir",
+    "gender": "Jenis Kelamin",
+    "male": "Laki-laki",
+    "female": "Perempuan",
+    "address": "Alamat",
+    "occupation": "Pekerjaan",
+    "completeInformation": "Lengkapi informasi diri anda di bawah ini untuk membuat profil lebih informatif untuk pengalaman pengguna yang lebih baik.",
+    "save": "Simpan"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

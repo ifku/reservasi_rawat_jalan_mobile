@@ -91,6 +91,10 @@ class $AssetsIconsGen {
   SvgGenImage get iconIdcard =>
       const SvgGenImage('assets/icons/icon_idcard.svg');
 
+  /// File path: assets/icons/icon_information.svg
+  SvgGenImage get iconInformation =>
+      const SvgGenImage('assets/icons/icon_information.svg');
+
   /// File path: assets/icons/icon_location.svg
   SvgGenImage get iconLocation =>
       const SvgGenImage('assets/icons/icon_location.svg');
@@ -180,6 +184,7 @@ class $AssetsIconsGen {
         iconHistory,
         iconHome,
         iconIdcard,
+        iconInformation,
         iconLocation,
         iconLock,
         iconLogout,

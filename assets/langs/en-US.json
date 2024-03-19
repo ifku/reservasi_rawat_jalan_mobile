@@ -73,5 +73,19 @@
     "noInternetException": "Please check your internet connection.",
     "googleSignInException": "Sign in to Google unsuccessful.",
     "generalErrorException": "Something is wrong, please try again later."
+  },
+  "detailProfileScreen": {
+    "idNumber": "ID Number",
+    "fullName": "Fullname",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "dateOfBirth": "Date of Birth",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "address": "Address",
+    "occupation": "Occupation",
+    "completeInformation": "Complete your personal information below to make your profile more informative for a better user experience.",
+    "save": "Save"
   }
 }

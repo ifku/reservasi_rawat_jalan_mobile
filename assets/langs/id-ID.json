@@ -73,5 +73,19 @@
     "noInternetException": "Silakan periksa koneksi internet Anda.",
     "googleSignInException": "Masuk ke Google tidak berhasil.",
     "generalErrorException": "Terdapat kesalahan, silakan coba lagi nanti."
+  },
+  "detailProfileScreen": {
+    "idNumber": "NIK",
+    "fullName": "Nama Lengkap",
+    "email": "Alamat Surel",
+    "phoneNumber": "Nomor Telepon",
+    "dateOfBirth": "Tanggal Lahir",
+    "gender": "Jenis Kelamin",
+    "male": "Laki-laki",
+    "female": "Perempuan",
+    "address": "Alamat",
+    "occupation": "Pekerjaan",
+    "completeInformation": "Lengkapi informasi diri anda di bawah ini untuk membuat profil lebih informatif untuk pengalaman pengguna yang lebih baik.",
+    "save": "Simpan"
   }
 }

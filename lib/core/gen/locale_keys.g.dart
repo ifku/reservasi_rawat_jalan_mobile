@@ -69,5 +69,16 @@ abstract class  LocaleKeys {
   static const exception_googleSignInException = 'exception.googleSignInException';
   static const exception_generalErrorException = 'exception.generalErrorException';
   static const exception = 'exception';
+  static const detailProfileScreen_idNumber = 'detailProfileScreen.idNumber';
+  static const detailProfileScreen_fullName = 'detailProfileScreen.fullName';
+  static const detailProfileScreen_email = 'detailProfileScreen.email';
+  static const detailProfileScreen_phoneNumber = 'detailProfileScreen.phoneNumber';
+  static const detailProfileScreen_dateOfBirth = 'detailProfileScreen.dateOfBirth';
+  static const detailProfileScreen_gender = 'detailProfileScreen.gender';
+  static const detailProfileScreen_address = 'detailProfileScreen.address';
+  static const detailProfileScreen_occupation = 'detailProfileScreen.occupation';
+  static const detailProfileScreen_completeInformation = 'detailProfileScreen.completeInformation';
+  static const detailProfileScreen_save = 'detailProfileScreen.save';
+  static const detailProfileScreen = 'detailProfileScreen';
 
 }

@@ -8,9 +8,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:reservasi_rawat_jalan_mobile/bloc_providers.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
 import 'package:reservasi_rawat_jalan_mobile/locator.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/profile_screen/profile_screen.dart';
 
 import 'core/gen/codegen_loader.g.dart';
-import 'core/routes/router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    /*return MaterialApp.router(
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       locale: context.locale,
@@ -53,15 +53,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: RRJThemeData.lightTheme,
       darkTheme: RRJThemeData.darkTheme,
-    );
+    );*/
 
-    // return MaterialApp(
-    //   supportedLocales: context.supportedLocales,
-    //   localizationsDelegates: context.localizationDelegates,
-    //   locale: context.locale,
-    //   theme: RRJThemeData.lightTheme,
-    //   debugShowCheckedModeBanner: false,
-    //   home: const DummyPage(),
-    // );
+    return MaterialApp(
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
+      locale: context.locale,
+      theme: RRJThemeData.lightTheme,
+      debugShowCheckedModeBanner: false,
+      home: const ProfileScreen(),
+    );
   }
 }
