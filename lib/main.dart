@@ -6,9 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:reservasi_rawat_jalan_mobile/bloc_providers.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/routes/router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
 import 'package:reservasi_rawat_jalan_mobile/locator.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/family_screen/familiy_screen.dart';
 
 import 'core/gen/codegen_loader.g.dart';
 
@@ -25,6 +25,7 @@ Future<void> main() async {
         Locale('en', 'US'),
         Locale('id', 'ID'),
       ],
+      startLocale: const Locale('id', 'ID'),
       fallbackLocale: const Locale('id', 'ID'),
       assetLoader: const CodegenLoader(),
       child: DevicePreview(
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /*return MaterialApp.router(
+    return MaterialApp.router(
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       locale: context.locale,
@@ -53,15 +54,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: RRJThemeData.lightTheme,
       darkTheme: RRJThemeData.darkTheme,
-    );*/
+    );
 
-    return MaterialApp(
+    /*return MaterialApp(
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       locale: context.locale,
       theme: RRJThemeData.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const FamilyScreen(),
-    );
+      home: OnboardingScreen(),
+    );*/
   }
 }

@@ -12,6 +12,7 @@ import 'package:reservasi_rawat_jalan_mobile/presentation/screen/choose_doctor_s
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/clinic_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/history_screen/history_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/home_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/onboarding_screen/onboarding_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/profile_screen/profile_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/splash_screen/splash_screen.dart';
 
@@ -119,7 +120,16 @@ class AppRouter {
             child: const SplashScreen(),
             state: state,
           );
-        })
+        }),
+    GoRoute(
+        path: RoutePath.onboarding,
+        name: RouteName.onboarding,
+        pageBuilder: (context, state) {
+          return canvas(
+            child: OnboardingScreen(),
+            state: state,
+          );
+        }),
   ];
 
   static Page canvas({
@@ -127,9 +137,18 @@ class AppRouter {
     required GoRouterState state,
   }) {
     if (Platform.isAndroid) {
-      return MaterialPage(
+      return CustomTransitionPage(
         key: state.pageKey,
         child: child,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return SlideTransition(
+            position: Tween<Offset>(
+              begin: const Offset(1, 0),
+              end: Offset.zero,
+            ).animate(CurvedAnimation(parent: animation, curve: Curves.easeInOutCubic)),
+            child: child,
+          );
+        },
       );
     }
     return CupertinoPage(

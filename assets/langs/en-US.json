@@ -92,5 +92,15 @@
     "familyList": "Family List",
     "addFamilyMember": "Add your Family Members to make service easier and provide a better experience.",
     "addMember": "Add Member"
+  },
+  "onboardingScreen": {
+    "onboarding1Subtitle": "Find the right doctor for your needs easily and quickly.",
+    "onboarding2Subtitle": "Arrange a doctor's appointment around your schedule, without the long wait.",
+    "onboarding3Subtitle": "Get real-time wait time estimates, so you can organize your daily schedule more efficiently.",
+    "onboarding4Subtitle": "Pay with ease using the various online payment methods available, from credit cards to digital wallets.",
+    "onboarding1Title": "Find The Best Doctor",
+    "onboarding2Title": "Set a Flexible Schedule",
+    "onboarding3Title": "Estimated Waiting Time",
+    "onboarding4Title": "Hassle-free Transactions"
   }
 }

@@ -108,6 +108,16 @@ class CodegenLoader extends AssetLoader{
     "familyList": "Family List",
     "addFamilyMember": "Add your Family Members to make service easier and provide a better experience.",
     "addMember": "Add Member"
+  },
+  "onboardingScreen": {
+    "onboarding1Subtitle": "Find the right doctor for your needs easily and quickly.",
+    "onboarding2Subtitle": "Arrange a doctor's appointment around your schedule, without the long wait.",
+    "onboarding3Subtitle": "Get real-time wait time estimates, so you can organize your daily schedule more efficiently.",
+    "onboarding4Subtitle": "Pay with ease using the various online payment methods available, from credit cards to digital wallets.",
+    "onboarding1Title": "Find The Best Doctor",
+    "onboarding2Title": "Set a Flexible Schedule",
+    "onboarding3Title": "Estimated Waiting Time",
+    "onboarding4Title": "Hassle-free Transactions"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -204,6 +214,16 @@ static const Map<String,dynamic> id_ID = {
     "familyList": "Daftar Keluarga",
     "addFamilyMember": "Tambahkan Anggota Keluarga Anda untuk membuat pelayanan lebih mudah dan memberikan pengalaman yang lebih baik.",
     "addMember": "Tambah Anggota"
+  },
+  "onboardingScreen": {
+    "onboarding1Subtitle": "Temukan dokter yang tepat untuk kebutuhan Anda dengan mudah dan cepat.",
+    "onboarding2Subtitle": "Atur janji dengan dokter sesuai jadwal Anda, tanpa perlu menunggu lama.",
+    "onboarding3Subtitle": "Dapatkan perkiraan waktu tunggu secara langsung, sehingga Anda bisa mengatur jadwal harian Anda dengan lebih efisien.",
+    "onboarding4Subtitle": "Bayar dengan mudah menggunakan berbagai metode pembayaran online yang tersedia, mulai dari kartu kredit hingga dompet digital.",
+    "onboarding1Title": "Temukan Dokter Terbaik",
+    "onboarding2Title": "Atur Jadwal Flexible",
+    "onboarding3Title": "Estimasi Waktu Tunggu",
+    "onboarding4Title": "Transaksi Tanpa Ribet"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

@@ -31,6 +31,14 @@ class $AssetsIconsGen {
   SvgGenImage get iconAppointment2 =>
       const SvgGenImage('assets/icons/icon_appointment2.svg');
 
+  /// File path: assets/icons/icon_arrow_circle_left.svg
+  SvgGenImage get iconArrowCircleLeft =>
+      const SvgGenImage('assets/icons/icon_arrow_circle_left.svg');
+
+  /// File path: assets/icons/icon_arrow_circle_right.svg
+  SvgGenImage get iconArrowCircleRight =>
+      const SvgGenImage('assets/icons/icon_arrow_circle_right.svg');
+
   /// File path: assets/icons/icon_briefcase.svg
   SvgGenImage get iconBriefcase =>
       const SvgGenImage('assets/icons/icon_briefcase.svg');
@@ -167,6 +175,8 @@ class $AssetsIconsGen {
         iconActivity,
         iconAppointment1,
         iconAppointment2,
+        iconArrowCircleLeft,
+        iconArrowCircleRight,
         iconBriefcase,
         iconCalendar,
         iconClock,
@@ -217,8 +227,31 @@ class $AssetsImagesGen {
   AssetGenImage get imageExample =>
       const AssetGenImage('assets/images/image_example.png');
 
+  /// File path: assets/images/image_onboarding1.svg
+  SvgGenImage get imageOnboarding1 =>
+      const SvgGenImage('assets/images/image_onboarding1.svg');
+
+  /// File path: assets/images/image_onboarding2.svg
+  SvgGenImage get imageOnboarding2 =>
+      const SvgGenImage('assets/images/image_onboarding2.svg');
+
+  /// File path: assets/images/image_onboarding3.svg
+  SvgGenImage get imageOnboarding3 =>
+      const SvgGenImage('assets/images/image_onboarding3.svg');
+
+  /// File path: assets/images/image_onboarding4.svg
+  SvgGenImage get imageOnboarding4 =>
+      const SvgGenImage('assets/images/image_onboarding4.svg');
+
   /// List of all assets
-  List<AssetGenImage> get values => [imageDoctorExample, imageExample];
+  List<dynamic> get values => [
+        imageDoctorExample,
+        imageExample,
+        imageOnboarding1,
+        imageOnboarding2,
+        imageOnboarding3,
+        imageOnboarding4
+      ];
 }
 
 class $AssetsLangsGen {

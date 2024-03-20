@@ -84,5 +84,14 @@ abstract class  LocaleKeys {
   static const familyScreen_addFamilyMember = 'familyScreen.addFamilyMember';
   static const familyScreen_addMember = 'familyScreen.addMember';
   static const familyScreen = 'familyScreen';
+  static const onboardingScreen_onboarding1Subtitle = 'onboardingScreen.onboarding1Subtitle';
+  static const onboardingScreen_onboarding2Subtitle = 'onboardingScreen.onboarding2Subtitle';
+  static const onboardingScreen_onboarding3Subtitle = 'onboardingScreen.onboarding3Subtitle';
+  static const onboardingScreen_onboarding4Subtitle = 'onboardingScreen.onboarding4Subtitle';
+  static const onboardingScreen_onboarding1Title = 'onboardingScreen.onboarding1Title';
+  static const onboardingScreen_onboarding2Title = 'onboardingScreen.onboarding2Title';
+  static const onboardingScreen_onboarding3Title = 'onboardingScreen.onboarding3Title';
+  static const onboardingScreen_onboarding4Title = 'onboardingScreen.onboarding4Title';
+  static const onboardingScreen = 'onboardingScreen';
 
 }
