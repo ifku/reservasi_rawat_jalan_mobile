@@ -40,7 +40,7 @@ class RRJThemeData {
         tertiaryContainer: RRJColors.yellow300,
         onTertiaryContainer: RRJColors.yellow900,
         /*Error*/
-        error: RRJColors.rose500,
+        error: RRJColors.rose600,
         onError: RRJColors.white,
         errorContainer: RRJColors.rose300,
         onErrorContainer: RRJColors.yellow900,
@@ -96,7 +96,7 @@ class RRJThemeData {
       tertiaryContainer: RRJColors.yellow800,
       onTertiaryContainer: RRJColors.yellow300,
       /*Error*/
-      error: RRJColors.rose500,
+      error: RRJColors.rose600,
       onError: RRJColors.white,
       onErrorContainer: RRJColors.rose900,
       /*Outline*/
@@ -123,77 +123,77 @@ TextTheme textTheme() {
     displayLarge: TextStyle(
       fontSize: 57,
       fontWeight: FontWeight.w600,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     displayMedium: TextStyle(
       fontSize: 45,
       fontWeight: FontWeight.w700,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     displaySmall: TextStyle(
       fontSize: 36,
       fontWeight: FontWeight.w500,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     headlineLarge: TextStyle(
       fontSize: 32,
       fontWeight: FontWeight.w700,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     headlineMedium: TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.w700,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     headlineSmall: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w700,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     titleLarge: TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w700,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     titleMedium: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w700,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     titleSmall: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w700,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     labelLarge: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w600,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     labelMedium: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w600,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     labelSmall: TextStyle(
       fontSize: 11,
       fontWeight: FontWeight.w600,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     bodyLarge: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w500,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     bodyMedium: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w500,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
     bodySmall: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w500,
-      fontFamily: RRJFonts.sfPro,
+      fontFamily: FontFamily.sfPro,
     ),
   );
 }

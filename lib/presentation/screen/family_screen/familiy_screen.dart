@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/button/rrj_primary_button.dart';
@@ -27,8 +26,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SvgPicture.asset(
-                      RRJAssets.icons.iconInformation.path,
+                    Assets.icons.iconInformation.svg(
                       colorFilter: ColorFilter.mode(
                         Theme.of(context).colorScheme.primary,
                         BlendMode.srcIn,

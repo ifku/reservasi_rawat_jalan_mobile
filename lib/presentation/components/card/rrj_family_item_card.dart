@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 
 class RRJFamilyItemCard extends StatelessWidget {
@@ -35,8 +34,8 @@ class RRJFamilyItemCard extends StatelessWidget {
                     shape: BoxShape.circle),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10.0, 0, 0),
-                  child: SvgPicture.asset(
-                    RRJAssets.icons.iconGroupPeople.path,
+                  child:
+                  Assets.icons.iconGroupPeople.svg(
                     height: 36.0,
                     width: 36.0,
                     alignment: Alignment.center,

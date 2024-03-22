@@ -118,6 +118,26 @@ class CodegenLoader extends AssetLoader{
     "onboarding2Title": "Set a Flexible Schedule",
     "onboarding3Title": "Estimated Waiting Time",
     "onboarding4Title": "Hassle-free Transactions"
+  },
+  "dialog": {
+    "error": "Error",
+    "errorFetchMessage": "Sorry, there was an error loading the data. Please try again later.",
+    "errorSaveMessage": "Your changes failed to save. Please try again later.",
+    "deleteData": "Data Deletion",
+    "deleteDataMessage": "Are you sure you want to delete this data? This action is irreversible.",
+    "unsavedData": "Unsaved Data",
+    "paymentSuccessful": "Payment Successful",
+    "paymentSuccessfulMessage": "Thank you! Your payment has been saved successfully.",
+    "dataSaved": "Data Saved Successfully",
+    "dataChangeMessage": "The changes you made have been saved successfully.",
+    "confirmationOfChange": "Confirmation of Changes",
+    "confirmationOfChangeMessage": "Are you sure you want to keep the changes changes?",
+    "verify": "Verify",
+    "verifyMessage": "Get all services by verifying first.",
+    "cancel": "Cancel"
+  },
+  "common": {
+    "underConstruction": "Coming Soon"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -224,6 +244,26 @@ static const Map<String,dynamic> id_ID = {
     "onboarding2Title": "Atur Jadwal Flexible",
     "onboarding3Title": "Estimasi Waktu Tunggu",
     "onboarding4Title": "Transaksi Tanpa Ribet"
+  },
+  "dialog": {
+    "error": "Kesalahan",
+    "errorFetchMessage": "Maaf, terjadi kesalahan saat memuat data. Silakan coba lagi nanti.",
+    "errorSaveMessage": "Perubahan yang Anda lakukan gagal disimpan. Silakan coba lagi nanti.",
+    "deleteData": "Penghapusan Data",
+    "deleteDataMessage": "Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat dikembalikan.",
+    "unsavedData": "Data Belum Tersimpan",
+    "paymentSuccessful": "Pembayaran Berhasil",
+    "paymentSuccessfulMessage": "Terima kasih! Pembayaran yang Anda lakukan telah berhasil disimpan dengan sukses.",
+    "dataSaved": "Data Berhasil Disimpan",
+    "dataChangeMessage": " Perubahan yang Anda lakukan telah berhasil disimpan dengan sukses.",
+    "confirmationOfChange": "Konfirmasi Perubahan",
+    "confirmationOfChangeMessage": "Apakah Anda yakin untuk menyimpan perubahan yang ada?",
+    "verify": "Lakukan Verifikasi",
+    "verifyMessage": "Dapatkan seluruh pelayanan dengan melakukan verifikasi terlebih dahulu.",
+    "cancel": "Kembali"
+  },
+  "common": {
+    "underConstruction": "Segera Hadir"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

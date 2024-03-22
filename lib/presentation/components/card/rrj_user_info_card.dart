@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
@@ -55,8 +54,8 @@ class RRJUserInfoCard extends StatelessWidget {
                             .withOpacity(0.4))),
                 GestureDetector(
                   onTap: onEditPressed,
-                  child: SvgPicture.asset(
-                    RRJAssets.icons.iconEdit.path,
+                  child:
+                  Assets.icons.iconEdit.svg(
                     height: 24.0,
                     width: 24.0,
                     fit: BoxFit.contain,

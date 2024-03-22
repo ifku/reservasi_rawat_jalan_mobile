@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
@@ -15,10 +14,10 @@ class OnboardingScreen extends StatelessWidget {
   final pageController = PageController();
 
   final List<String> images = [
-    RRJAssets.images.imageOnboarding1.path,
-    RRJAssets.images.imageOnboarding2.path,
-    RRJAssets.images.imageOnboarding3.path,
-    RRJAssets.images.imageOnboarding4.path,
+    Assets.images.imageOnboarding1.path,
+    Assets.images.imageOnboarding2.path,
+    Assets.images.imageOnboarding3.path,
+    Assets.images.imageOnboarding4.path,
   ];
 
   final List<String> title = [
@@ -81,8 +80,7 @@ class OnboardingScreen extends StatelessWidget {
                                     );
                                   }
                                 },
-                                child: SvgPicture.asset(
-                                  RRJAssets.icons.iconArrowCircleLeft.path,
+                                child: Assets.icons.iconArrowCircleLeft.svg(
                                   colorFilter: ColorFilter.mode(
                                     Theme.of(context).colorScheme.primary,
                                     BlendMode.srcIn,
@@ -123,8 +121,7 @@ class OnboardingScreen extends StatelessWidget {
                               context.goNamed(RouteName.home);
                             }
                           },
-                          child: SvgPicture.asset(
-                            RRJAssets.icons.iconArrowCircleRight.path,
+                          child: Assets.icons.iconArrowCircleRight.svg(
                             colorFilter: ColorFilter.mode(
                               Theme.of(context).colorScheme.primary,
                               BlendMode.srcIn,

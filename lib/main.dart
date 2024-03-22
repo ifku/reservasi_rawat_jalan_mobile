@@ -9,14 +9,16 @@ import 'package:reservasi_rawat_jalan_mobile/bloc_providers.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
 import 'package:reservasi_rawat_jalan_mobile/locator.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth/login_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/dummy_page.dart';
 
 import 'core/gen/codegen_loader.g.dart';
 
 Future<void> main() async {
+  await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await setupServiceLocator();
-  await dotenv.load(fileName: ".env");
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
     EasyLocalization(
@@ -56,13 +58,13 @@ class MyApp extends StatelessWidget {
       darkTheme: RRJThemeData.darkTheme,
     );
 
-    /*return MaterialApp(
+   /* return MaterialApp(
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       locale: context.locale,
       theme: RRJThemeData.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: OnboardingScreen(),
+      home: const LoginScreen(),
     );*/
   }
 }

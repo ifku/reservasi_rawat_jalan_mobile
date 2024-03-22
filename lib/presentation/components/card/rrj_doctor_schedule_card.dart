@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
 
@@ -75,8 +74,7 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SvgPicture.asset(
-                        RRJAssets.icons.iconPerson2.path,
+                      Assets.icons.iconPerson2.svg(
                         colorFilter: const ColorFilter.mode(
                             RRJColors.grey200, BlendMode.srcIn),
                         height: 12,
@@ -103,8 +101,7 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SvgPicture.asset(
-                        RRJAssets.icons.iconCalendar.path,
+                      Assets.icons.iconCalendar.svg(
                         colorFilter: const ColorFilter.mode(
                             RRJColors.grey200, BlendMode.srcIn),
                         height: 12,
@@ -114,7 +111,8 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                         TextSpan(
                           children: [
                             TextSpan(
-                              text: DateFormatter.formatDateTime(doctorSchedule),
+                              text:
+                                  DateFormatter.formatDateTime(doctorSchedule),
                               style: Theme.of(context)
                                   .textTheme
                                   .bodySmall
@@ -131,8 +129,7 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SvgPicture.asset(
-                        RRJAssets.icons.iconClock.path,
+                      Assets.icons.iconClock.svg(
                         colorFilter: const ColorFilter.mode(
                             RRJColors.grey200, BlendMode.srcIn),
                         height: 12,

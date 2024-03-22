@@ -101,19 +101,19 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
             RRJDoctorInfoCard(
-              icon: RRJAssets.icons.iconBriefcase.path,
+              icon: Assets.icons.iconBriefcase.path,
               title: LocaleKeys.detailDoctorScreen_strNumber.tr(),
               content: doctorSIP,
             ),
             const SizedBox(height: 20.0),
             RRJDoctorInfoCard(
-              icon: RRJAssets.icons.iconHeroCheck.path,
+              icon: Assets.icons.iconHeroCheck.path,
               title: LocaleKeys.detailDoctorScreen_sipNumber.tr(),
               content: doctorSTR,
             ),
             const SizedBox(height: 20.0),
             RRJDoctorInfoCard(
-              icon: RRJAssets.icons.iconPriceTag.path,
+              icon: Assets.icons.iconPriceTag.path,
               title: LocaleKeys.detailDoctorScreen_paymentMethod.tr(),
               content: doctorPayment,
             ),

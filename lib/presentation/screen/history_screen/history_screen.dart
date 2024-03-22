@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/common/under_construction.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
@@ -6,9 +7,7 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('History Screen'),
-      ),
+      body: UnderConstruction(),
     );
   }
 }

@@ -10,6 +10,9 @@ class DummyPage extends StatefulWidget {
 class _DummyPageState extends State<DummyPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+        body: Center(
+      child: Container()
+    ));
   }
 }

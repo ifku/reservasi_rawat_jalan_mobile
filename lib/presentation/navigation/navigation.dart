@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
@@ -60,8 +59,7 @@ class _NavigationState extends State<Navigation> {
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SvgPicture.asset(
-                              RRJAssets.icons.iconHome.path,
+                            Assets.icons.iconHome.svg(
                               height: 20.0,
                               width: 20.0,
                               colorFilter:
@@ -125,8 +123,7 @@ class _NavigationState extends State<Navigation> {
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SvgPicture.asset(
-                              RRJAssets.icons.iconHistory.path,
+                            Assets.icons.iconHistory.svg(
                               height: 20.0,
                               width: 20.0,
                               colorFilter:
@@ -190,8 +187,7 @@ class _NavigationState extends State<Navigation> {
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SvgPicture.asset(
-                              RRJAssets.icons.iconActivity.path,
+                            Assets.icons.iconActivity.svg(
                               height: 20.0,
                               width: 20.0,
                               colorFilter:
@@ -255,8 +251,7 @@ class _NavigationState extends State<Navigation> {
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SvgPicture.asset(
-                              RRJAssets.icons.iconPerson2.path,
+                            Assets.icons.iconPerson2.svg(
                               height: 20.0,
                               width: 20.0,
                               colorFilter:

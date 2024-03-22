@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/bloc/clinic_bloc.dart';
@@ -45,7 +44,7 @@ class _ClinicScreenState extends State<ClinicScreen> {
                 builder: (context, state) {
                   if (state is GetClinicLoading) {
                     return Expanded(
-                        child: Lottie.asset(RRJAssets.raw.loadingAnim.path));
+                      child: Assets.raw.loadingAnim.lottie());
                   }
                   if (state is GetClinicFailure) {
                     return Center(

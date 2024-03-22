@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 
 import '../../../core/gen/assets.gen.dart';
@@ -118,8 +117,7 @@ class RRJDoctorCard extends StatelessWidget {
                     alignment: WrapAlignment.start,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      SvgPicture.asset(
-                        RRJAssets.icons.iconStar.path,
+                      Assets.icons.iconStar.svg(
                         colorFilter: const ColorFilter.mode(
                             RRJColors.yellow500, BlendMode.srcIn),
                         height: 18,

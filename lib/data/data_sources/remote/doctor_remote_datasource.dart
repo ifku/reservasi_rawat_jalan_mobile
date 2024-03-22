@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/const/api_constants.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/data_sources/doctor_datasource.dart';
@@ -13,7 +12,7 @@ class DoctorRemoteDataSource implements DoctorDatasource {
   @override
   Future<Either<Exception, List<DoctorModel>>> getDoctorById(String id) async {
     final response = await client.get(
-      "${dotenv.env['API_BASE_URL']}${ApiConstants.DOCTOR_BYID}${id.toString()}",
+      "${ApiConstants.DOCTOR_BYID}${id.toString()}",
     );
 
     return response.fold((error) => Left(error), (data) {

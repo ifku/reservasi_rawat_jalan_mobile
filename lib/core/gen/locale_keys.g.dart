@@ -93,5 +93,23 @@ abstract class  LocaleKeys {
   static const onboardingScreen_onboarding3Title = 'onboardingScreen.onboarding3Title';
   static const onboardingScreen_onboarding4Title = 'onboardingScreen.onboarding4Title';
   static const onboardingScreen = 'onboardingScreen';
+  static const dialog_error = 'dialog.error';
+  static const dialog_errorFetchMessage = 'dialog.errorFetchMessage';
+  static const dialog_errorSaveMessage = 'dialog.errorSaveMessage';
+  static const dialog_deleteData = 'dialog.deleteData';
+  static const dialog_deleteDataMessage = 'dialog.deleteDataMessage';
+  static const dialog_unsavedData = 'dialog.unsavedData';
+  static const dialog_paymentSuccessful = 'dialog.paymentSuccessful';
+  static const dialog_paymentSuccessfulMessage = 'dialog.paymentSuccessfulMessage';
+  static const dialog_dataSaved = 'dialog.dataSaved';
+  static const dialog_dataChangeMessage = 'dialog.dataChangeMessage';
+  static const dialog_confirmationOfChange = 'dialog.confirmationOfChange';
+  static const dialog_confirmationOfChangeMessage = 'dialog.confirmationOfChangeMessage';
+  static const dialog_verify = 'dialog.verify';
+  static const dialog_verifyMessage = 'dialog.verifyMessage';
+  static const dialog_cancel = 'dialog.cancel';
+  static const dialog = 'dialog';
+  static const common_underConstruction = 'common.underConstruction';
+  static const common = 'common';
 
 }

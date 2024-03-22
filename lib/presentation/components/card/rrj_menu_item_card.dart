@@ -53,7 +53,7 @@ class RRJMenuItemCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: SvgPicture.asset(
-                    menuIcon ?? RRJAssets.icons.iconAppointment1.path,
+                    menuIcon ?? Assets.icons.iconAppointment1.path,
                     fit: BoxFit.contain,
                   )),
               const SizedBox(width: 8.0),

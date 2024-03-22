@@ -47,6 +47,9 @@ class $AssetsIconsGen {
   SvgGenImage get iconCalendar =>
       const SvgGenImage('assets/icons/icon_calendar.svg');
 
+  /// File path: assets/icons/icon_check.svg
+  SvgGenImage get iconCheck => const SvgGenImage('assets/icons/icon_check.svg');
+
   /// File path: assets/icons/icon_clock.svg
   SvgGenImage get iconClock => const SvgGenImage('assets/icons/icon_clock.svg');
 
@@ -62,6 +65,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/icon_edit.svg
   SvgGenImage get iconEdit => const SvgGenImage('assets/icons/icon_edit.svg');
+
+  /// File path: assets/icons/icon_error.svg
+  SvgGenImage get iconError => const SvgGenImage('assets/icons/icon_error.svg');
 
   /// File path: assets/icons/icon_example.svg
   SvgGenImage get iconExample =>
@@ -140,6 +146,10 @@ class $AssetsIconsGen {
   SvgGenImage get iconPriceTag =>
       const SvgGenImage('assets/icons/icon_price_tag.svg');
 
+  /// File path: assets/icons/icon_question.svg
+  SvgGenImage get iconQuestion =>
+      const SvgGenImage('assets/icons/icon_question.svg');
+
   /// File path: assets/icons/icon_skincare.svg
   SvgGenImage get iconSkincare =>
       const SvgGenImage('assets/icons/icon_skincare.svg');
@@ -157,6 +167,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/icon_teeth.svg
   SvgGenImage get iconTeeth => const SvgGenImage('assets/icons/icon_teeth.svg');
+
+  /// File path: assets/icons/icon_trash.svg
+  SvgGenImage get iconTrash => const SvgGenImage('assets/icons/icon_trash.svg');
 
   /// File path: assets/icons/icon_user.svg
   SvgGenImage get iconUser => const SvgGenImage('assets/icons/icon_user.svg');
@@ -179,11 +192,13 @@ class $AssetsIconsGen {
         iconArrowCircleRight,
         iconBriefcase,
         iconCalendar,
+        iconCheck,
         iconClock,
         iconCreditCard,
         iconDate,
         iconEar,
         iconEdit,
+        iconError,
         iconExample,
         iconEye,
         iconFetus,
@@ -205,11 +220,13 @@ class $AssetsIconsGen {
         iconPerson,
         iconPerson2,
         iconPriceTag,
+        iconQuestion,
         iconSkincare,
         iconStar,
         iconSthetoscope,
         iconSurgeon,
         iconTeeth,
+        iconTrash,
         iconUser,
         iconUserGroup,
         iconUterus
@@ -258,12 +275,10 @@ class $AssetsLangsGen {
   const $AssetsLangsGen();
 
   /// File path: assets/langs/en-US.json
-  String get enUS =>
-      'packages/reservasi_rawat_jalan_mobile/assets/langs/en-US.json';
+  String get enUS => 'assets/langs/en-US.json';
 
   /// File path: assets/langs/id-ID.json
-  String get idID =>
-      'packages/reservasi_rawat_jalan_mobile/assets/langs/id-ID.json';
+  String get idID => 'assets/langs/id-ID.json';
 
   /// List of all assets
   List<String> get values => [enUS, idID];
@@ -276,14 +291,16 @@ class $AssetsRawGen {
   LottieGenImage get loadingAnim =>
       const LottieGenImage('assets/raw/loading-anim.json');
 
+  /// File path: assets/raw/under-construction-anim.json
+  LottieGenImage get underConstructionAnim =>
+      const LottieGenImage('assets/raw/under-construction-anim.json');
+
   /// List of all assets
-  List<LottieGenImage> get values => [loadingAnim];
+  List<LottieGenImage> get values => [loadingAnim, underConstructionAnim];
 }
 
-class RRJAssets {
-  RRJAssets._();
-
-  static const String package = 'reservasi_rawat_jalan_mobile';
+class Assets {
+  Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
@@ -295,8 +312,6 @@ class AssetGenImage {
   const AssetGenImage(this._assetName);
 
   final String _assetName;
-
-  static const String package = 'reservasi_rawat_jalan_mobile';
 
   Image image({
     Key? key,
@@ -318,8 +333,7 @@ class AssetGenImage {
     bool matchTextDirection = false,
     bool gaplessPlayback = false,
     bool isAntiAlias = false,
-    @Deprecated('Do not specify package for a generated library asset')
-    String? package = package,
+    String? package,
     FilterQuality filterQuality = FilterQuality.low,
     int? cacheWidth,
     int? cacheHeight,
@@ -354,8 +368,7 @@ class AssetGenImage {
 
   ImageProvider provider({
     AssetBundle? bundle,
-    @Deprecated('Do not specify package for a generated library asset')
-    String? package = package,
+    String? package,
   }) {
     return AssetImage(
       _assetName,
@@ -366,7 +379,7 @@ class AssetGenImage {
 
   String get path => _assetName;
 
-  String get keyName => 'packages/reservasi_rawat_jalan_mobile/$_assetName';
+  String get keyName => _assetName;
 }
 
 class SvgGenImage {
@@ -374,14 +387,11 @@ class SvgGenImage {
 
   final String _assetName;
 
-  static const String package = 'reservasi_rawat_jalan_mobile';
-
   SvgPicture svg({
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    @Deprecated('Do not specify package for a generated library asset')
-    String? package = package,
+    String? package,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
@@ -422,15 +432,13 @@ class SvgGenImage {
 
   String get path => _assetName;
 
-  String get keyName => 'packages/reservasi_rawat_jalan_mobile/$_assetName';
+  String get keyName => _assetName;
 }
 
 class LottieGenImage {
   const LottieGenImage(this._assetName);
 
   final String _assetName;
-
-  static const String package = 'reservasi_rawat_jalan_mobile';
 
   LottieBuilder lottie({
     Animation<double>? controller,
@@ -450,8 +458,7 @@ class LottieGenImage {
     double? height,
     BoxFit? fit,
     AlignmentGeometry? alignment,
-    @Deprecated('Do not specify package for a generated library asset')
-    String? package = package,
+    String? package,
     bool? addRepaintBoundary,
     FilterQuality? filterQuality,
     void Function(String)? onWarning,
@@ -484,5 +491,5 @@ class LottieGenImage {
 
   String get path => _assetName;
 
-  String get keyName => 'packages/reservasi_rawat_jalan_mobile/$_assetName';
+  String get keyName => _assetName;
 }

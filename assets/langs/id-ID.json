@@ -102,5 +102,25 @@
     "onboarding2Title": "Atur Jadwal Flexible",
     "onboarding3Title": "Estimasi Waktu Tunggu",
     "onboarding4Title": "Transaksi Tanpa Ribet"
+  },
+  "dialog": {
+    "error": "Kesalahan",
+    "errorFetchMessage": "Maaf, terjadi kesalahan saat memuat data. Silakan coba lagi nanti.",
+    "errorSaveMessage": "Perubahan yang Anda lakukan gagal disimpan. Silakan coba lagi nanti.",
+    "deleteData": "Penghapusan Data",
+    "deleteDataMessage": "Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat dikembalikan.",
+    "unsavedData": "Data Belum Tersimpan",
+    "paymentSuccessful": "Pembayaran Berhasil",
+    "paymentSuccessfulMessage": "Terima kasih! Pembayaran yang Anda lakukan telah berhasil disimpan dengan sukses.",
+    "dataSaved": "Data Berhasil Disimpan",
+    "dataChangeMessage": " Perubahan yang Anda lakukan telah berhasil disimpan dengan sukses.",
+    "confirmationOfChange": "Konfirmasi Perubahan",
+    "confirmationOfChangeMessage": "Apakah Anda yakin untuk menyimpan perubahan yang ada?",
+    "verify": "Lakukan Verifikasi",
+    "verifyMessage": "Dapatkan seluruh pelayanan dengan melakukan verifikasi terlebih dahulu.",
+    "cancel": "Kembali"
+  },
+  "common": {
+    "underConstruction": "Segera Hadir"
   }
 }
