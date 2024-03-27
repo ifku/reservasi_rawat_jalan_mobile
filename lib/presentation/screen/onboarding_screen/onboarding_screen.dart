@@ -118,7 +118,7 @@ class OnboardingScreen extends StatelessWidget {
                                 curve: Curves.easeInOut,
                               );
                             } else {
-                              context.goNamed(RouteName.home);
+                              context.goNamed(RouteName.auth);
                             }
                           },
                           child: Assets.icons.iconArrowCircleRight.svg(

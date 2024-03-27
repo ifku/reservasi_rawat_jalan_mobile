@@ -76,6 +76,10 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
                         height: MediaQuery.of(context).size.width * 0.3,
                         width: MediaQuery.of(context).size.width * 0.3,
                         fit: BoxFit.cover,
+                        placeholder: (context, url) =>
+                            Assets.raw.loadingAnim.lottie(),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
                         imageUrl: doctorImage!)
                     : Container(
                         height: MediaQuery.of(context).size.width * 0.3,

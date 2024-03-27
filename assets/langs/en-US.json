@@ -60,12 +60,23 @@
     "chooseDoctor": "CHOOSE DOCTOR"
   },
   "reservationScreen": {
-    "reservationDetail": "Reservation Detail",
-    "selectTheDay": "Choose a day and date for the Appointment",
-    "patient": "Patient",
-    "date": "Date",
-    "time": "Time",
-    "next": "Next"
+    "noBook": "You have not booked a service yet. Please start scheduling",
+    "makeAReservation": "Make a Reservation",
+    "reservation": "Reservation",
+    "noReservation": "No Reservation Yet",
+    "yourReservationNumber": "Your Reservation Number",
+    "pleaseArrive": "Please Arrive 15 Minutes Before Queue",
+    "scanCode": "Scan Code",
+    "currentReservation": "Current Queue",
+    "estimatedTime": "Estimated Time",
+    "serviceInformation": "Service Information",
+    "doctor": "Doctor",
+    "typeOfInsurance": "Types of Health Insurance",
+    "clinic": "Clinic",
+    "patientName": "Patient Name",
+    "serviceHour": "Service Hours",
+    "reservationDate": "Reservation Date",
+    "return": "Return"
   },
   "exception": {
     "requestTimeOutException": "The connection has timed out, please try again.",
@@ -122,5 +133,24 @@
   },
   "common": {
     "underConstruction": "Coming Soon"
+  },
+  "auth": {
+    "greeting": "Hello, Healthy Friend!",
+    "signIn": "SIGN IN",
+    "signUp": "SIGN UP",
+    "orContinueWithEmail": "Or continue with email",
+    "signInWithGoogle": "Sign in with Google",
+    "email": "Email",
+    "haveAnAccount": "Already have an account? Click ",
+    "click": "Click",
+    "here": "here",
+    "otp": "OTP Code",
+    "otpMessage": "An OTP code has been sent to your email. Please check your inbox and enter the code here to proceed.",
+    "haventReceiveTheCodeYet": "Haven't received a code yet?",
+    "otpSendCode": "We have sent a code to ",
+    "otpDidntReceive": "Didn't receive the code?",
+    "otpResendCode": "Resend Code",
+    "otpVerify": "VERIFY",
+    "donttHaveAnAccount": "Don't have an account? Click "
   }
 }

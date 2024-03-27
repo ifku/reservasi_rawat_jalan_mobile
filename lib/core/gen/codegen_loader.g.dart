@@ -76,12 +76,23 @@ class CodegenLoader extends AssetLoader{
     "chooseDoctor": "CHOOSE DOCTOR"
   },
   "reservationScreen": {
-    "reservationDetail": "Reservation Detail",
-    "selectTheDay": "Choose a day and date for the Appointment",
-    "patient": "Patient",
-    "date": "Date",
-    "time": "Time",
-    "next": "Next"
+    "noBook": "You have not booked a service yet. Please start scheduling",
+    "makeAReservation": "Make a Reservation",
+    "reservation": "Reservation",
+    "noReservation": "No Reservation Yet",
+    "yourReservationNumber": "Your Reservation Number",
+    "pleaseArrive": "Please Arrive 15 Minutes Before Queue",
+    "scanCode": "Scan Code",
+    "currentReservation": "Current Queue",
+    "estimatedTime": "Estimated Time",
+    "serviceInformation": "Service Information",
+    "doctor": "Doctor",
+    "typeOfInsurance": "Types of Health Insurance",
+    "clinic": "Clinic",
+    "patientName": "Patient Name",
+    "serviceHour": "Service Hours",
+    "reservationDate": "Reservation Date",
+    "return": "Return"
   },
   "exception": {
     "requestTimeOutException": "The connection has timed out, please try again.",
@@ -138,6 +149,25 @@ class CodegenLoader extends AssetLoader{
   },
   "common": {
     "underConstruction": "Coming Soon"
+  },
+  "auth": {
+    "greeting": "Hello, Healthy Friend!",
+    "signIn": "SIGN IN",
+    "signUp": "SIGN UP",
+    "orContinueWithEmail": "Or continue with email",
+    "signInWithGoogle": "Sign in with Google",
+    "email": "Email",
+    "haveAnAccount": "Already have an account? Click ",
+    "click": "Click",
+    "here": "here",
+    "otp": "OTP Code",
+    "otpMessage": "An OTP code has been sent to your email. Please check your inbox and enter the code here to proceed.",
+    "haventReceiveTheCodeYet": "Haven't received a code yet?",
+    "otpSendCode": "We have sent a code to ",
+    "otpDidntReceive": "Didn't receive the code?",
+    "otpResendCode": "Resend Code",
+    "otpVerify": "VERIFY",
+    "donttHaveAnAccount": "Don't have an account? Click "
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -202,12 +232,23 @@ static const Map<String,dynamic> id_ID = {
     "chooseDoctor": "PILIH DOKTER"
   },
   "reservationScreen": {
-    "reservationDetail": "Detail Reservasi",
-    "selectTheDay": "Pilih hari dan tanggal untuk Janji Temu",
-    "patient": "Pasien",
-    "date": "Tanggal",
-    "time": "Waktu",
-    "next": "Selanjutnya"
+    "noBook": "Anda belum memesan layanan. Silahkan mulai untuk melakukan penjadwalan",
+    "makeAReservation": "Lakukan Reservasi",
+    "reservation": "Reservasi",
+    "noReservation": "Belum Ada Reservasi",
+    "yourReservationNumber": "Nomor Reservasi Anda",
+    "pleaseArrive": "Harap Datang 15 Menit Sebelum Antrian",
+    "scanCode": "Pindai Kode",
+    "currentReservation": "Antrian Saat Ini",
+    "estimatedTime": "Estimasi Pelayanan",
+    "serviceInformation": "Informasi Pelayanan",
+    "doctor": "Dokter Pemeriksa",
+    "typeOfInsurance": "Jenis Asuransi Kesehatan",
+    "clinic": "Klinik",
+    "patientName": "Nama Pasien",
+    "serviceHour": "Jam Pelayanan",
+    "reservationDate": "Tanggal Reservasi",
+    "return": "Kembali"
   },
   "exception": {
     "requestTimeOutException": "Sambungan terputus, silakan coba lagi.",
@@ -264,6 +305,25 @@ static const Map<String,dynamic> id_ID = {
   },
   "common": {
     "underConstruction": "Segera Hadir"
+  },
+  "auth": {
+    "greeting": "Halo, Kawan Sehat!",
+    "signIn": "MASUK",
+    "signUp": "DAFTAR",
+    "orContinueWithEmail": "Atau masuk dengan email",
+    "signInWithGoogle": "Masuk dengan Google",
+    "email": "Alamat Surel",
+    "haveAnAccount": "Sudah memiliki akun? Klik ",
+    "click": "Klik",
+    "here": "di sini",
+    "otp": "Kode OTP",
+    "otpMessage": "Kode OTP telah dikirimkan ke email Anda. Mohon periksa kotak masuk Anda dan masukkan kode tersebut di sini untuk melanjutkan",
+    "haventReceiveTheCodeYet": "Belum menerima kode?",
+    "otpSendCode": "Kami telah mengirimkan kode ke ",
+    "otpDidntReceive": "Tidak menerima kode?",
+    "otpResendCode": "Kirim Ulang Kode",
+    "otpVerify": "VERIFIKASI",
+    "donttHaveAnAccount": "Tidak punya akun? Klik "
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

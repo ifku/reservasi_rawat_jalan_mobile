@@ -79,6 +79,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icon_fetus.svg
   SvgGenImage get iconFetus => const SvgGenImage('assets/icons/icon_fetus.svg');
 
+  /// File path: assets/icons/icon_google.svg
+  SvgGenImage get iconGoogle =>
+      const SvgGenImage('assets/icons/icon_google.svg');
+
   /// File path: assets/icons/icon_group_people.svg
   SvgGenImage get iconGroupPeople =>
       const SvgGenImage('assets/icons/icon_group_people.svg');
@@ -202,6 +206,7 @@ class $AssetsIconsGen {
         iconExample,
         iconEye,
         iconFetus,
+        iconGoogle,
         iconGroupPeople,
         iconHealthcare,
         iconHeart,
@@ -236,6 +241,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/image_attendance.svg
+  SvgGenImage get imageAttendance =>
+      const SvgGenImage('assets/images/image_attendance.svg');
+
   /// File path: assets/images/image_doctor_example.png
   AssetGenImage get imageDoctorExample =>
       const AssetGenImage('assets/images/image_doctor_example.png');
@@ -243,6 +252,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/image_example.png
   AssetGenImage get imageExample =>
       const AssetGenImage('assets/images/image_example.png');
+
+  /// File path: assets/images/image_login.jpg
+  AssetGenImage get imageLogin =>
+      const AssetGenImage('assets/images/image_login.jpg');
 
   /// File path: assets/images/image_onboarding1.svg
   SvgGenImage get imageOnboarding1 =>
@@ -260,14 +273,30 @@ class $AssetsImagesGen {
   SvgGenImage get imageOnboarding4 =>
       const SvgGenImage('assets/images/image_onboarding4.svg');
 
+  /// File path: assets/images/image_otp.svg
+  SvgGenImage get imageOtp => const SvgGenImage('assets/images/image_otp.svg');
+
+  /// File path: assets/images/image_register.jpg
+  AssetGenImage get imageRegister =>
+      const AssetGenImage('assets/images/image_register.jpg');
+
+  /// File path: assets/images/image_reservation.svg
+  SvgGenImage get imageReservation =>
+      const SvgGenImage('assets/images/image_reservation.svg');
+
   /// List of all assets
   List<dynamic> get values => [
+        imageAttendance,
         imageDoctorExample,
         imageExample,
+        imageLogin,
         imageOnboarding1,
         imageOnboarding2,
         imageOnboarding3,
-        imageOnboarding4
+        imageOnboarding4,
+        imageOtp,
+        imageRegister,
+        imageReservation
       ];
 }
 

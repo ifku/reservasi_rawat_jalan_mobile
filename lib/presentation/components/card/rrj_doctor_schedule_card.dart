@@ -3,9 +3,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
-
-import '../../../core/gen/assets.gen.dart';
-import '../../../core/style/color.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
 
 class RRJDoctorScheduleCard extends StatelessWidget {
   const RRJDoctorScheduleCard(
@@ -50,7 +49,11 @@ class RRJDoctorScheduleCard extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: CachedNetworkImage(
-                            imageUrl: doctorImage!, fit: BoxFit.cover),
+                            placeholder: (context, url) => Assets.raw.loadingAnim.lottie(),
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
+                            imageUrl: doctorImage!,
+                            fit: BoxFit.cover),
                       ),
                     )
                   : Container(

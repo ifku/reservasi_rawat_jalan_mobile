@@ -60,12 +60,23 @@
     "chooseDoctor": "PILIH DOKTER"
   },
   "reservationScreen": {
-    "reservationDetail": "Detail Reservasi",
-    "selectTheDay": "Pilih hari dan tanggal untuk Janji Temu",
-    "patient": "Pasien",
-    "date": "Tanggal",
-    "time": "Waktu",
-    "next": "Selanjutnya"
+    "noBook": "Anda belum memesan layanan. Silahkan mulai untuk melakukan penjadwalan",
+    "makeAReservation": "Lakukan Reservasi",
+    "reservation": "Reservasi",
+    "noReservation": "Belum Ada Reservasi",
+    "yourReservationNumber": "Nomor Reservasi Anda",
+    "pleaseArrive": "Harap Datang 15 Menit Sebelum Antrian",
+    "scanCode": "Pindai Kode",
+    "currentReservation": "Antrian Saat Ini",
+    "estimatedTime": "Estimasi Pelayanan",
+    "serviceInformation": "Informasi Pelayanan",
+    "doctor": "Dokter Pemeriksa",
+    "typeOfInsurance": "Jenis Asuransi Kesehatan",
+    "clinic": "Klinik",
+    "patientName": "Nama Pasien",
+    "serviceHour": "Jam Pelayanan",
+    "reservationDate": "Tanggal Reservasi",
+    "return": "Kembali"
   },
   "exception": {
     "requestTimeOutException": "Sambungan terputus, silakan coba lagi.",
@@ -122,5 +133,24 @@
   },
   "common": {
     "underConstruction": "Segera Hadir"
+  },
+  "auth": {
+    "greeting": "Halo, Kawan Sehat!",
+    "signIn": "MASUK",
+    "signUp": "DAFTAR",
+    "orContinueWithEmail": "Atau masuk dengan email",
+    "signInWithGoogle": "Masuk dengan Google",
+    "email": "Alamat Surel",
+    "haveAnAccount": "Sudah memiliki akun? Klik ",
+    "click": "Klik",
+    "here": "di sini",
+    "otp": "Kode OTP",
+    "otpMessage": "Kode OTP telah dikirimkan ke email Anda. Mohon periksa kotak masuk Anda dan masukkan kode tersebut di sini untuk melanjutkan",
+    "haventReceiveTheCodeYet": "Belum menerima kode?",
+    "otpSendCode": "Kami telah mengirimkan kode ke ",
+    "otpDidntReceive": "Tidak menerima kode?",
+    "otpResendCode": "Kirim Ulang Kode",
+    "otpVerify": "VERIFIKASI",
+    "donttHaveAnAccount": "Tidak punya akun? Klik "
   }
 }

@@ -9,8 +9,6 @@ import 'package:reservasi_rawat_jalan_mobile/bloc_providers.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
 import 'package:reservasi_rawat_jalan_mobile/locator.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth/login_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/dummy_page.dart';
 
 import 'core/gen/codegen_loader.g.dart';
 
@@ -57,14 +55,13 @@ class MyApp extends StatelessWidget {
       theme: RRJThemeData.lightTheme,
       darkTheme: RRJThemeData.darkTheme,
     );
-
-   /* return MaterialApp(
+    /*return MaterialApp(
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       locale: context.locale,
       theme: RRJThemeData.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: const ReservationScreen(),
     );*/
   }
 }

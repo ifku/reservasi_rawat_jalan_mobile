@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/button/rrj_outlined_button.dart';
@@ -44,6 +45,9 @@ class RRJNewsCard extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: newsImageUrl,
                 fit: BoxFit.cover,
+                placeholder: (context, url) => Assets.raw.loadingAnim.lottie(),
+                errorWidget: (context, url, error) =>
+                const Icon(Icons.error),
               ),
             ),
           ),

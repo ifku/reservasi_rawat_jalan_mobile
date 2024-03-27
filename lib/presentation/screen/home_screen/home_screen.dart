@@ -74,6 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           switch (index) {
                             case 0:
                               context.goNamed(RouteName.clinicList);
+                            case 2:
+                              context.goNamed(RouteName.reservation);
                           }
                         });
                   },

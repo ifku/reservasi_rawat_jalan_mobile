@@ -80,7 +80,7 @@ class RRJThemeData {
       onInverseSurface: RRJColors.grey900,
       onSurfaceVariant: RRJColors.grey200,
       /*Primary*/
-      primary: RRJColors.blue500,
+      primary: RRJColors.blue400,
       onPrimary: RRJColors.white,
       primaryContainer: RRJColors.grey200,
       onPrimaryContainer: RRJColors.grey200,

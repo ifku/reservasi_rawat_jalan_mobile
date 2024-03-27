@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../../core/style/color.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
 
 class RRJClinicItem extends StatelessWidget {
   const RRJClinicItem(

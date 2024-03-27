@@ -55,6 +55,7 @@ class RRJOutlinedButton extends OutlinedButton {
     double? elevation,
     double? borderWidth,
     double? height,
+    double? width,
     double? cornerRadius,
     EdgeInsetsGeometry? padding,
   }) = _RRJOutlinedButtonWithIcon;
@@ -74,6 +75,7 @@ class _RRJOutlinedButtonWithIcon extends RRJOutlinedButton {
     Color? shadowColor,
     double? elevation,
     double? borderWidth,
+    double? width,
     super.height,
     super.cornerRadius,
     super.padding,
@@ -87,6 +89,7 @@ class _RRJOutlinedButtonWithIcon extends RRJOutlinedButton {
               label,
             ],
           ),
+          width: width ?? 250,
           borderColor: borderColor ?? RRJColors.grey300,
           shadowColor: shadowColor ?? const Color.fromARGB(60, 24, 24, 27),
           elevation: elevation ?? 0,

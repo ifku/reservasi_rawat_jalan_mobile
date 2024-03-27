@@ -58,6 +58,9 @@ class RRJDoctorCard extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: CachedNetworkImage(
+                            placeholder: (context, url) => Assets.raw.loadingAnim.lottie(),
+                            errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
                             imageUrl: doctorImage!, fit: BoxFit.cover),
                       ),
                     )
