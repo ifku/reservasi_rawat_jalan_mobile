@@ -95,10 +95,10 @@ class CodegenLoader extends AssetLoader{
     "return": "Return"
   },
   "exception": {
-    "requestTimeOutException": "The connection has timed out, please try again.",
-    "requestCancelledException": "Request was cancelled.",
-    "noInternetException": "Please check your internet connection.",
-    "googleSignInException": "Sign in to Google unsuccessful.",
+    "requestTimeOutException": "The server appears to be taking too long to answer. Please try again later.",
+    "requestCancelledException": "The request was cancelled. Please try again.",
+    "noInternetException": "You are not connected to the internet. Please check your network connection and try again.",
+    "googleSignInException": "There was an issue signing in with Google. Please try again or use a different sign-in method.",
     "generalErrorException": "Something is wrong, please try again later."
   },
   "detailProfileScreen": {
@@ -167,7 +167,10 @@ class CodegenLoader extends AssetLoader{
     "otpDidntReceive": "Didn't receive the code?",
     "otpResendCode": "Resend Code",
     "otpVerify": "VERIFY",
-    "donttHaveAnAccount": "Don't have an account? Click "
+    "id": "National ID number",
+    "dontHaveAnAccount": "Don't have an account? Click ",
+    "otpCode": "OTP Code",
+    "otpCodeSent": "The OTP code has been sent to your email. Please check your inbox and enter the code here to proceed."
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -251,10 +254,10 @@ static const Map<String,dynamic> id_ID = {
     "return": "Kembali"
   },
   "exception": {
-    "requestTimeOutException": "Sambungan terputus, silakan coba lagi.",
-    "requestCancelledException": "Permintaan dibatalkan.",
-    "noInternetException": "Silakan periksa koneksi internet Anda.",
-    "googleSignInException": "Masuk ke Google tidak berhasil.",
+    "requestTimeOutException": "Server tampaknya terlalu lama merespons. Silakan coba lagi nanti.",
+    "requestCancelledException": "Permintaan dibatalkan. Silakan coba lagi.",
+    "noInternetException": "Anda tidak tersambung ke internet. Periksa koneksi jaringan Anda dan coba lagi.",
+    "googleSignInException": "Ada masalah saat masuk dengan Google. Silakan coba lagi atau gunakan metode masuk yang berbeda.",
     "generalErrorException": "Terdapat kesalahan, silakan coba lagi nanti."
   },
   "detailProfileScreen": {
@@ -323,7 +326,10 @@ static const Map<String,dynamic> id_ID = {
     "otpDidntReceive": "Tidak menerima kode?",
     "otpResendCode": "Kirim Ulang Kode",
     "otpVerify": "VERIFIKASI",
-    "donttHaveAnAccount": "Tidak punya akun? Klik "
+    "id": "Nomor Induk Kependudukan (NIK) ",
+    "dontHaveAnAccount": "Tidak punya akun? Klik ",
+    "otpCode": "Kode OTP",
+    "otpCodeSent": "Kode OTP telah dikirimkan ke email Anda. Mohon periksa kotak masuk Anda dan masukkan kode tersebut di sini untuk melanjutkan."
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

@@ -146,9 +146,17 @@ class $AssetsIconsGen {
   SvgGenImage get iconPerson2 =>
       const SvgGenImage('assets/icons/icon_person2.svg');
 
+  /// File path: assets/icons/icon_person3.svg
+  SvgGenImage get iconPerson3 =>
+      const SvgGenImage('assets/icons/icon_person3.svg');
+
   /// File path: assets/icons/icon_price_tag.svg
   SvgGenImage get iconPriceTag =>
       const SvgGenImage('assets/icons/icon_price_tag.svg');
+
+  /// File path: assets/icons/icon_qrcode.svg
+  SvgGenImage get iconQrcode =>
+      const SvgGenImage('assets/icons/icon_qrcode.svg');
 
   /// File path: assets/icons/icon_question.svg
   SvgGenImage get iconQuestion =>
@@ -185,6 +193,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icon_uterus.svg
   SvgGenImage get iconUterus =>
       const SvgGenImage('assets/icons/icon_uterus.svg');
+
+  /// File path: assets/icons/icon_wallet.svg
+  SvgGenImage get iconWallet =>
+      const SvgGenImage('assets/icons/icon_wallet.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
@@ -224,7 +236,9 @@ class $AssetsIconsGen {
         iconNotes,
         iconPerson,
         iconPerson2,
+        iconPerson3,
         iconPriceTag,
+        iconQrcode,
         iconQuestion,
         iconSkincare,
         iconStar,
@@ -234,7 +248,8 @@ class $AssetsIconsGen {
         iconTrash,
         iconUser,
         iconUserGroup,
-        iconUterus
+        iconUterus,
+        iconWallet
       ];
 }
 
@@ -256,6 +271,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/image_login.jpg
   AssetGenImage get imageLogin =>
       const AssetGenImage('assets/images/image_login.jpg');
+
+  /// File path: assets/images/image_logo.png
+  AssetGenImage get imageLogo =>
+      const AssetGenImage('assets/images/image_logo.png');
 
   /// File path: assets/images/image_onboarding1.svg
   SvgGenImage get imageOnboarding1 =>
@@ -290,6 +309,7 @@ class $AssetsImagesGen {
         imageDoctorExample,
         imageExample,
         imageLogin,
+        imageLogo,
         imageOnboarding1,
         imageOnboarding2,
         imageOnboarding3,
@@ -316,6 +336,10 @@ class $AssetsLangsGen {
 class $AssetsRawGen {
   const $AssetsRawGen();
 
+  /// File path: assets/raw/current-anim.json
+  LottieGenImage get currentAnim =>
+      const LottieGenImage('assets/raw/current-anim.json');
+
   /// File path: assets/raw/loading-anim.json
   LottieGenImage get loadingAnim =>
       const LottieGenImage('assets/raw/loading-anim.json');
@@ -325,7 +349,8 @@ class $AssetsRawGen {
       const LottieGenImage('assets/raw/under-construction-anim.json');
 
   /// List of all assets
-  List<LottieGenImage> get values => [loadingAnim, underConstructionAnim];
+  List<LottieGenImage> get values =>
+      [currentAnim, loadingAnim, underConstructionAnim];
 }
 
 class Assets {

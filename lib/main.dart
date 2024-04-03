@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:reservasi_rawat_jalan_mobile/bloc_providers.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/injection/bloc_providers.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
-import 'package:reservasi_rawat_jalan_mobile/locator.dart';
 
 import 'core/gen/codegen_loader.g.dart';
 

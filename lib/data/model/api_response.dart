@@ -8,20 +8,20 @@ class ApiResponse<T> {
   T? data;
   bool isSuccess;
 
-  ApiResponse({required this.message, this.data, required this.isSuccess});
+  ApiResponse({
+    required this.message,
+    this.data,
+    required this.isSuccess,
+  });
 
   factory ApiResponse.fromJson(
     Map<String, dynamic> json,
-    Function(Map<String, dynamic>) create,
+    T Function(Map<String, dynamic>) create,
   ) {
     return ApiResponse<T>(
-      isSuccess: json["isSuccess"],
-      data: json["value"] != null && json["value"].toString() != "{}"
-          ? json["value"]["data"].toString() != "{}"
-              ? create(json["value"]["data"])
-              : null
-          : null,
-      message: json["message"],
+      isSuccess: json["isSuccess"] ?? false,
+      data: json["data"] != null ? create(json["data"]) : null,
+      message: json["message"] ?? "",
     );
   }
 }

@@ -42,6 +42,7 @@ class RRJInputTextField extends StatelessWidget {
     this.focusedBorderColor = RRJColors.grey500,
     this.maxLength,
     this.counterText = '',
+    this.validator,
   }) : assert(
           obscureText == true && maxLines == 1 || obscureText == false,
           'maxLines must be 1 if obscureText is true',
@@ -83,6 +84,8 @@ class RRJInputTextField extends StatelessWidget {
   final Color focusedBorderColor;
   final int? maxLength;
   final String? counterText;
+
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -129,6 +132,7 @@ class RRJInputTextField extends StatelessWidget {
               height: height ?? 44,
               child: TextFormField(
                 onTap: onTap,
+                validator: validator,
                 focusNode: focusNode,
                 maxLines: maxLines,
                 initialValue: initialValue,
@@ -196,6 +200,7 @@ class RRJInputTextField extends StatelessWidget {
           else
             TextFormField(
               onTap: onTap,
+              validator: validator,
               focusNode: focusNode,
               maxLines: maxLines,
               initialValue: initialValue,

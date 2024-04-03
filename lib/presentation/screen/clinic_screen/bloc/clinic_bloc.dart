@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:reservasi_rawat_jalan_mobile/domain/usecases/clinic/get_all_clinic_usecase.dart';
-import 'package:reservasi_rawat_jalan_mobile/locator.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 
 import '../../../../data/model/clinic_model.dart';
 

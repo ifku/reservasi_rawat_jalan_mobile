@@ -8,14 +8,14 @@ import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/button/rrj_primary_button.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/input_field/rrj_input_textfield.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   final _emailController = TextEditingController();
 
   @override
@@ -74,12 +74,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         "Mulai peduli kesehatanmu dengan LoremIpsum",
                         maxLines: 2,
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontWeight: FontWeight.w400,
-                          color: Theme.of(context)
-                              .colorScheme
-                              .onSurface
-                              .withOpacity(0.5),
-                        ),
+                              fontWeight: FontWeight.w400,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withOpacity(0.5),
+                            ),
                       ),
                       const SizedBox(height: 16),
                       RRJInputTextField(
@@ -106,7 +106,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         },
                         height: 44.0,
                         width: MediaQuery.of(context).size.width,
-                        child: Text(LocaleKeys.auth_signUp.tr()),
+                        child: Text(LocaleKeys.auth_signIn.tr()),
                       ),
                       const SizedBox(height: 16),
                       Center(
@@ -116,12 +116,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              LocaleKeys.auth_donttHaveAnAccount.tr(),
+                              LocaleKeys.auth_dontHaveAnAccount.tr(),
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                             GestureDetector(
                               onTap: () {
-                                context.goNamed(RouteName.signIn);
+                                context.goNamed(RouteName.signUp);
                               },
                               child: Text(
                                 LocaleKeys.auth_here.tr(),
@@ -129,9 +129,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     .textTheme
                                     .bodySmall
                                     ?.copyWith(
-                                  color:
-                                  Theme.of(context).colorScheme.primary,
-                                ),
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
+                                    ),
                               ),
                             )
                           ],

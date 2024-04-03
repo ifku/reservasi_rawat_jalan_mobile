@@ -2,20 +2,27 @@
 //
 //     final clinicModel = clinicModelFromJson(jsonString);
 
-class ClinicModel {
+import 'package:reservasi_rawat_jalan_mobile/domain/entity/clinic_entity.dart';
+
+class ClinicModel extends ClinicEntity {
   final String idClinic;
   final String clinicName;
   final String clinicIcon;
   final DateTime createdAt;
   final DateTime updatedAt;
 
-  ClinicModel({
+  const ClinicModel({
     required this.idClinic,
     required this.clinicName,
     required this.clinicIcon,
     required this.createdAt,
     required this.updatedAt,
-  });
+  }) : super(
+          idClinic: idClinic,
+          clinicName: clinicName,
+          createdAt: createdAt,
+          updatedAt: updatedAt,
+        );
 
   factory ClinicModel.fromJson(Map<String, dynamic> json) => ClinicModel(
         idClinic: json["id_clinic"],

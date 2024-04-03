@@ -65,6 +65,7 @@ class RRJColors {
 
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
+  static const Color blueDark = Color(0xFF222B45);
 
   static const Color background = Color(0xFFF9FCFF);
   static const Color backgroundDark = Color(0xFF2F2F2F);

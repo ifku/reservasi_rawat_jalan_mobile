@@ -4,7 +4,7 @@ import 'package:reservasi_rawat_jalan_mobile/data/model/news_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/model/upcoming_schedule_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/domain/usecases/home/get_news_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/domain/usecases/home/get_upcoming_schedule_usecase.dart';
-import 'package:reservasi_rawat_jalan_mobile/locator.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

@@ -4,21 +4,27 @@
 
 import 'dart:convert';
 
+import 'package:reservasi_rawat_jalan_mobile/domain/entity/token_entity.dart';
+
 TokenModel tokenModelFromJson(String str) =>
     TokenModel.fromJson(json.decode(str));
 
 String tokenModelToJson(TokenModel data) => json.encode(data.toJson());
 
-class TokenModel {
+class TokenModel extends TokenEntity {
   final String accessToken;
   final String tokenType;
   final int expiresIn;
 
-  TokenModel({
+  const TokenModel({
     required this.accessToken,
     required this.tokenType,
     required this.expiresIn,
-  });
+  }) : super(
+          accessToken: accessToken,
+          tokenType: tokenType,
+          expiresIn: expiresIn,
+        );
 
   factory TokenModel.fromJson(Map<String, dynamic> json) => TokenModel(
         accessToken: json["access_token"],

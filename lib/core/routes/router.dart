@@ -8,10 +8,10 @@ import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_path.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/navigation/navigation.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/activity_screen/activity_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth/auth_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth/features/login/login_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth/features/otp/otp_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth/features/register/register_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/auth_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/features/otp/otp_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/features/sign-in/sign_in_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/features/sign-up/sign_up_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/choose_doctor_screen/choose_doctor_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/clinic_screen.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/history_screen/history_screen.dart';
@@ -172,7 +172,7 @@ class AppRouter {
             name: RouteName.signIn,
             pageBuilder: (context, state) {
               return canvas(
-                child: const LoginScreen(),
+                child: const SignInScreen(),
                 state: state,
               );
             }),
@@ -181,7 +181,7 @@ class AppRouter {
             name: RouteName.signUp,
             pageBuilder: (context, state) {
               return canvas(
-                child: const RegisterScreen(),
+                child: const SignUpScreen(),
                 state: state,
               );
             }),

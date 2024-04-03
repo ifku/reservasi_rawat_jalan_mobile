@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/model/upcoming_schedule_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/domain/repository/upcoming_schedule_repository.dart';
 import 'package:reservasi_rawat_jalan_mobile/domain/usecases/usecase.dart';
-import 'package:reservasi_rawat_jalan_mobile/locator.dart';
 
 class GetUpcomingScheduleUseCase
     implements UseCase<List<UpcomingScheduleModel>, void> {

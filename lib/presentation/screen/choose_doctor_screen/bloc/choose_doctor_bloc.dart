@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/model/doctor_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/domain/usecases/choose_doctor/get_doctor_by_clinic_id_usecase.dart';
-import 'package:reservasi_rawat_jalan_mobile/locator.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 
 part 'choose_doctor_event.dart';
 part 'choose_doctor_state.dart';

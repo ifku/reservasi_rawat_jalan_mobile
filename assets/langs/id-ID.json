@@ -79,10 +79,10 @@
     "return": "Kembali"
   },
   "exception": {
-    "requestTimeOutException": "Sambungan terputus, silakan coba lagi.",
-    "requestCancelledException": "Permintaan dibatalkan.",
-    "noInternetException": "Silakan periksa koneksi internet Anda.",
-    "googleSignInException": "Masuk ke Google tidak berhasil.",
+    "requestTimeOutException": "Server tampaknya terlalu lama merespons. Silakan coba lagi nanti.",
+    "requestCancelledException": "Permintaan dibatalkan. Silakan coba lagi.",
+    "noInternetException": "Anda tidak tersambung ke internet. Periksa koneksi jaringan Anda dan coba lagi.",
+    "googleSignInException": "Ada masalah saat masuk dengan Google. Silakan coba lagi atau gunakan metode masuk yang berbeda.",
     "generalErrorException": "Terdapat kesalahan, silakan coba lagi nanti."
   },
   "detailProfileScreen": {
@@ -151,6 +151,9 @@
     "otpDidntReceive": "Tidak menerima kode?",
     "otpResendCode": "Kirim Ulang Kode",
     "otpVerify": "VERIFIKASI",
-    "donttHaveAnAccount": "Tidak punya akun? Klik "
+    "id": "Nomor Induk Kependudukan (NIK) ",
+    "dontHaveAnAccount": "Tidak punya akun? Klik ",
+    "otpCode": "Kode OTP",
+    "otpCodeSent": "Kode OTP telah dikirimkan ke email Anda. Mohon periksa kotak masuk Anda dan masukkan kode tersebut di sini untuk melanjutkan."
   }
 }

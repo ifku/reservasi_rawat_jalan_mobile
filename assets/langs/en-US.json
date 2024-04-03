@@ -79,10 +79,10 @@
     "return": "Return"
   },
   "exception": {
-    "requestTimeOutException": "The connection has timed out, please try again.",
-    "requestCancelledException": "Request was cancelled.",
-    "noInternetException": "Please check your internet connection.",
-    "googleSignInException": "Sign in to Google unsuccessful.",
+    "requestTimeOutException": "The server appears to be taking too long to answer. Please try again later.",
+    "requestCancelledException": "The request was cancelled. Please try again.",
+    "noInternetException": "You are not connected to the internet. Please check your network connection and try again.",
+    "googleSignInException": "There was an issue signing in with Google. Please try again or use a different sign-in method.",
     "generalErrorException": "Something is wrong, please try again later."
   },
   "detailProfileScreen": {
@@ -151,6 +151,9 @@
     "otpDidntReceive": "Didn't receive the code?",
     "otpResendCode": "Resend Code",
     "otpVerify": "VERIFY",
-    "donttHaveAnAccount": "Don't have an account? Click "
+    "id": "National ID number",
+    "dontHaveAnAccount": "Don't have an account? Click ",
+    "otpCode": "OTP Code",
+    "otpCodeSent": "The OTP code has been sent to your email. Please check your inbox and enter the code here to proceed."
   }
 }

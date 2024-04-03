@@ -138,7 +138,10 @@ abstract class  LocaleKeys {
   static const auth_otpDidntReceive = 'auth.otpDidntReceive';
   static const auth_otpResendCode = 'auth.otpResendCode';
   static const auth_otpVerify = 'auth.otpVerify';
-  static const auth_donttHaveAnAccount = 'auth.donttHaveAnAccount';
+  static const auth_id = 'auth.id';
+  static const auth_dontHaveAnAccount = 'auth.dontHaveAnAccount';
+  static const auth_otpCode = 'auth.otpCode';
+  static const auth_otpCodeSent = 'auth.otpCodeSent';
   static const auth = 'auth';
 
 }

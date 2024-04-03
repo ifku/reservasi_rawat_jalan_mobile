@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 
 class AppException implements Exception {
   String message;
@@ -37,28 +38,28 @@ class InternalServerException extends AppException {
 class RequestTimeoutException implements Exception {
   @override
   String toString() {
-    return 'requestTimeoutException'.tr();
+    return LocaleKeys.exception_requestTimeOutException.tr();
   }
 }
 
 class RequestCancelledException implements Exception {
   @override
   String toString() {
-    return 'requestCancelledException'.tr();
+    return LocaleKeys.exception_requestCancelledException.tr();
   }
 }
 
 class NoInternetException implements Exception {
   @override
   String toString() {
-    return 'noInternetException'.tr();
+    return LocaleKeys.exception_noInternetException.tr();
   }
 }
 
 class SignInWithGoogleException implements Exception {
   @override
   String toString() {
-    return 'signInWithGoogleException'.tr();
+    return LocaleKeys.exception_googleSignInException.tr();
   }
 }
 
@@ -79,7 +80,8 @@ extension DioExceptionExtension on DioException {
         final respData = resp?.data;
         String errorMessage;
         if (respData is Map) {
-          errorMessage = respData['message'] ?? 'generalErrorException'.tr();
+          errorMessage = respData['message'] ??
+              LocaleKeys.exception_generalErrorException.tr();
         } else {
           errorMessage = respData.toString();
         }
@@ -109,10 +111,12 @@ extension DioExceptionExtension on DioException {
           exception = NoInternetException();
           break;
         }
-        exception = AppException('generalErrorExceptin'.tr());
+        exception =
+            AppException(LocaleKeys.exception_generalErrorException.tr());
         break;
       default:
-        exception = AppException('generalErrorException'.tr());
+        exception =
+            AppException(LocaleKeys.exception_generalErrorException.tr());
         break;
     }
     return exception;

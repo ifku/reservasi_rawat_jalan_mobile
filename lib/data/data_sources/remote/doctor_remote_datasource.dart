@@ -4,7 +4,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/data_sources/doctor_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/model/api_response.dart';
 import 'package:reservasi_rawat_jalan_mobile/data/model/doctor_model.dart';
-import 'package:reservasi_rawat_jalan_mobile/locator.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 
 class DoctorRemoteDataSource implements DoctorDatasource {
   final AppHttpClient client = locator<AppHttpClient>();
@@ -12,7 +12,7 @@ class DoctorRemoteDataSource implements DoctorDatasource {
   @override
   Future<Either<Exception, List<DoctorModel>>> getDoctorById(String id) async {
     final response = await client.get(
-      "${ApiConstants.DOCTOR_BYID}${id.toString()}",
+      "${ApiConstants.doctorById}${id.toString()}",
     );
 
     return response.fold((error) => Left(error), (data) {
