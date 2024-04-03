@@ -12,7 +12,9 @@ class _DummyPageState extends State<DummyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: Container()
-    ));
+            child: ElevatedButton(
+      onPressed: () {},
+      child: const Text('Loading'),
+    )));
   }
 }

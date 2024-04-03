@@ -7,6 +7,9 @@ import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/components/dialog/rrj_confirmation_dialog.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/components/dialog/rrj_show_loading.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/components/dialog/show_rrj_dialog.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/input_field/rrj_pin_inputfield.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/features/otp/bloc/otp_bloc.dart';
 
@@ -27,7 +30,30 @@ class _OtpScreenState extends State<OtpScreen> {
         child: BlocConsumer<OtpBloc, OtpState>(
           listener: (context, state) {
             if (state is VerifyOtpSuccess) {
+              hideRRJLoading(context);
               context.goNamed(RouteName.home);
+            }
+            if (state is VerifyOtpLoading) {
+              showRRJLoading(context,
+                  barrierDismissible: true,
+                  overlayColor:
+                      Theme.of(context).colorScheme.surface.withOpacity(0.5),
+                  loadingWidget: Assets.raw.loadingAnim.lottie(
+                    height: 500,
+                    width: 500,
+                    alignment: Alignment.center,
+                  ));
+            }
+            if (state is VerifyOtpFailure) {
+              hideRRJLoading(context);
+              showRRJDialog(
+                context,
+                child: RRJConfirmationDialog(
+                    title: "Error",
+                    message: state.error,
+                    iconColor: Theme.of(context).colorScheme.error,
+                    icon: Assets.icons.iconError.path),
+              );
             }
           },
           builder: (context, state) {

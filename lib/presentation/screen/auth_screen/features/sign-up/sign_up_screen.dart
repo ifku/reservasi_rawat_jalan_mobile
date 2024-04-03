@@ -7,6 +7,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/button/rrj_primary_button.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/dialog/rrj_confirmation_dialog.dart';
+import 'package:reservasi_rawat_jalan_mobile/presentation/components/dialog/rrj_show_loading.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/dialog/show_rrj_dialog.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/components/input_field/rrj_input_textfield.dart';
 import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/features/sign-up/bloc/sign_up_bloc.dart';
@@ -37,9 +38,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: BlocConsumer<SignUpBloc, SignUpState>(
         listener: (context, state) {
           if (state is SignUpSuccess) {
+            hideRRJLoading(context);
             context.goNamed(RouteName.otp, extra: _emailController.text);
           }
+          if (state is SignUpLoading) {
+            showRRJLoading(context,
+                overlayColor:
+                    Theme.of(context).colorScheme.surface.withOpacity(0.5),
+                loadingWidget: Assets.raw.loadingAnim.lottie(
+                  height: 500,
+                  width: 500,
+                  alignment: Alignment.center,
+                ));
+          }
           if (state is SignUpFailure) {
+            hideRRJLoading(context);
             showRRJDialog(
               context,
               child: RRJConfirmationDialog(
@@ -51,12 +64,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
           }
         },
         builder: (context, state) {
-          if (state is SignUpLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-
           return Stack(
             children: [
               Align(

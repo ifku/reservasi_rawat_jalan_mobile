@@ -72,7 +72,7 @@ class _ReservationDetailScreenState extends State<ReservationDetailScreen> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.32,
+                  height: MediaQuery.of(context).size.height * 0.33,
                   decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.surface,
                     borderRadius: const BorderRadius.all(Radius.circular(8.0)),
@@ -87,59 +87,63 @@ class _ReservationDetailScreenState extends State<ReservationDetailScreen> {
                       ),
                     ],
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Informasi Pelayanan",
-                            style: Theme.of(context).textTheme.bodyLarge),
-                        const SizedBox(height: 16.0),
-                        Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ReservationInfoItem(
-                                    title: "Dokter Pemeriksa",
-                                    icon: Assets.icons.iconPerson3.path,
-                                    content: "Dr. John Doe"),
-                                const SizedBox(height: 12),
-                                ReservationInfoItem(
-                                    title: "Poli Layanan",
-                                    icon: Assets.icons.iconLocation.path,
-                                    content: "Dokter Umum"),
-                                const SizedBox(height: 12),
-                                ReservationInfoItem(
-                                    title: "Nama Pasien",
-                                    icon: Assets.icons.iconPerson3.path,
-                                    content: "Mochammad Rizky"),
-                              ],
-                            ),
-                            SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.05),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ReservationInfoItem(
-                                    title: "Jenis Asuransi",
-                                    icon: Assets.icons.iconWallet.path,
-                                    content: "BPJS"),
-                                const SizedBox(height: 12),
-                                ReservationInfoItem(
-                                    title: "Jam Layanan",
-                                    icon: Assets.icons.iconClock.path,
-                                    content: "00:00"),
-                                const SizedBox(height: 12),
-                                ReservationInfoItem(
-                                    title: "Tanggal Pemesanan",
-                                    icon: Assets.icons.iconCalendar.path,
-                                    content: "14 April 2024"),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Informasi Pelayanan",
+                              style: Theme.of(context).textTheme.bodyLarge),
+                          const SizedBox(height: 16.0),
+                          Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ReservationInfoItem(
+                                      title: "Dokter Pemeriksa",
+                                      icon: Assets.icons.iconPerson3.path,
+                                      content: "Dr. John Doe"),
+                                  const SizedBox(height: 12),
+                                  ReservationInfoItem(
+                                      title: "Poli Layanan",
+                                      icon: Assets.icons.iconLocation.path,
+                                      content: "Dokter Umum"),
+                                  const SizedBox(height: 12),
+                                  ReservationInfoItem(
+                                      title: "Nama Pasien",
+                                      icon: Assets.icons.iconPerson3.path,
+                                      content: "Mochammad Rizky"),
+                                ],
+                              ),
+                              SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ReservationInfoItem(
+                                      title: "Jenis Asuransi",
+                                      icon: Assets.icons.iconWallet.path,
+                                      content: "BPJS"),
+                                  const SizedBox(height: 12),
+                                  ReservationInfoItem(
+                                      title: "Jam Layanan",
+                                      icon: Assets.icons.iconClock.path,
+                                      content: "00:00"),
+                                  const SizedBox(height: 12),
+                                  ReservationInfoItem(
+                                      title: "Tanggal Pemesanan",
+                                      icon: Assets.icons.iconCalendar.path,
+                                      content: "14 April 2024"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
