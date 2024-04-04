@@ -2,25 +2,24 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/navigation/navigation.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_path.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/navigation/navigation.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/activity_screen/activity_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/auth_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/features/otp/otp_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/features/sign-in/sign_in_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/auth_screen/features/sign-up/sign_up_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/choose_doctor_screen/choose_doctor_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/clinic_screen/clinic_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/history_screen/history_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/home_screen/home_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/onboarding_screen/onboarding_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/profile_screen/profile_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/reservation_screen/features/reservation_detail_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/reservation_screen/reservation_screen.dart';
-import 'package:reservasi_rawat_jalan_mobile/presentation/screen/splash_screen/splash_screen.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/activity/presentation/pages/activity_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/auth_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/onboarding/onboarding_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/otp/otp_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_in/sign_in_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_up/sign_up_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation/current_reservation_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation_detail/current_reservation_detail_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/home/presentation/pages/home_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile/profile_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/choose_doctor_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/clinic_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/splash/splash_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/history/presentation/pages/history_page.dart';
 
 class AppRouter {
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -49,7 +48,7 @@ class AppRouter {
             name: RouteName.home,
             pageBuilder: (context, state) {
               return canvas(
-                child: const HomeScreen(),
+                child: const HomePage(),
                 state: state,
               );
             },
@@ -59,7 +58,7 @@ class AppRouter {
                 name: RouteName.clinicList,
                 pageBuilder: (context, state) {
                   return canvas(
-                    child: const ClinicScreen(),
+                    child: const ClinicPage(),
                     state: state,
                   );
                 },
@@ -70,7 +69,7 @@ class AppRouter {
                     pageBuilder: (context, state) {
                       return canvas(
                         child:
-                            ChooseDoctorScreen(clinicId: state.extra as String),
+                            ChooseDoctorPage(clinicId: state.extra as String),
                         state: state,
                       );
                     },
@@ -78,21 +77,21 @@ class AppRouter {
                 ],
               ),
               GoRoute(
-                  path: RoutePath.reservation,
-                  name: RouteName.reservation,
+                  path: RoutePath.currentReservation,
+                  name: RouteName.currentReservation,
                   pageBuilder: (context, state) {
                     return canvas(
-                      child: const ReservationScreen(),
+                      child: const CurrentReservationPage(),
                       state: state,
                     );
                   },
                   routes: [
                     GoRoute(
-                      path: RoutePath.reservationDetail,
-                      name: RouteName.reservationDetail,
+                      path: RoutePath.currentReservationDetail,
+                      name: RouteName.currentReservationDetail,
                       pageBuilder: (context, state) {
                         return canvas(
-                          child: const ReservationDetailScreen(),
+                          child: const CurrentReservationDetailPage(),
                           state: state,
                         );
                       },
@@ -107,7 +106,7 @@ class AppRouter {
             name: RouteName.history,
             pageBuilder: (context, state) {
               return canvas(
-                child: const HistoryScreen(),
+                child: const HistoryPage(),
                 state: state,
               );
             },
@@ -119,7 +118,7 @@ class AppRouter {
             name: RouteName.activity,
             pageBuilder: (context, state) {
               return canvas(
-                child: const ActivityScreen(),
+                child: const ActivityPage(),
                 state: state,
               );
             },
@@ -131,7 +130,7 @@ class AppRouter {
             name: RouteName.account,
             pageBuilder: (context, state) {
               return canvas(
-                child: const ProfileScreen(),
+                child: const ProfilePage(),
                 state: state,
               );
             },
@@ -144,7 +143,7 @@ class AppRouter {
         name: RouteName.splash,
         pageBuilder: (context, state) {
           return canvas(
-            child: const SplashScreen(),
+            child: const SplashPage(),
             state: state,
           );
         }),
@@ -153,7 +152,7 @@ class AppRouter {
         name: RouteName.onboarding,
         pageBuilder: (context, state) {
           return canvas(
-            child: OnboardingScreen(),
+            child: OnboardingPage(),
             state: state,
           );
         }),
@@ -162,7 +161,7 @@ class AppRouter {
       name: RouteName.auth,
       pageBuilder: (context, state) {
         return canvas(
-          child: const AuthScreen(),
+          child: const AuthPage(),
           state: state,
         );
       },
@@ -172,7 +171,7 @@ class AppRouter {
             name: RouteName.signIn,
             pageBuilder: (context, state) {
               return canvas(
-                child: const SignInScreen(),
+                child: const SignInPage(),
                 state: state,
               );
             }),
@@ -181,7 +180,7 @@ class AppRouter {
             name: RouteName.signUp,
             pageBuilder: (context, state) {
               return canvas(
-                child: const SignUpScreen(),
+                child: const SignUpPage(),
                 state: state,
               );
             }),
@@ -190,7 +189,7 @@ class AppRouter {
             name: RouteName.otp,
             pageBuilder: (context, state) {
               return canvas(
-                child: OtpScreen(
+                child: OtpPage(
                   email: state.extra as String,
                 ),
                 state: state,

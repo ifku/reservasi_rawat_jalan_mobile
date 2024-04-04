@@ -14,10 +14,10 @@ class RouteName {
   static const String activity = 'activity';
   static const String account = 'account';
 
-  static const String clinicList = 'clinic_list';
-  static const String clinicDoctorList = 'clinic_doctor';
-  static const String doctorDetail = 'doctor_detail';
+  static const String clinicList = 'clinic-list';
+  static const String clinicDoctorList = 'clinic-doctor';
+  static const String doctorDetail = 'doctor-detail';
 
-  static const String reservation = 'reservation';
-  static const String reservationDetail = 'reservation_detail';
+  static const String currentReservation = 'current-reservation';
+  static const String currentReservationDetail = 'current-reservation-detail';
 }

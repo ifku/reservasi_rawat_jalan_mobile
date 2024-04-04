@@ -14,9 +14,9 @@ class RoutePath {
   static const String account = '/account';
 
   static const String clinicList = 'clinic';
-  static const String clinicDoctorList = 'clinic_doctor';
-  static const String doctorDetail = 'doctor_detail';
+  static const String clinicDoctorList = 'clinic-doctor';
+  static const String doctorDetail = 'doctor-detail';
 
-  static const String reservation = 'reservation';
-  static const String reservationDetail = 'reservation_detail';
+  static const String currentReservation = 'reservation';
+  static const String currentReservationDetail = 'reservation-detail';
 }
