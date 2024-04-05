@@ -5,6 +5,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/network/dio_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/app_database.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/auth_datasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/send_otp_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/data_sources/clinic_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/data_sources/doctor_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/data_sources/fake/choose_doctor_fake_datasource.dart';
@@ -71,4 +72,5 @@ Future<void> setupServiceLocator() async {
   locator.registerSingleton<AuthRepository>(AuthRepositoryImpl());
   locator.registerSingleton<SignUpUseCase>(SignUpUseCase());
   locator.registerSingleton<SignInUseCase>(SignInUseCase());
+  locator.registerSingleton<SendOtpUseCase>(SendOtpUseCase());
 }

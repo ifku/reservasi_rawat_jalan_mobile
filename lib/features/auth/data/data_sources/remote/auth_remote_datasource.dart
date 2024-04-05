@@ -55,8 +55,18 @@ class AuthRemoteDataSource implements AuthDataSource {
 
   @override
   Future<Either<Exception, OtpModel>> sendOtp(String email) async {
-    // TODO: implement sendOtp
-    throw UnimplementedError();
+    final response = await client.post(
+      ApiConstants.sendOtp,
+      data: {
+        'user_email': email,
+      },
+    );
+    return response.fold((error) => Left(error), (data) {
+      final responseObj = ApiResponse<OtpModel>.fromJson(data, (p0) {
+        return OtpModel.fromJson(p0);
+      });
+      return Right(responseObj.data!);
+    });
   }
 
   @override

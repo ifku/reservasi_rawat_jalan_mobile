@@ -22,8 +22,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<Either<Exception, OtpModel>> sendOtp(String email) async {
-    // TODO: implement sendOtp
-    throw UnimplementedError();
+    return await _authDataSource.sendOtp(email);
   }
 
   @override
