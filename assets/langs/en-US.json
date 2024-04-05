@@ -66,8 +66,8 @@
     "noReservation": "No Reservation Yet",
     "yourReservationNumber": "Your Reservation Number",
     "pleaseArrive": "Please Arrive 15 Minutes Before Queue",
-    "scanCode": "Scan Code",
-    "currentReservation": "Current Queue",
+    "scanCode": "SCAN CODE",
+    "currentReservation": "Current Reservation Number",
     "estimatedTime": "Estimated Time",
     "serviceInformation": "Service Information",
     "doctor": "Doctor",
@@ -76,7 +76,8 @@
     "patientName": "Patient Name",
     "serviceHour": "Service Hours",
     "reservationDate": "Reservation Date",
-    "return": "Return"
+    "return": "RETURN",
+    "reservationInformation": "Reservation Information"
   },
   "exception": {
     "requestTimeOutException": "The server appears to be taking too long to answer. Please try again later.",

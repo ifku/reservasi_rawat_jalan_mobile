@@ -73,6 +73,7 @@ abstract class  LocaleKeys {
   static const reservationScreen_serviceHour = 'reservationScreen.serviceHour';
   static const reservationScreen_reservationDate = 'reservationScreen.reservationDate';
   static const reservationScreen_return = 'reservationScreen.return';
+  static const reservationScreen_reservationInformation = 'reservationScreen.reservationInformation';
   static const reservationScreen = 'reservationScreen';
   static const exception_requestTimeOutException = 'exception.requestTimeOutException';
   static const exception_requestCancelledException = 'exception.requestCancelledException';

@@ -66,8 +66,8 @@
     "noReservation": "Belum Ada Reservasi",
     "yourReservationNumber": "Nomor Reservasi Anda",
     "pleaseArrive": "Harap Datang 15 Menit Sebelum Antrian",
-    "scanCode": "Pindai Kode",
-    "currentReservation": "Antrian Saat Ini",
+    "scanCode": "PINDAI KODE",
+    "currentReservation": "Nomor Antrian Saat Ini",
     "estimatedTime": "Estimasi Pelayanan",
     "serviceInformation": "Informasi Pelayanan",
     "doctor": "Dokter Pemeriksa",
@@ -76,7 +76,8 @@
     "patientName": "Nama Pasien",
     "serviceHour": "Jam Pelayanan",
     "reservationDate": "Tanggal Reservasi",
-    "return": "Kembali"
+    "return": "KEMBALI",
+    "reservationInformation": "Informasi Reservasi"
   },
   "exception": {
     "requestTimeOutException": "Server tampaknya terlalu lama merespons. Silakan coba lagi nanti.",

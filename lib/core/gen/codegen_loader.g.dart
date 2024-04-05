@@ -82,8 +82,8 @@ class CodegenLoader extends AssetLoader{
     "noReservation": "No Reservation Yet",
     "yourReservationNumber": "Your Reservation Number",
     "pleaseArrive": "Please Arrive 15 Minutes Before Queue",
-    "scanCode": "Scan Code",
-    "currentReservation": "Current Queue",
+    "scanCode": "SCAN CODE",
+    "currentReservation": "Current Reservation Number",
     "estimatedTime": "Estimated Time",
     "serviceInformation": "Service Information",
     "doctor": "Doctor",
@@ -92,7 +92,8 @@ class CodegenLoader extends AssetLoader{
     "patientName": "Patient Name",
     "serviceHour": "Service Hours",
     "reservationDate": "Reservation Date",
-    "return": "Return"
+    "return": "RETURN",
+    "reservationInformation": "Reservation Information"
   },
   "exception": {
     "requestTimeOutException": "The server appears to be taking too long to answer. Please try again later.",
@@ -241,8 +242,8 @@ static const Map<String,dynamic> id_ID = {
     "noReservation": "Belum Ada Reservasi",
     "yourReservationNumber": "Nomor Reservasi Anda",
     "pleaseArrive": "Harap Datang 15 Menit Sebelum Antrian",
-    "scanCode": "Pindai Kode",
-    "currentReservation": "Antrian Saat Ini",
+    "scanCode": "PINDAI KODE",
+    "currentReservation": "Nomor Antrian Saat Ini",
     "estimatedTime": "Estimasi Pelayanan",
     "serviceInformation": "Informasi Pelayanan",
     "doctor": "Dokter Pemeriksa",
@@ -251,7 +252,8 @@ static const Map<String,dynamic> id_ID = {
     "patientName": "Nama Pasien",
     "serviceHour": "Jam Pelayanan",
     "reservationDate": "Tanggal Reservasi",
-    "return": "Kembali"
+    "return": "KEMBALI",
+    "reservationInformation": "Informasi Reservasi"
   },
   "exception": {
     "requestTimeOutException": "Server tampaknya terlalu lama merespons. Silakan coba lagi nanti.",
