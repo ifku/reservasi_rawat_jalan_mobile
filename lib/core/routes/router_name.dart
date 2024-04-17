@@ -9,6 +9,7 @@ class RouteName {
   static const String signUp = 'sign-up';
   static const String otp = 'otp';
   static const String home = 'home';
+  static const String completeProfile = "complete-profile";
 
   static const String history = 'history';
   static const String activity = 'activity';

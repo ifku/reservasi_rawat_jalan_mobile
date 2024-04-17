@@ -7,4 +7,5 @@ class ApiConstants {
 
   static const String clinic = "/clinic";
   static const String doctorById = "/doctor/clinic/";
+  static const String reservationByPatientId = "/reservation/patient/";
 }

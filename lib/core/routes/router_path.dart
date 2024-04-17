@@ -7,6 +7,7 @@ class RoutePath {
   static const String signIn = 'sign-in';
   static const String signUp = 'sign-up';
   static const String otp = 'otp';
+  static const String completeProfile = "/complete-profile";
 
   static const String home = '/';
   static const String history = '/history';

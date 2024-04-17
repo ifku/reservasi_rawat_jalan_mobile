@@ -27,3 +27,8 @@ final class VerifyOtpFailure extends OtpState {
   @override
   List<Object> get props => [error];
 }
+
+final class UserProfileIncomplete extends OtpState {
+  @override
+  List<Object> get props => [];
+}

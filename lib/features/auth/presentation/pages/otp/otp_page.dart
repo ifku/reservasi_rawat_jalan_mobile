@@ -12,6 +12,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/otp/bloc/otp_bloc.dart';
+
 class OtpPage extends StatefulWidget {
   const OtpPage({super.key, this.email});
 
@@ -31,6 +32,10 @@ class _OtpPageState extends State<OtpPage> {
             if (state is VerifyOtpSuccess) {
               hideRRJLoading(context);
               context.goNamed(RouteName.home);
+            }
+            if (state is UserProfileIncomplete) {
+              hideRRJLoading(context);
+              context.goNamed(RouteName.completeProfile);
             }
             if (state is VerifyOtpLoading) {
               showRRJLoading(context,

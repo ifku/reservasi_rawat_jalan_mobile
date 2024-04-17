@@ -17,10 +17,13 @@ class OtpBloc extends Bloc<OtpEvent, OtpState> {
       try {
         final result =
             await _signInUseCase.call(Tuple2(event.email, event.otp));
-        result.fold(
-          (l) => emit(VerifyOtpFailure(error: l.toString())),
-          (r) => emit(VerifyOtpSuccess()),
-        );
+        result.fold((l) => emit(VerifyOtpFailure(error: l.toString())), (r) {
+          if (r.user.isCompleteProfile) {
+            emit(VerifyOtpSuccess());
+          } else {
+            emit(UserProfileIncomplete());
+          }
+        });
       } catch (e) {
         emit(VerifyOtpFailure(error: e.toString()));
       }

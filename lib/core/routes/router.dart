@@ -8,6 +8,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_path.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/activity/presentation/pages/activity_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/auth_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/complete_profile/complete_profile_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/onboarding/onboarding_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/otp/otp_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_in/sign_in_page.dart';
@@ -197,6 +198,15 @@ class AppRouter {
             }),
       ],
     ),
+    GoRoute(
+        path: RoutePath.completeProfile,
+        name: RouteName.completeProfile,
+        pageBuilder: (context, state) {
+          return canvas(
+            child: const CompleteProfilePage(),
+            state: state,
+          );
+        }),
   ];
 
   static Page canvas({
