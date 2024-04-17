@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/models/clinic_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/clinic_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/use_cases/clinic/get_all_clinic_usecase.dart';
 
 part 'clinic_event.dart';

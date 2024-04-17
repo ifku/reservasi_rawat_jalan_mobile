@@ -1,59 +1,41 @@
 import 'dart:convert';
 
-class DoctorModel {
-  final String idDoctor;
-  final String doctorName;
-  final String doctorSip;
-  final String doctorStr;
-  final int doctorAge;
-  final String doctorRating;
-  final String? doctorImage;
-  final String clinicId;
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
 
-  final bool isAvailable;
-
-  final String clinicName;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-
-
-  DoctorModel({
-    required this.idDoctor,
-    required this.doctorName,
-    required this.doctorSip,
-    required this.doctorStr,
-    required this.doctorAge,
-    required this.doctorRating,
-    required this.doctorImage,
-    required this.clinicId,
-    required this.isAvailable,
-    required this.clinicName,
-    required this.createdAt,
-    required this.updatedAt,
-  });
-
+class DoctorModel extends DoctorEntity {
   factory DoctorModel.fromRawJson(String str) =>
       DoctorModel.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
+  const DoctorModel({
+    required super.idDoctor,
+    required super.doctorName,
+    required super.doctorSip,
+    required super.doctorStr,
+    required super.doctorAge,
+    required super.doctorRating,
+    required super.doctorImage,
+    required super.clinicId,
+    required super.isAvailable,
+    required super.clinicName,
+    required super.createdAt,
+    required super.updatedAt,
+  });
+
   factory DoctorModel.fromJson(Map<String, dynamic> json) => DoctorModel(
-        idDoctor: json["id_doctor"] ?? "",
-        doctorName: json["doctor_name"] ?? "",
-        doctorSip: json["doctor_sip"] ?? "",
-        doctorStr: json["doctor_str"] ?? "",
-        doctorAge: json["doctor_age"] ?? "",
-        doctorRating: json["doctor_rating"] ?? "",
+        idDoctor: json["id_doctor"],
+        doctorName: json["doctor_name"],
+        doctorSip: json["doctor_sip"],
+        doctorStr: json["doctor_str"],
+        doctorAge: json["doctor_age"],
+        doctorRating: json["doctor_rating"],
         doctorImage: json["doctor_image"],
-        clinicId: json["clinic_id"] ?? "",
-        isAvailable: json["is_available"] ?? false,
-        clinicName: json["clinic_name"] ?? "",
-        createdAt: json["created_at"] == null
-            ? null
-            : DateTime.parse(json["created_at"]),
-        updatedAt: json["updated_at"] == null
-            ? null
-            : DateTime.parse(json["updated_at"]),
+        clinicId: json["clinic_id"],
+        isAvailable: json["is_available"],
+        clinicName: json["clinic_name"],
+        createdAt: DateTime.parse(json["created_at"]),
+        updatedAt: DateTime.parse(json["updated_at"]),
       );
 
   Map<String, dynamic> toJson() => {

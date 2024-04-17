@@ -1,49 +1,21 @@
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/user_entity.dart';
 
 class UserModel extends UserEntity {
-  final String idUser;
-  final String? userName;
-  final String? userFullName;
-  final String userNik;
-  final String userEmail;
-  final String? userPhone;
-  final String? userAddress;
-  final String? userGender;
-  final DateTime? userDateOfBirth;
-  final bool isCompleteProfile;
-  final String? refreshToken;
-  final DateTime createdAt;
-  final DateTime updatedAt;
-
   const UserModel({
-    required this.idUser,
-    required this.userName,
-    required this.userFullName,
-    required this.userNik,
-    required this.userEmail,
-    required this.userPhone,
-    required this.userAddress,
-    required this.userGender,
-    required this.userDateOfBirth,
-    required this.isCompleteProfile,
-    required this.refreshToken,
-    required this.createdAt,
-    required this.updatedAt,
-  }) : super(
-          idUser: idUser,
-          userName: userName,
-          userFullName: userFullName,
-          userNik: userNik,
-          userEmail: userEmail,
-          userPhone: userPhone,
-          userAddress: userAddress,
-          userGender: userGender,
-          userDateOfBirth: userDateOfBirth,
-          isCompleteProfile: isCompleteProfile,
-          refreshToken: refreshToken,
-          createdAt: createdAt,
-          updatedAt: updatedAt,
-        );
+    required super.idUser,
+    required super.userName,
+    required super.userFullName,
+    required super.userNik,
+    required super.userEmail,
+    required super.userPhone,
+    required super.userAddress,
+    required super.userGender,
+    required super.userDateOfBirth,
+    required super.isCompleteProfile,
+    required super.refreshToken,
+    required super.createdAt,
+    required super.updatedAt,
+  });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         idUser: json["id_user"],

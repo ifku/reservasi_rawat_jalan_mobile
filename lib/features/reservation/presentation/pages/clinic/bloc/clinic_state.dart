@@ -10,7 +10,7 @@ class GetClinicLoading extends ClinicState {
 }
 
 class GetClinicSuccess extends ClinicState {
-  final List<ClinicModel> clinics;
+  final List<ClinicEntity> clinics;
 
   const GetClinicSuccess({required this.clinics});
 

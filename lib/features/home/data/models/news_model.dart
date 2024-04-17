@@ -1,18 +1,13 @@
-class NewsModel {
-  String title;
-  String author;
-  String url;
-  String urlToImage;
-  DateTime publishedAt;
-  String content;
+import 'package:reservasi_rawat_jalan_mobile/features/home/domain/entities/news_entity.dart';
 
-  NewsModel(
-      {required this.title,
-      required this.author,
-      required this.url,
-      required this.urlToImage,
-      required this.publishedAt,
-      required this.content});
+class NewsModel extends NewsEntity {
+  const NewsModel(
+      {required super.title,
+      required super.author,
+      required super.url,
+      required super.urlToImage,
+      required super.publishedAt,
+      required super.content});
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
     return NewsModel(

@@ -13,14 +13,12 @@ String signUpModelToJson(SignUpModel data) => json.encode(data.toJson());
 
 class SignUpModel extends SignUpEntity {
   final UserRegisterModel user;
-  final int otp;
-  final int expirationTime;
 
   const SignUpModel({
     required this.user,
-    required this.otp,
-    required this.expirationTime,
-  }) : super(user: user, otp: otp, expirationTime: expirationTime);
+    required super.otp,
+    required super.expirationTime,
+  }) : super(user: user);
 
   factory SignUpModel.fromJson(Map<String, dynamic> json) => SignUpModel(
         user: UserRegisterModel.fromJson(json["user"]),
@@ -36,24 +34,13 @@ class SignUpModel extends SignUpEntity {
 }
 
 class UserRegisterModel extends UserRegisterEntity {
-  final String idUser;
-  final String userEmail;
-  final String userNik;
-  final DateTime updatedAt;
-  final DateTime createdAt;
-
   const UserRegisterModel({
-    required this.idUser,
-    required this.userEmail,
-    required this.userNik,
-    required this.updatedAt,
-    required this.createdAt,
-  }) : super(
-            idUser: idUser,
-            userEmail: userEmail,
-            userNik: userNik,
-            updatedAt: updatedAt,
-            createdAt: createdAt);
+    required super.idUser,
+    required super.userEmail,
+    required super.userNik,
+    required super.updatedAt,
+    required super.createdAt,
+  });
 
   factory UserRegisterModel.fromJson(Map<String, dynamic> json) =>
       UserRegisterModel(

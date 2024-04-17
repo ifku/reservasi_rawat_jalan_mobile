@@ -13,21 +13,14 @@ TokenModel tokenModelFromJson(String str) =>
 String tokenModelToJson(TokenModel data) => json.encode(data.toJson());
 
 class TokenModel extends TokenEntity {
-  final String accessToken;
-  final String tokenType;
-  final int expiresIn;
   final UserModel user;
 
   const TokenModel({
-    required this.accessToken,
-    required this.tokenType,
-    required this.expiresIn,
+    required super.accessToken,
+    required super.tokenType,
+    required super.expiresIn,
     required this.user,
-  }) : super(
-            accessToken: accessToken,
-            tokenType: tokenType,
-            expiresIn: expiresIn,
-            user: user);
+  }) : super(user: user);
 
   factory TokenModel.fromJson(Map<String, dynamic> json) => TokenModel(
         accessToken: json["access_token"],

@@ -11,13 +11,10 @@ OtpModel otpModelFromJson(String str) => OtpModel.fromJson(json.decode(str));
 String otpModelToJson(OtpModel data) => json.encode(data.toJson());
 
 class OtpModel extends OtpEntity {
-  final int otp;
-  final int expirationTime;
-
   const OtpModel({
-    required this.otp,
-    required this.expirationTime,
-  }) : super(otp: otp, expirationTime: expirationTime);
+    required super.otp,
+    required super.expirationTime,
+  });
 
   factory OtpModel.fromJson(Map<String, dynamic> json) => OtpModel(
         otp: json["otp"],

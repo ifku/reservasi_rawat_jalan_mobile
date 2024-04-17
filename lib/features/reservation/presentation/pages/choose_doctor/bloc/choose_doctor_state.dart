@@ -15,7 +15,7 @@ class GetDoctorByClinicIdLoading extends ChooseDoctorState {
 }
 
 class GetDoctorByClinicIdSuccess extends ChooseDoctorState {
-  final List<DoctorModel> doctor;
+  final List<DoctorEntity> doctor;
 
   const GetDoctorByClinicIdSuccess({required this.doctor});
 
