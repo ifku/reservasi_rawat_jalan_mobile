@@ -2,20 +2,20 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/user_
 
 class UserModel extends UserEntity {
   final String idUser;
-  final String userName;
-  final String userFullName;
+  final String? userName;
+  final String? userFullName;
   final String userNik;
   final String userEmail;
-  final String userPhone;
-  final String userAddress;
-  final String userGender;
-  final DateTime userDateOfBirth;
+  final String? userPhone;
+  final String? userAddress;
+  final String? userGender;
+  final DateTime? userDateOfBirth;
   final bool isCompleteProfile;
-  final String refreshToken;
+  final String? refreshToken;
   final DateTime createdAt;
   final DateTime updatedAt;
 
-  UserModel({
+  const UserModel({
     required this.idUser,
     required this.userName,
     required this.userFullName,
@@ -47,14 +47,16 @@ class UserModel extends UserEntity {
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         idUser: json["id_user"],
-        userName: json["user_name"],
-        userFullName: json["user_fullname"],
+        userName: json["user_name"] ?? "",
+        userFullName: json["user_fullname"] ?? "",
         userNik: json["user_nik"],
-        userEmail: json["user_email"],
-        userPhone: json["user_phone"],
-        userAddress: json["user_address"],
+        userEmail: json["user_email"] ?? "",
+        userPhone: json["user_phone"] ?? "",
+        userAddress: json["user_address"] ?? "",
         userGender: json["user_gender"],
-        userDateOfBirth: DateTime.parse(json["user_date_of_birth"]),
+        userDateOfBirth: json["user_date_of_birth"] != null
+            ? DateTime.parse(json["user_date_of_birth"])
+            : DateTime.now(),
         isCompleteProfile: json["is_complete_profile"],
         refreshToken: json["refresh_token"] ?? "",
         createdAt: DateTime.parse(json["created_at"]),
@@ -70,7 +72,7 @@ class UserModel extends UserEntity {
         "user_phone": userPhone,
         "user_address": userAddress,
         "user_gender": userGender,
-        "user_date_of_birth": userDateOfBirth.toIso8601String(),
+        "user_date_of_birth": userDateOfBirth?.toIso8601String(),
         "is_complete_profile": isCompleteProfile,
         "refresh_token": refreshToken,
         "created_at": createdAt.toIso8601String(),

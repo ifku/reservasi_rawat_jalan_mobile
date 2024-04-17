@@ -4,18 +4,20 @@
 
 import 'dart:convert';
 
+import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/otp_entity.dart';
+
 OtpModel otpModelFromJson(String str) => OtpModel.fromJson(json.decode(str));
 
 String otpModelToJson(OtpModel data) => json.encode(data.toJson());
 
-class OtpModel {
+class OtpModel extends OtpEntity {
   final int otp;
   final int expirationTime;
 
-  OtpModel({
+  const OtpModel({
     required this.otp,
     required this.expirationTime,
-  });
+  }) : super(otp: otp, expirationTime: expirationTime);
 
   factory OtpModel.fromJson(Map<String, dynamic> json) => OtpModel(
         otp: json["otp"],

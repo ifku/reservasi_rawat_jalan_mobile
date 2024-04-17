@@ -53,9 +53,6 @@ class _SignUpPageState extends State<SignUpPage> {
           }
           if (state is SignUpFailure) {
             hideRRJLoading(context);
-            // For development only
-            context.goNamed(RouteName.home);
-            // For development only
             showRRJDialog(
               context,
               child: RRJConfirmationDialog(
