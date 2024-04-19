@@ -17,14 +17,18 @@ class ReservationInfoItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w400,
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3),
-              ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.3,
+          child: Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w400,
+                  color:
+                      Theme.of(context).colorScheme.onSurface.withOpacity(0.3),
+                ),
+          ),
         ),
         const SizedBox(height: 8.0),
         Row(
@@ -35,7 +39,13 @@ class ReservationInfoItem extends StatelessWidget {
                 colorFilter: ColorFilter.mode(
                     Theme.of(context).colorScheme.onSurface, BlendMode.srcIn)),
             const SizedBox(width: 4.0),
-            Text(content, style: Theme.of(context).textTheme.labelLarge),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.3,
+              child: Text(content,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.labelLarge),
+            ),
           ],
         ),
       ],
