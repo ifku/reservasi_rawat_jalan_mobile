@@ -140,15 +140,13 @@ extension RequestOptionsExt on RequestOptions {
       'x-client-version': packageInfo.version,
     });
 
-    // headers.putIfAbsent('client-platform', () => platform);
-    // final tokenDataSource = TokenLocalDataSource();
-    // final accessToken = await tokenDataSource.getAccessToken();
-    // if (accessToken != null) {
-    //   headers.putIfAbsent(
-    //     HttpHeaders.authorizationHeader,
-    //     () => 'Bearer ${accessToken.value}',
-    //   );
-    // }
+    /*headers.putIfAbsent('client-platform', () => platform);
+    final tokenDataSource = locator<TokenLocalDataSource>();
+    final accessToken = await tokenDataSource.getAccessToken();
+    headers.putIfAbsent(
+      HttpHeaders.authorizationHeader,
+      () => 'Bearer $accessToken',
+    );*/
 
     return this;
   }

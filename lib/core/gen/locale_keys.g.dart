@@ -74,6 +74,8 @@ abstract class  LocaleKeys {
   static const reservationScreen_reservationDate = 'reservationScreen.reservationDate';
   static const reservationScreen_return = 'reservationScreen.return';
   static const reservationScreen_reservationInformation = 'reservationScreen.reservationInformation';
+  static const reservationScreen_reservation_id = 'reservationScreen.reservation_id';
+  static const reservationScreen_see_eticket = 'reservationScreen.see_eticket';
   static const reservationScreen = 'reservationScreen';
   static const exception_requestTimeOutException = 'exception.requestTimeOutException';
   static const exception_requestCancelledException = 'exception.requestCancelledException';
@@ -144,5 +146,12 @@ abstract class  LocaleKeys {
   static const auth_otpCode = 'auth.otpCode';
   static const auth_otpCodeSent = 'auth.otpCodeSent';
   static const auth = 'auth';
+  static const historyScreen_thereAreNoReservation = 'historyScreen.thereAreNoReservation';
+  static const historyScreen_youHaveNotBooked = 'historyScreen.youHaveNotBooked';
+  static const historyScreen_makeReservation = 'historyScreen.makeReservation';
+  static const historyScreen = 'historyScreen';
+  static const activityScreen_thereAreNoActivities = 'activityScreen.thereAreNoActivities';
+  static const activityScreen_youHaveNotBooked = 'activityScreen.youHaveNotBooked';
+  static const activityScreen = 'activityScreen';
 
 }

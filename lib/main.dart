@@ -9,6 +9,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/injection/bloc_providers.dart'
 import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/utils/app_database.dart';
 
 import 'core/gen/codegen_loader.g.dart';
 
@@ -16,6 +17,7 @@ Future<void> main() async {
   await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await AppDatabase().initialize();
   await setupServiceLocator();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(

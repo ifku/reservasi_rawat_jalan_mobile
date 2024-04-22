@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/user_db_model.dart';
 
 class AppDatabase {
   bool _isInitialized = false;
@@ -17,8 +20,11 @@ class AppDatabase {
     }
 
     final dir = await getApplicationDocumentsDirectory();
-    _isar = await Isar.open([], directory: dir.path);
+    _isar = await Isar.open([UserDbModelSchema],
+        directory: dir.path, inspector: true);
     _isInitialized = true;
+
+    log('Database initialized $_isInitialized');
   }
 
   Isar get isar => _isar;

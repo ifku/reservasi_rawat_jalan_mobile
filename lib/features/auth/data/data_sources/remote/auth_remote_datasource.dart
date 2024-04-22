@@ -6,7 +6,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/auth_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/otp_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/signup_model.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/token_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/sign_in_model.dart';
 
 class AuthRemoteDataSource implements AuthDataSource {
   final AppHttpClient client = locator<AppHttpClient>();
@@ -34,7 +34,8 @@ class AuthRemoteDataSource implements AuthDataSource {
   }
 
   @override
-  Future<Either<Exception, TokenModel>> signIn(String email, String otp) async {
+  Future<Either<Exception, SignInModel>> signIn(
+      String email, String otp) async {
     final response = await client.post(
       ApiConstants.signIn,
       data: {
@@ -45,8 +46,8 @@ class AuthRemoteDataSource implements AuthDataSource {
     return response.fold(
       (error) => Left(error),
       (data) {
-        final responseObj = ApiResponse<TokenModel>.fromJson(data, (p0) {
-          return TokenModel.fromJson(p0);
+        final responseObj = ApiResponse<SignInModel>.fromJson(data, (p0) {
+          return SignInModel.fromJson(p0);
         });
         return Right(responseObj.data!);
       },
@@ -70,7 +71,7 @@ class AuthRemoteDataSource implements AuthDataSource {
   }
 
   @override
-  Future<Either<Exception, TokenModel>> refreshToken() async {
+  Future<Either<Exception, SignInModel>> refreshToken() async {
     // TODO: implement refreshToken
     throw UnimplementedError();
   }

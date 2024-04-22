@@ -46,6 +46,7 @@ ApiListResponse<T> _$ApiListResponseFromJson<T>(
       message: json['message'] as String?,
       data: (json['data'] as List<dynamic>?)?.map(fromJsonT).toList(),
       isSuccess: json['isSuccess'] as bool,
+      total: json['total'] as int?,
     );
 
 Map<String, dynamic> _$ApiListResponseToJson<T>(
@@ -56,4 +57,5 @@ Map<String, dynamic> _$ApiListResponseToJson<T>(
       'message': instance.message,
       'data': instance.data?.map(toJsonT).toList(),
       'isSuccess': instance.isSuccess,
+      'total': instance.total,
     };

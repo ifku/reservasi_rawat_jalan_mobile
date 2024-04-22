@@ -93,7 +93,9 @@ class CodegenLoader extends AssetLoader{
     "serviceHour": "Service Hours",
     "reservationDate": "Reservation Date",
     "return": "RETURN",
-    "reservationInformation": "Reservation Information"
+    "reservationInformation": "Reservation Information",
+    "reservation_id": "Reservation ID",
+    "see_eticket": "SEE E-TICKET"
   },
   "exception": {
     "requestTimeOutException": "The server appears to be taking too long to answer. Please try again later.",
@@ -172,6 +174,15 @@ class CodegenLoader extends AssetLoader{
     "dontHaveAnAccount": "Don't have an account? Click ",
     "otpCode": "OTP Code",
     "otpCodeSent": "The OTP code has been sent to your email. Please check your inbox and enter the code here to proceed."
+  },
+  "historyScreen": {
+    "thereAreNoReservation": "There are No Reservations Yet",
+    "youHaveNotBooked": "You have not booked a service yet. Please start scheduling",
+    "makeReservation": "MAKE A RESERVATION"
+  },
+  "activityScreen": {
+    "thereAreNoActivities": "There are No Recent Activity",
+    "youHaveNotBooked": "You have not booked a service yet. Please start scheduling"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -253,7 +264,9 @@ static const Map<String,dynamic> id_ID = {
     "serviceHour": "Jam Pelayanan",
     "reservationDate": "Tanggal Reservasi",
     "return": "KEMBALI",
-    "reservationInformation": "Informasi Reservasi"
+    "reservationInformation": "Informasi Reservasi",
+    "reservation_id": "ID Pemesanan",
+    "see_eticket": "LIHAT E-TIKET"
   },
   "exception": {
     "requestTimeOutException": "Server tampaknya terlalu lama merespons. Silakan coba lagi nanti.",
@@ -332,6 +345,15 @@ static const Map<String,dynamic> id_ID = {
     "dontHaveAnAccount": "Tidak punya akun? Klik ",
     "otpCode": "Kode OTP",
     "otpCodeSent": "Kode OTP telah dikirimkan ke email Anda. Mohon periksa kotak masuk Anda dan masukkan kode tersebut di sini untuk melanjutkan."
+  },
+  "historyScreen": {
+    "thereAreNoReservation": "Belum Ada Pemesanan Nih!",
+    "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan",
+    "makeReservation": "LAKUKAN RESERVASI"
+  },
+  "activityScreen": {
+    "thereAreNoActivities": "Tidak Ada Aktivitas Terbaru",
+    "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

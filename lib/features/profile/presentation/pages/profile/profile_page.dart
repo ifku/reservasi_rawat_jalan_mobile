@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/components/under_construction.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_button.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -11,8 +11,11 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: UnderConstruction()
-    );
+    return Scaffold(
+        body: Center(
+            child: RRJPrimaryButton(
+      onPressed: () {},
+      child: const Text("Logout"),
+    )));
   }
 }

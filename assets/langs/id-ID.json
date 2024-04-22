@@ -77,7 +77,9 @@
     "serviceHour": "Jam Pelayanan",
     "reservationDate": "Tanggal Reservasi",
     "return": "KEMBALI",
-    "reservationInformation": "Informasi Reservasi"
+    "reservationInformation": "Informasi Reservasi",
+    "reservation_id": "ID Pemesanan",
+    "see_eticket": "LIHAT E-TIKET"
   },
   "exception": {
     "requestTimeOutException": "Server tampaknya terlalu lama merespons. Silakan coba lagi nanti.",
@@ -156,5 +158,14 @@
     "dontHaveAnAccount": "Tidak punya akun? Klik ",
     "otpCode": "Kode OTP",
     "otpCodeSent": "Kode OTP telah dikirimkan ke email Anda. Mohon periksa kotak masuk Anda dan masukkan kode tersebut di sini untuk melanjutkan."
+  },
+  "historyScreen": {
+    "thereAreNoReservation": "Belum Ada Pemesanan Nih!",
+    "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan",
+    "makeReservation": "LAKUKAN RESERVASI"
+  },
+  "activityScreen": {
+    "thereAreNoActivities": "Tidak Ada Aktivitas Terbaru",
+    "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan"
   }
 }
