@@ -5,6 +5,12 @@ sealed class CurrentReservationEvent extends Equatable {
 }
 
 final class GetCurrentReservation extends CurrentReservationEvent {
+
+  final String patientId;
+
+  const GetCurrentReservation({required this.patientId});
   @override
-  List<Object> get props => [];
+  List<Object> get props => [
+    patientId
+  ];
 }

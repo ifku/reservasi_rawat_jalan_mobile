@@ -10,9 +10,9 @@ class DoctorRemoteDataSource implements DoctorDatasource {
   final AppHttpClient client = locator<AppHttpClient>();
 
   @override
-  Future<Either<Exception, List<DoctorModel>>> getDoctorById(String id) async {
+  Future<Either<Exception, List<DoctorModel>>> getDoctorByClinicId(String id) async {
     final response = await client.get(
-      "${ApiConstants.doctorById}${id.toString()}",
+      "${ApiConstants.doctorByClinicId}$id",
     );
 
     return response.fold((error) => Left(error), (data) {

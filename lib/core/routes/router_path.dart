@@ -10,14 +10,15 @@ class RoutePath {
   static const String completeProfile = "/complete-profile";
 
   static const String home = '/';
-  static const String history = '/history';
-  static const String activity = '/activity';
-  static const String account = '/account';
-
   static const String clinicList = 'clinic';
   static const String clinicDoctorList = 'clinic-doctor';
   static const String doctorDetail = 'doctor-detail';
 
   static const String currentReservation = 'reservation';
   static const String currentReservationDetail = 'reservation-detail';
+
+  static const String history = '/history';
+  static const String activity = '/activity';
+  static const String account = '/account';
+  static const String detailAccount = 'detail-account';
 }

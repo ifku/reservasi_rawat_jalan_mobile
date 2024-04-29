@@ -1,40 +1,31 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_outlined_button.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_button.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 
-class RRJConfirmationDialog extends StatelessWidget {
-  const RRJConfirmationDialog({
-    super.key,
-    required this.title,
-    required this.message,
-    required this.icon,
-    this.iconColor,
-    this.contentPadding,
-    this.onSubmit,
-    this.onCancel,
-    this.submitButtonColor,
-    this.cancelTextColor,
-    this.cancelBorderColor,
-    this.submitButtonTitle,
-    this.cancelButtonTitle,
-  });
+class RRJInfoDialog extends StatelessWidget {
+  const RRJInfoDialog(
+      {super.key,
+      required this.title,
+      required this.message,
+      required this.icon,
+      this.iconColor,
+      this.contentPadding,
+      this.onClose,
+      this.closeButtonColor,
+      this.buttonTextColor,
+      this.cancelBorderColor});
 
   final String title;
   final String message;
   final String icon;
   final Color? iconColor;
   final EdgeInsetsGeometry? contentPadding;
-  final Color? submitButtonColor;
-  final Color? cancelTextColor;
+  final Color? closeButtonColor;
+  final Color? buttonTextColor;
   final Color? cancelBorderColor;
-  final String? submitButtonTitle;
-  final String? cancelButtonTitle;
-  final void Function()? onSubmit;
-  final void Function()? onCancel;
+  final void Function()? onClose;
 
   @override
   Widget build(BuildContext context) {
@@ -83,33 +74,19 @@ class RRJConfirmationDialog extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                    child: RRJOutlinedButton(
-                  onPressed: onCancel ?? () => context.pop(),
-                  foregroundColor:
-                      cancelTextColor ?? Theme.of(context).colorScheme.error,
-                  borderColor:
-                      cancelBorderColor ?? Theme.of(context).colorScheme.error,
-                  child: Text(
-                    LocaleKeys.dialog_cancel.tr(),
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                          color: Theme.of(context).colorScheme.error,
-                        ),
-                  ),
-                )),
-                const SizedBox(width: 16.0),
-                Expanded(
                     child: RRJPrimaryButton(
-                  onPressed: onSubmit,
+                  onPressed: onClose ?? () => Navigator.of(context).pop(),
                   disabledBackgroundColor:
-                      submitButtonColor ?? Theme.of(context).colorScheme.error,
+                      closeButtonColor ?? Theme.of(context).colorScheme.error,
                   disabledForegroundColor:
                       Theme.of(context).colorScheme.onError,
                   backgroundColor:
-                      submitButtonColor ?? Theme.of(context).colorScheme.error,
+                      closeButtonColor ?? Theme.of(context).colorScheme.error,
                   child: Text(
-                    submitButtonTitle ?? LocaleKeys.dialog_yes.tr(),
+                    LocaleKeys.dialog_close.tr(),
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                          color: Theme.of(context).colorScheme.onError,
+                          color: buttonTextColor ??
+                              Theme.of(context).colorScheme.onError,
                         ),
                   ),
                 )),

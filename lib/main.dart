@@ -1,17 +1,18 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/gen/codegen_loader.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/injection/bloc_providers.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/theme.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/app_database.dart';
-
-import 'core/gen/codegen_loader.g.dart';
+import 'package:reservasi_rawat_jalan_mobile/firebase_options.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: ".env");
@@ -20,6 +21,9 @@ Future<void> main() async {
   await AppDatabase().initialize();
   await setupServiceLocator();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     EasyLocalization(
       path: 'assets/langs',
@@ -57,13 +61,13 @@ class MyApp extends StatelessWidget {
       theme: RRJThemeData.lightTheme,
       darkTheme: RRJThemeData.darkTheme,
     );
-    /* return MaterialApp(
+    /*return MaterialApp(
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       locale: context.locale,
       theme: RRJThemeData.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const DummyPage(),
+      home: const ProfilePage(),
     );*/
   }
 }

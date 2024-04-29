@@ -11,9 +11,10 @@ class CurrentReservationRemoteDataSource
   final AppHttpClient client = locator<AppHttpClient>();
 
   @override
-  Future<Either<Exception, List<ReservationDetailModel>>>
-      getCurrentReservation() async {
-    final response = await client.get(ApiConstants.reservationByPatientId);
+  Future<Either<Exception, List<ReservationDetailModel>>> getCurrentReservation(
+      String patientId) async {
+    final response =
+        await client.get(ApiConstants.reservationByPatientId + patientId);
     return response.fold((error) => Left(error), (data) {
       final responseObject = ApiListResponse<ReservationDetailModel>.fromJson(
           data, ReservationDetailModel.fromJson);

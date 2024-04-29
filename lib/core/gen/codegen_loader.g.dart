@@ -77,7 +77,7 @@ class CodegenLoader extends AssetLoader{
   },
   "reservationScreen": {
     "noBook": "You have not booked a service yet. Please start scheduling",
-    "makeAReservation": "Make a Reservation",
+    "makeAReservation": "MAKE A RESERVATION",
     "reservation": "Reservation",
     "noReservation": "No Reservation Yet",
     "yourReservationNumber": "Your Reservation Number",
@@ -95,7 +95,8 @@ class CodegenLoader extends AssetLoader{
     "return": "RETURN",
     "reservationInformation": "Reservation Information",
     "reservation_id": "Reservation ID",
-    "see_eticket": "SEE E-TICKET"
+    "see_eticket": "SEE E-TICKET",
+    "seeETicket": "See E-TICKET"
   },
   "exception": {
     "requestTimeOutException": "The server appears to be taking too long to answer. Please try again later.",
@@ -148,7 +149,11 @@ class CodegenLoader extends AssetLoader{
     "confirmationOfChangeMessage": "Are you sure you want to keep the changes changes?",
     "verify": "Verify",
     "verifyMessage": "Get all services by verifying first.",
-    "cancel": "Cancel"
+    "cancel": "CANCEL",
+    "close": "CLOSE",
+    "yes": "YES",
+    "save": "SAVE",
+    "back": "BACK"
   },
   "common": {
     "underConstruction": "Coming Soon"
@@ -178,11 +183,24 @@ class CodegenLoader extends AssetLoader{
   "historyScreen": {
     "thereAreNoReservation": "There are No Reservations Yet",
     "youHaveNotBooked": "You have not booked a service yet. Please start scheduling",
-    "makeReservation": "MAKE A RESERVATION"
+    "makeReservation": "MAKE A RESERVATION",
+    "history": "Histor"
   },
   "activityScreen": {
     "thereAreNoActivities": "There are No Recent Activity",
-    "youHaveNotBooked": "You have not booked a service yet. Please start scheduling"
+    "youHaveNotBooked": "You have not booked a service yet. Please start scheduling",
+    "makeAReservation": "MAKE A RESERVAT",
+    "activity": "Activity"
+  },
+  "completeProfile": {
+    "email": "Email",
+    "nationalIdentityNumber": "National Identity Number",
+    "phoneNumber": "Phone Number",
+    "address": "Addres",
+    "dateOfBirth": "Date of Birth",
+    "completeProfile": "Complete Profile",
+    "fullname": "Fullnam",
+    "gender": "Gender"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -248,7 +266,7 @@ static const Map<String,dynamic> id_ID = {
   },
   "reservationScreen": {
     "noBook": "Anda belum memesan layanan. Silahkan mulai untuk melakukan penjadwalan",
-    "makeAReservation": "Lakukan Reservasi",
+    "makeAReservation": "LAKUKAN RESERVASI",
     "reservation": "Reservasi",
     "noReservation": "Belum Ada Reservasi",
     "yourReservationNumber": "Nomor Reservasi Anda",
@@ -266,7 +284,8 @@ static const Map<String,dynamic> id_ID = {
     "return": "KEMBALI",
     "reservationInformation": "Informasi Reservasi",
     "reservation_id": "ID Pemesanan",
-    "see_eticket": "LIHAT E-TIKET"
+    "see_eticket": "LIHAT E-TIKET",
+    "seeETicket": "Lihat E-TICKET"
   },
   "exception": {
     "requestTimeOutException": "Server tampaknya terlalu lama merespons. Silakan coba lagi nanti.",
@@ -319,7 +338,11 @@ static const Map<String,dynamic> id_ID = {
     "confirmationOfChangeMessage": "Apakah Anda yakin untuk menyimpan perubahan yang ada?",
     "verify": "Lakukan Verifikasi",
     "verifyMessage": "Dapatkan seluruh pelayanan dengan melakukan verifikasi terlebih dahulu.",
-    "cancel": "Kembali"
+    "cancel": "BATAL",
+    "close": "TUTUP",
+    "yes": "IYA",
+    "save": "SIMPAN",
+    "back": "KEMBALI"
   },
   "common": {
     "underConstruction": "Segera Hadir"
@@ -349,11 +372,24 @@ static const Map<String,dynamic> id_ID = {
   "historyScreen": {
     "thereAreNoReservation": "Belum Ada Pemesanan Nih!",
     "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan",
-    "makeReservation": "LAKUKAN RESERVASI"
+    "makeReservation": "LAKUKAN RESERVASI",
+    "history": "Riwayat"
   },
   "activityScreen": {
     "thereAreNoActivities": "Tidak Ada Aktivitas Terbaru",
-    "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan"
+    "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan",
+    "makeAReservation": "LAKUKAN RESERVASI",
+    "activity": "Aktivitas"
+  },
+  "completeProfile": {
+    "email": "Email ",
+    "nationalIdentityNumber": "Nomor Induk Kependudukan (NIK)",
+    "phoneNumber": "Nomor Telepon",
+    "address": "Alamat",
+    "dateOfBirth": "Tanggal Lahir",
+    "completeProfile": "Lengkapi Profil",
+    "fullname": "Nama Lengkap",
+    "gender": "Jenis Kelamin"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

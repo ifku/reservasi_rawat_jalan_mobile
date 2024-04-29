@@ -61,7 +61,7 @@
   },
   "reservationScreen": {
     "noBook": "You have not booked a service yet. Please start scheduling",
-    "makeAReservation": "Make a Reservation",
+    "makeAReservation": "MAKE A RESERVATION",
     "reservation": "Reservation",
     "noReservation": "No Reservation Yet",
     "yourReservationNumber": "Your Reservation Number",
@@ -79,7 +79,8 @@
     "return": "RETURN",
     "reservationInformation": "Reservation Information",
     "reservation_id": "Reservation ID",
-    "see_eticket": "SEE E-TICKET"
+    "see_eticket": "SEE E-TICKET",
+    "seeETicket": "See E-TICKET"
   },
   "exception": {
     "requestTimeOutException": "The server appears to be taking too long to answer. Please try again later.",
@@ -132,7 +133,11 @@
     "confirmationOfChangeMessage": "Are you sure you want to keep the changes changes?",
     "verify": "Verify",
     "verifyMessage": "Get all services by verifying first.",
-    "cancel": "Cancel"
+    "cancel": "CANCEL",
+    "close": "CLOSE",
+    "yes": "YES",
+    "save": "SAVE",
+    "back": "BACK"
   },
   "common": {
     "underConstruction": "Coming Soon"
@@ -162,10 +167,23 @@
   "historyScreen": {
     "thereAreNoReservation": "There are No Reservations Yet",
     "youHaveNotBooked": "You have not booked a service yet. Please start scheduling",
-    "makeReservation": "MAKE A RESERVATION"
+    "makeReservation": "MAKE A RESERVATION",
+    "history": "Histor"
   },
   "activityScreen": {
     "thereAreNoActivities": "There are No Recent Activity",
-    "youHaveNotBooked": "You have not booked a service yet. Please start scheduling"
+    "youHaveNotBooked": "You have not booked a service yet. Please start scheduling",
+    "makeAReservation": "MAKE A RESERVAT",
+    "activity": "Activity"
+  },
+  "completeProfile": {
+    "email": "Email",
+    "nationalIdentityNumber": "National Identity Number",
+    "phoneNumber": "Phone Number",
+    "address": "Addres",
+    "dateOfBirth": "Date of Birth",
+    "completeProfile": "Complete Profile",
+    "fullname": "Fullnam",
+    "gender": "Gender"
   }
 }

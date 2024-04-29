@@ -61,7 +61,7 @@
   },
   "reservationScreen": {
     "noBook": "Anda belum memesan layanan. Silahkan mulai untuk melakukan penjadwalan",
-    "makeAReservation": "Lakukan Reservasi",
+    "makeAReservation": "LAKUKAN RESERVASI",
     "reservation": "Reservasi",
     "noReservation": "Belum Ada Reservasi",
     "yourReservationNumber": "Nomor Reservasi Anda",
@@ -79,7 +79,8 @@
     "return": "KEMBALI",
     "reservationInformation": "Informasi Reservasi",
     "reservation_id": "ID Pemesanan",
-    "see_eticket": "LIHAT E-TIKET"
+    "see_eticket": "LIHAT E-TIKET",
+    "seeETicket": "Lihat E-TICKET"
   },
   "exception": {
     "requestTimeOutException": "Server tampaknya terlalu lama merespons. Silakan coba lagi nanti.",
@@ -132,7 +133,11 @@
     "confirmationOfChangeMessage": "Apakah Anda yakin untuk menyimpan perubahan yang ada?",
     "verify": "Lakukan Verifikasi",
     "verifyMessage": "Dapatkan seluruh pelayanan dengan melakukan verifikasi terlebih dahulu.",
-    "cancel": "Kembali"
+    "cancel": "BATAL",
+    "close": "TUTUP",
+    "yes": "IYA",
+    "save": "SIMPAN",
+    "back": "KEMBALI"
   },
   "common": {
     "underConstruction": "Segera Hadir"
@@ -162,10 +167,23 @@
   "historyScreen": {
     "thereAreNoReservation": "Belum Ada Pemesanan Nih!",
     "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan",
-    "makeReservation": "LAKUKAN RESERVASI"
+    "makeReservation": "LAKUKAN RESERVASI",
+    "history": "Riwayat"
   },
   "activityScreen": {
     "thereAreNoActivities": "Tidak Ada Aktivitas Terbaru",
-    "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan"
+    "youHaveNotBooked": "Anda belum memesan layanan. Silakan mulai untuk melakukan penjadwalan",
+    "makeAReservation": "LAKUKAN RESERVASI",
+    "activity": "Aktivitas"
+  },
+  "completeProfile": {
+    "email": "Email ",
+    "nationalIdentityNumber": "Nomor Induk Kependudukan (NIK)",
+    "phoneNumber": "Nomor Telepon",
+    "address": "Alamat",
+    "dateOfBirth": "Tanggal Lahir",
+    "completeProfile": "Lengkapi Profil",
+    "fullname": "Nama Lengkap",
+    "gender": "Jenis Kelamin"
   }
 }

@@ -15,15 +15,19 @@ final class CurrentReservationEmpty extends CurrentReservationState {
 }
 
 final class CurrentReservationAvailable extends CurrentReservationState {
+  final List<ReservationDetailEntity> data;
+
+  const CurrentReservationAvailable({required this.data});
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [data];
 }
 
 final class CurrentReservationError extends CurrentReservationState {
   final String error;
 
   const CurrentReservationError({required this.error});
+
   @override
   List<Object> get props => [error];
 }
-

@@ -16,20 +16,30 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: Text(
+          "Detail Profile",
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(18.0, 36.0, 18.0, 16.0),
+            padding: const EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 16.0),
             child: Column(children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                    Assets.icons.iconInformation.svg(
-                      colorFilter: ColorFilter.mode(
-                        Theme.of(context).colorScheme.primary,
-                        BlendMode.srcIn,
-                      ),
+                  Assets.icons.iconInformation.svg(
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.primary,
+                      BlendMode.srcIn,
                     ),
+                  ),
                   const SizedBox(width: 14.0),
                   Expanded(
                     child: Text(

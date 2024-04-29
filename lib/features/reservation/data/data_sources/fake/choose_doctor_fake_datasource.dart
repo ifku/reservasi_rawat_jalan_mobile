@@ -12,7 +12,7 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
         doctorAge: 28,
         doctorRating: '4',
         doctorImage:
-        'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745012/reservasi-rawat-jalan/icons/doctors/image_doctor7_saom8k.jpg',
+            'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745012/reservasi-rawat-jalan/icons/doctors/image_doctor7_saom8k.jpg',
         clinicId: '8215c886-b2a4-4688-b96b-c823476fbe5d',
         isAvailable: true,
         clinicName: 'Klinik Umum',
@@ -26,7 +26,7 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
         doctorAge: 22,
         doctorRating: '4',
         doctorImage:
-        'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745009/reservasi-rawat-jalan/icons/doctors/image_doctor5_yc4bem.jpg',
+            'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745009/reservasi-rawat-jalan/icons/doctors/image_doctor5_yc4bem.jpg',
         clinicId: '8215c886-b2a4-4688-b96b-c823476fbe5d',
         isAvailable: true,
         clinicName: 'Klinik Umum',
@@ -40,7 +40,7 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
         doctorAge: 32,
         doctorRating: '5',
         doctorImage:
-        'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745005/reservasi-rawat-jalan/icons/doctors/image_doctor6_mhtiw1.jpg',
+            'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745005/reservasi-rawat-jalan/icons/doctors/image_doctor6_mhtiw1.jpg',
         clinicId: '8215c886-b2a4-4688-b96b-c823476fbe5d',
         isAvailable: true,
         clinicName: 'Klinik Umum',
@@ -54,7 +54,7 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
         doctorAge: 40,
         doctorRating: '5',
         doctorImage:
-        'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745006/reservasi-rawat-jalan/icons/doctors/image_doctor3_smkqdr.jpg',
+            'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745006/reservasi-rawat-jalan/icons/doctors/image_doctor3_smkqdr.jpg',
         clinicId: '8215c886-b2a4-4688-b96b-c823476fbe5d',
         isAvailable: true,
         clinicName: 'Klinik Umum',
@@ -68,7 +68,7 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
         doctorAge: 32,
         doctorRating: '4.2',
         doctorImage:
-        'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745005/reservasi-rawat-jalan/icons/doctors/image_doctor1_ahztja.jpg',
+            'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745005/reservasi-rawat-jalan/icons/doctors/image_doctor1_ahztja.jpg',
         clinicId: '8215c886-b2a4-4688-b96b-c823476fbe5d',
         isAvailable: true,
         clinicName: 'Klinik Umum',
@@ -82,7 +82,7 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
         doctorAge: 33,
         doctorRating: '4.8',
         doctorImage:
-        'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745010/reservasi-rawat-jalan/icons/doctors/image_doctor2_rhqsxc.jpg',
+            'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745010/reservasi-rawat-jalan/icons/doctors/image_doctor2_rhqsxc.jpg',
         clinicId: '8215c886-b2a4-4688-b96b-c823476fbe5d',
         isAvailable: false,
         clinicName: 'Klinik Umum',
@@ -96,7 +96,7 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
         doctorAge: 33,
         doctorRating: '4.8',
         doctorImage:
-        'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745008/reservasi-rawat-jalan/icons/doctors/image_doctor4_niyiuo.jpg',
+            'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745008/reservasi-rawat-jalan/icons/doctors/image_doctor4_niyiuo.jpg',
         clinicId: '8215c886-b2a4-4688-b96b-c823476fbe5d',
         isAvailable: false,
         clinicName: 'Klinik Umum',
@@ -110,19 +110,20 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
         doctorAge: 33,
         doctorRating: '4.8',
         doctorImage:
-        'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745008/reservasi-rawat-jalan/icons/doctors/image_doctor4_niyiuo.jpg',
+            'https://res.cloudinary.com/dr0pg1lxr/image/upload/v1710745008/reservasi-rawat-jalan/icons/doctors/image_doctor4_niyiuo.jpg',
         clinicId: 'f5071ce5-4191-42b9-ab9f-4d63522527c0',
         isAvailable: false,
         clinicName: 'Penyakit Dalam',
         createdAt: DateTime(2024 - 03 - 13),
         updatedAt: DateTime(2024 - 03 - 13)),
   ];
+
   @override
-  Future<Either<Exception, List<DoctorModel>>> getDoctorById(String id) async {
+  Future<Either<Exception, List<DoctorModel>>> getDoctorByClinicId(
+      String id) async {
     await Future.delayed(const Duration(seconds: 3));
-    List<DoctorModel> doctorsInClinic = doctorModels
-        .where((doctor) => doctor.clinicId == id)
-        .toList();
+    List<DoctorModel> doctorsInClinic =
+        doctorModels.where((doctor) => doctor.clinicId == id).toList();
     return Right(doctorsInClinic ?? []);
   }
 }

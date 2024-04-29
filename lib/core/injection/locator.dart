@@ -26,6 +26,11 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/save
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/send_otp_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/sign_in_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/sign_up_usecase.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/data/data_sources/current_reservation_dataasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/data/data_sources/remote/current_reservation_remote_datasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/data/repositories/current_reservation_repository_impl.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain/repositories/current_reservation_repository.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain/use_cases/get_current_reservation_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/data/data_sources/fake/news_fake_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/data/data_sources/fake/upcoming_schedule_fake_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/data/data_sources/news_datasource.dart';
@@ -105,4 +110,12 @@ Future<void> setupServiceLocator() async {
   locator.registerSingleton<UserRepository>(UserRepositoryImpl());
   locator.registerSingleton<SaveUserUseCase>(SaveUserUseCase());
   locator.registerSingleton<GetUserUseCase>(GetUserUseCase());
+
+  /*Current Reservation*/
+  locator.registerSingleton<CurrentReservationDataSource>(
+      CurrentReservationRemoteDataSource());
+  locator.registerSingleton<CurrentReservationRepository>(
+      CurrentReservationRepositoryImpl());
+  locator.registerSingleton<GetCurrentReservationUseCase>(
+      GetCurrentReservationUseCase());
 }

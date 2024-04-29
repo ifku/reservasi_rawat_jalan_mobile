@@ -3,6 +3,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/on
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/otp/bloc/otp_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_in/bloc/sign_in_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_up/bloc/sign_up_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation/bloc/current_reservation_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/presentation/pages/bloc/home_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/bloc/choose_doctor_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/bloc/clinic_bloc.dart';
@@ -17,6 +18,8 @@ class BlocProviders {
       BlocProvider<OtpBloc>(create: (context) => OtpBloc()),
       BlocProvider<SignInBloc>(create: (context) => SignInBloc()),
       BlocProvider<SignUpBloc>(create: (context) => SignUpBloc()),
+      BlocProvider<CurrentReservationBloc>(
+          create: (context) => CurrentReservationBloc()),
     ];
   }
 }

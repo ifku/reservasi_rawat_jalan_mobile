@@ -10,6 +10,6 @@ class GetDoctorByClinicIdUseCase
 
   @override
   Future<Either<Exception, List<DoctorEntity>>> call(String params) async {
-    return await doctorRepository.getDoctorById(params);
+    return await doctorRepository.getDoctorByClinicId(params);
   }
 }

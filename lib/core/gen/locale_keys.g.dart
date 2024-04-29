@@ -76,6 +76,7 @@ abstract class  LocaleKeys {
   static const reservationScreen_reservationInformation = 'reservationScreen.reservationInformation';
   static const reservationScreen_reservation_id = 'reservationScreen.reservation_id';
   static const reservationScreen_see_eticket = 'reservationScreen.see_eticket';
+  static const reservationScreen_seeETicket = 'reservationScreen.seeETicket';
   static const reservationScreen = 'reservationScreen';
   static const exception_requestTimeOutException = 'exception.requestTimeOutException';
   static const exception_requestCancelledException = 'exception.requestCancelledException';
@@ -122,6 +123,10 @@ abstract class  LocaleKeys {
   static const dialog_verify = 'dialog.verify';
   static const dialog_verifyMessage = 'dialog.verifyMessage';
   static const dialog_cancel = 'dialog.cancel';
+  static const dialog_close = 'dialog.close';
+  static const dialog_yes = 'dialog.yes';
+  static const dialog_save = 'dialog.save';
+  static const dialog_back = 'dialog.back';
   static const dialog = 'dialog';
   static const common_underConstruction = 'common.underConstruction';
   static const common = 'common';
@@ -149,9 +154,21 @@ abstract class  LocaleKeys {
   static const historyScreen_thereAreNoReservation = 'historyScreen.thereAreNoReservation';
   static const historyScreen_youHaveNotBooked = 'historyScreen.youHaveNotBooked';
   static const historyScreen_makeReservation = 'historyScreen.makeReservation';
+  static const historyScreen_history = 'historyScreen.history';
   static const historyScreen = 'historyScreen';
   static const activityScreen_thereAreNoActivities = 'activityScreen.thereAreNoActivities';
   static const activityScreen_youHaveNotBooked = 'activityScreen.youHaveNotBooked';
+  static const activityScreen_makeAReservation = 'activityScreen.makeAReservation';
+  static const activityScreen_activity = 'activityScreen.activity';
   static const activityScreen = 'activityScreen';
+  static const completeProfile_email = 'completeProfile.email';
+  static const completeProfile_nationalIdentityNumber = 'completeProfile.nationalIdentityNumber';
+  static const completeProfile_phoneNumber = 'completeProfile.phoneNumber';
+  static const completeProfile_address = 'completeProfile.address';
+  static const completeProfile_dateOfBirth = 'completeProfile.dateOfBirth';
+  static const completeProfile_completeProfile = 'completeProfile.completeProfile';
+  static const completeProfile_fullname = 'completeProfile.fullname';
+  static const completeProfile_gender = 'completeProfile.gender';
+  static const completeProfile = 'completeProfile';
 
 }

@@ -36,7 +36,9 @@ class _SignInPageState extends State<SignInPage> {
         listener: (context, state) {
           if (state is SignInSuccess) {
             hideRRJLoading(context);
-            context.goNamed(RouteName.otp, extra: _emailController.text);
+            context.goNamed(RouteName.otp, extra: {
+              "email": _emailController.text,
+            });
           }
           if (state is SignInLoading) {
             showRRJLoading(context,
@@ -118,7 +120,7 @@ class _SignInPageState extends State<SignInPage> {
                           ),
                           const SizedBox(height: 16),
                           RRJInputTextField(
-                            label: "Email",
+                            label: LocaleKeys.auth_email.tr(),
                             controller: _emailController,
                             keyboardType: TextInputType.emailAddress,
                             borderColor: Theme.of(context)

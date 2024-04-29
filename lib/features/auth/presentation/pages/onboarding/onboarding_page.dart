@@ -21,9 +21,9 @@ class OnboardingPage extends StatelessWidget {
   ];
 
   final List<String> title = [
-    LocaleKeys.onboardingScreen_onboarding4Title,
-    LocaleKeys.onboardingScreen_onboarding4Title,
-    LocaleKeys.onboardingScreen_onboarding4Title,
+    LocaleKeys.onboardingScreen_onboarding1Title,
+    LocaleKeys.onboardingScreen_onboarding2Title,
+    LocaleKeys.onboardingScreen_onboarding3Title,
     LocaleKeys.onboardingScreen_onboarding4Title,
   ];
   final List<String> subtitle = [

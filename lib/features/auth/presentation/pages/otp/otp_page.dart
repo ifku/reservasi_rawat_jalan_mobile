@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,9 +12,10 @@ import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/otp/bloc/otp_bloc.dart';
 
 class OtpPage extends StatefulWidget {
-  const OtpPage({super.key, this.email});
+  const OtpPage({super.key, required this.email, this.nik});
 
-  final String? email;
+  final String email;
+  final String? nik;
 
   @override
   State<OtpPage> createState() => _OtpPageState();
@@ -35,7 +34,10 @@ class _OtpPageState extends State<OtpPage> {
             }
             if (state is UserProfileIncomplete) {
               hideRRJLoading(context);
-              context.goNamed(RouteName.completeProfile);
+              context.goNamed(RouteName.completeProfile, extra: {
+                "email": widget.email,
+                "nik": widget.nik,
+              });
             }
             if (state is VerifyOtpLoading) {
               showRRJLoading(context,
@@ -101,7 +103,7 @@ class _OtpPageState extends State<OtpPage> {
                       ),
                       const SizedBox(height: 14),
                       RRJPinInputField(
-                        sendDestination: widget.email ?? "",
+                        sendDestination: widget.email,
                         submitButtonHeight: 44.0,
                         initialCoolingDown: true,
                         subtitle: LocaleKeys.auth_otpSendCode.tr(),
@@ -111,10 +113,9 @@ class _OtpPageState extends State<OtpPage> {
                         padding: EdgeInsets.zero,
                         onChanged: (value) {},
                         onCompleted: (value) {
-                          log("value $value");
                           context.read<OtpBloc>().add(
                                 ValidateOtp(
-                                  email: widget.email ?? "",
+                                  email: widget.email,
                                   otp: value,
                                 ),
                               );

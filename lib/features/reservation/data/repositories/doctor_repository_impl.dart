@@ -8,7 +8,7 @@ class DoctorRepositoryImpl implements DoctorRepository {
   final DoctorDatasource doctorDatasource = locator<DoctorDatasource>();
 
   @override
-  Future<Either<Exception, List<DoctorModel>>> getDoctorById(String id) async {
-    return await doctorDatasource.getDoctorById(id);
+  Future<Either<Exception, List<DoctorModel>>> getDoctorByClinicId(String id) async {
+    return await doctorDatasource.getDoctorByClinicId(id);
   }
 }

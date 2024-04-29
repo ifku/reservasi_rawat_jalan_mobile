@@ -39,7 +39,10 @@ class _SignUpPageState extends State<SignUpPage> {
         listener: (context, state) {
           if (state is SignUpSuccess) {
             hideRRJLoading(context);
-            context.goNamed(RouteName.otp, extra: _emailController.text);
+            context.goNamed(RouteName.otp, extra: {
+              "email": _emailController.text,
+              "nik": _nikController.text,
+            });
           }
           if (state is SignUpLoading) {
             showRRJLoading(context,

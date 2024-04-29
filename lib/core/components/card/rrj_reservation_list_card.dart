@@ -57,7 +57,7 @@ class RRJReservationListCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "ID Pemesanan",
+                        LocaleKeys.reservationScreen_reservation_id.tr(),
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               color: Theme.of(context)
                                   .colorScheme
@@ -119,12 +119,13 @@ class RRJReservationListCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ReservationInfoItem(
-                            title: "Nama Pasieasddddddddddddddddddddddasdn",
+                            title:
+                                LocaleKeys.reservationScreen_patientName.tr(),
                             icon: Assets.icons.iconPerson3.path,
                             content: patientName),
                         const SizedBox(height: 12),
                         ReservationInfoItem(
-                            title: "Poli Layanan",
+                            title: LocaleKeys.reservationScreen_clinic.tr(),
                             icon: Assets.icons.iconLocation.path,
                             content: clinic),
                       ],
@@ -134,12 +135,13 @@ class RRJReservationListCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ReservationInfoItem(
-                            title: "Jam Pelayanan",
+                            title:
+                                LocaleKeys.reservationScreen_serviceHour.tr(),
                             icon: Assets.icons.iconClock.path,
                             content: serviceHour),
                         const SizedBox(height: 12),
                         ReservationInfoItem(
-                            title: "Jam Layanan",
+                            title: LocaleKeys.reservationScreen_doctor.tr(),
                             icon: Assets.icons.iconPerson3.path,
                             content: doctorName),
                       ],
@@ -153,13 +155,13 @@ class RRJReservationListCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
             child: RRJOutlinedButton(
-              onPressed: () {},
+              onPressed: onPressed,
               width: MediaQuery.of(context).size.width,
               borderColor: Theme.of(context).colorScheme.primary,
               backgroundColor:
                   Theme.of(context).colorScheme.primary.withOpacity(0.1),
               child: Text(
-                "Lihat E-TIKET",
+                LocaleKeys.reservationScreen_seeETicket.tr(),
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                     ),

@@ -190,6 +190,10 @@ class $AssetsIconsGen {
   SvgGenImage get iconUserGroup =>
       const SvgGenImage('assets/icons/icon_user_group.svg');
 
+  /// File path: assets/icons/icon_user_group2.svg
+  SvgGenImage get iconUserGroup2 =>
+      const SvgGenImage('assets/icons/icon_user_group2.svg');
+
   /// File path: assets/icons/icon_uterus.svg
   SvgGenImage get iconUterus =>
       const SvgGenImage('assets/icons/icon_uterus.svg');
@@ -248,6 +252,7 @@ class $AssetsIconsGen {
         iconTrash,
         iconUser,
         iconUserGroup,
+        iconUserGroup2,
         iconUterus,
         iconWallet
       ];
@@ -255,6 +260,10 @@ class $AssetsIconsGen {
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/image_activity.svg
+  SvgGenImage get imageActivity =>
+      const SvgGenImage('assets/images/image_activity.svg');
 
   /// File path: assets/images/image_attendance.svg
   SvgGenImage get imageAttendance =>
@@ -267,6 +276,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/image_example.png
   AssetGenImage get imageExample =>
       const AssetGenImage('assets/images/image_example.png');
+
+  /// File path: assets/images/image_history.svg
+  SvgGenImage get imageHistory =>
+      const SvgGenImage('assets/images/image_history.svg');
 
   /// File path: assets/images/image_login.jpg
   AssetGenImage get imageLogin =>
@@ -305,9 +318,11 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
+        imageActivity,
         imageAttendance,
         imageDoctorExample,
         imageExample,
+        imageHistory,
         imageLogin,
         imageLogo,
         imageOnboarding1,

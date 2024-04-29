@@ -17,6 +17,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presen
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation_detail/current_reservation_detail_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile/profile_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile_detail/detail_profile_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/choose_doctor_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/clinic_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/splash/splash_page.dart';
@@ -135,6 +136,18 @@ class AppRouter {
                 state: state,
               );
             },
+            routes: [
+              GoRoute(
+                path: RoutePath.detailAccount,
+                name: RouteName.detailAccount,
+                pageBuilder: (context, state) {
+                  return canvas(
+                    child: const ProfileDetailPage(),
+                    state: state,
+                  );
+                },
+              ),
+            ]
           ),
         ]),
       ],
@@ -189,9 +202,12 @@ class AppRouter {
             path: RoutePath.otp,
             name: RouteName.otp,
             pageBuilder: (context, state) {
+              final Map<String, String?> extraData =
+                  state.extra as Map<String, String?>;
               return canvas(
                 child: OtpPage(
-                  email: state.extra as String,
+                  email: extraData['email'] as String,
+                  nik: extraData['nik'],
                 ),
                 state: state,
               );
@@ -202,8 +218,13 @@ class AppRouter {
         path: RoutePath.completeProfile,
         name: RouteName.completeProfile,
         pageBuilder: (context, state) {
+          final Map<String, String?> extraData =
+              state.extra as Map<String, String?>;
           return canvas(
-            child: const CompleteProfilePage(),
+            child: CompleteProfilePage(
+              email: extraData['email'] as String,
+              nik: extraData['nik'],
+            ),
             state: state,
           );
         }),
