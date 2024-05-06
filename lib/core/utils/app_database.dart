@@ -24,7 +24,7 @@ class AppDatabase {
         directory: dir.path, inspector: true);
     _isInitialized = true;
 
-    log('Database initialized $_isInitialized');
+    log('Isar Database initialized $_isInitialized');
   }
 
   Isar get isar => _isar;

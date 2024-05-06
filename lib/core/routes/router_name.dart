@@ -13,7 +13,7 @@ class RouteName {
 
   static const String clinicList = 'clinic-list';
   static const String clinicDoctorList = 'clinic-doctor';
-  static const String doctorDetail = 'doctor-detail';
+  static const String createReservation = 'create-reservation';
 
   static const String currentReservation = 'current-reservation';
   static const String currentReservationDetail = 'current-reservation-detail';
@@ -22,5 +22,4 @@ class RouteName {
   static const String activity = 'activity';
   static const String account = 'account';
   static const String detailAccount = 'detail-account';
-
 }

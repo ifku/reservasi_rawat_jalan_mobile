@@ -1,11 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/base_shimmer.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/bottom_sheet/rrj_choose_doctor_bottom_sheet.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/bottom_sheet/show_rrj_bottom_sheet.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/card/rrj_doctor_card.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/bloc/choose_doctor_bloc.dart';
 
 class ChooseDoctorPage extends StatefulWidget {
@@ -136,7 +138,10 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
                                   doctorImage: state.doctor[index].doctorImage,
                                   doctorPayment: "",
                                   isAvailable: state.doctor[index].isAvailable,
-                                  onChooseDoctor: () {},
+                                  onChooseDoctor: () {
+                                    context
+                                        .pushNamed(RouteName.createReservation);
+                                  },
                                 )),
                             margin: const EdgeInsets.only(bottom: 16),
                           ),

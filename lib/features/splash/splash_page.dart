@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/repositories/onboard_repository.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -10,6 +12,8 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  final OnboardRepository onboardRepository = locator<OnboardRepository>();
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -23,9 +27,18 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) {
+      _redirectToNextScreen();
+    });
+  }
+
+  Future<void> _redirectToNextScreen() async {
+    final isOnboarded = await onboardRepository.getOnboardStatus();
+    if (mounted) {
+      if (isOnboarded) {
+        context.goNamed(RouteName.signIn);
+      } else {
         context.goNamed(RouteName.onboarding);
       }
-    });
+    }
   }
 }

@@ -10,3 +10,12 @@ class OnboardingPageChangedEvent extends OnboardingEvent {
   @override
   List<Object> get props => [];
 }
+
+class OnboardingFinished extends OnboardingEvent {
+  final bool isOnboarded;
+
+  const OnboardingFinished({required this.isOnboarded});
+
+  @override
+  List<Object> get props => [isOnboarded];
+}

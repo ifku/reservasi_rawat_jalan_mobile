@@ -7,15 +7,19 @@ import 'package:reservasi_rawat_jalan_mobile/core/network/dio_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/app_database.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/auth_datasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/local/onboard_local_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/local/token_local_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/local/user_local_datasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/onboard_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/remote/auth_remote_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/token_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/user_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/data/repositories/onboard_repository_impl.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/repositories/token_repository_impl.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/repositories/user_repository_impl.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/repositories/auth_repository.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/repositories/onboard_repository.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/repositories/token_repository.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/repositories/user_repository.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/delete_token_usecase.dart';
@@ -69,11 +73,14 @@ Future<void> setupServiceLocator() async {
   locator.registerSingleton<FlutterSecureStorage>(const FlutterSecureStorage());
 
   /*Authentication*/
+
   locator.registerSingleton<AuthDataSource>(AuthRemoteDataSource());
   locator.registerSingleton<AuthRepository>(AuthRepositoryImpl());
   locator.registerSingleton<SignUpUseCase>(SignUpUseCase());
   locator.registerSingleton<SignInUseCase>(SignInUseCase());
   locator.registerSingleton<SendOtpUseCase>(SendOtpUseCase());
+  locator.registerSingleton<OnboardDataSource>(OnboardLocalDataSource());
+  locator.registerSingleton<OnboardRepository>(OnboardRepositoryImpl());
 
   locator.registerSingleton<TokenDataSource>(TokenLocalDataSource());
   locator.registerSingleton<TokenRepository>(TokenRepositoryImpl());

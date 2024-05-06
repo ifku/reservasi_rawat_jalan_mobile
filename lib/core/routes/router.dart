@@ -20,6 +20,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages
 import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile_detail/detail_profile_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/choose_doctor_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/clinic_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/create_reservation.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/splash/splash_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/history/presentation/pages/history_page.dart';
 
@@ -75,6 +76,18 @@ class AppRouter {
                         state: state,
                       );
                     },
+                    routes: [
+                      GoRoute(
+                        path: RoutePath.createReservation,
+                        name: RouteName.createReservation,
+                        pageBuilder: (context, state) {
+                          return canvas(
+                            child: const CreateReservationPage(),
+                            state: state,
+                          );
+                        },
+                      ),
+                    ]
                   ),
                 ],
               ),
@@ -128,27 +141,26 @@ class AppRouter {
         ]),
         StatefulShellBranch(routes: [
           GoRoute(
-            path: RoutePath.account,
-            name: RouteName.account,
-            pageBuilder: (context, state) {
-              return canvas(
-                child: const ProfilePage(),
-                state: state,
-              );
-            },
-            routes: [
-              GoRoute(
-                path: RoutePath.detailAccount,
-                name: RouteName.detailAccount,
-                pageBuilder: (context, state) {
-                  return canvas(
-                    child: const ProfileDetailPage(),
-                    state: state,
-                  );
-                },
-              ),
-            ]
-          ),
+              path: RoutePath.account,
+              name: RouteName.account,
+              pageBuilder: (context, state) {
+                return canvas(
+                  child: const ProfilePage(),
+                  state: state,
+                );
+              },
+              routes: [
+                GoRoute(
+                  path: RoutePath.detailAccount,
+                  name: RouteName.detailAccount,
+                  pageBuilder: (context, state) {
+                    return canvas(
+                      child: const ProfileDetailPage(),
+                      state: state,
+                    );
+                  },
+                ),
+              ]),
         ]),
       ],
     ),

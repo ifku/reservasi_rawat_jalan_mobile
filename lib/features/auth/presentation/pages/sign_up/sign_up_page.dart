@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_button.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/rrj_confirmation_dialog.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/rrj_info_dialog.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/rrj_show_loading.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/show_rrj_dialog.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/input_field/rrj_input_textfield.dart';
@@ -58,7 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
             hideRRJLoading(context);
             showRRJDialog(
               context,
-              child: RRJConfirmationDialog(
+              child: RRJInfoDialog(
                   title: "Error",
                   message: state.error,
                   iconColor: Theme.of(context).colorScheme.error,

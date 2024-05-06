@@ -185,5 +185,25 @@
     "completeProfile": "Complete Profile",
     "fullname": "Fullnam",
     "gender": "Gender"
+  },
+  "createReservation": {
+    "reservationDetail": "Reservation Detail",
+    "selectTheDayAndDateForTheAppointment": "Select the day and date for the Appointment",
+    "patient": "Patient",
+    "date": "Date",
+    "next": "NEXT",
+    "patientDetail": "Patient Details",
+    "fullname": "Fullname",
+    "email": "Email ",
+    "phoneNumber": "Phone Number",
+    "addAsPatient": "Add as patient",
+    "addAnotherPatient": "Add another patient",
+    "listOfFamilyMembers": "List of family members",
+    "choosePatient": "CHOOSE PATIENT",
+    "addPatientData": "ADD PATIENT DATA",
+    "reservationDate": "Reservation Date",
+    "selectDate": "Select Date",
+    "chooseDate": "CHOOSE DATE",
+    "makeReservation": "MAKE RESERVATION"
   }
 }

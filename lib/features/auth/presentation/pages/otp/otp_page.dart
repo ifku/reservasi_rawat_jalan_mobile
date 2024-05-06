@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/rrj_confirmation_dialog.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/rrj_info_dialog.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/rrj_show_loading.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/show_rrj_dialog.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/input_field/rrj_pin_inputfield.dart';
@@ -54,7 +54,7 @@ class _OtpPageState extends State<OtpPage> {
               hideRRJLoading(context);
               showRRJDialog(
                 context,
-                child: RRJConfirmationDialog(
+                child: RRJInfoDialog(
                     title: "Error",
                     message: state.error,
                     iconColor: Theme.of(context).colorScheme.error,

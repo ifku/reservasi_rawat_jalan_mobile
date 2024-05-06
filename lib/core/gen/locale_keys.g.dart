@@ -170,5 +170,24 @@ abstract class  LocaleKeys {
   static const completeProfile_fullname = 'completeProfile.fullname';
   static const completeProfile_gender = 'completeProfile.gender';
   static const completeProfile = 'completeProfile';
+  static const createReservation_reservationDetail = 'createReservation.reservationDetail';
+  static const createReservation_selectTheDayAndDateForTheAppointment = 'createReservation.selectTheDayAndDateForTheAppointment';
+  static const createReservation_patient = 'createReservation.patient';
+  static const createReservation_date = 'createReservation.date';
+  static const createReservation_next = 'createReservation.next';
+  static const createReservation_patientDetail = 'createReservation.patientDetail';
+  static const createReservation_fullname = 'createReservation.fullname';
+  static const createReservation_email = 'createReservation.email';
+  static const createReservation_phoneNumber = 'createReservation.phoneNumber';
+  static const createReservation_addAsPatient = 'createReservation.addAsPatient';
+  static const createReservation_addAnotherPatient = 'createReservation.addAnotherPatient';
+  static const createReservation_listOfFamilyMembers = 'createReservation.listOfFamilyMembers';
+  static const createReservation_choosePatient = 'createReservation.choosePatient';
+  static const createReservation_addPatientData = 'createReservation.addPatientData';
+  static const createReservation_reservationDate = 'createReservation.reservationDate';
+  static const createReservation_selectDate = 'createReservation.selectDate';
+  static const createReservation_chooseDate = 'createReservation.chooseDate';
+  static const createReservation_makeReservation = 'createReservation.makeReservation';
+  static const createReservation = 'createReservation';
 
 }

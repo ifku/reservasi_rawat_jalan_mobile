@@ -118,6 +118,8 @@ class OnboardingPage extends StatelessWidget {
                                 curve: Curves.easeInOut,
                               );
                             } else {
+                              context.read<OnboardingBloc>().add(
+                                  const OnboardingFinished(isOnboarded: true));
                               context.goNamed(RouteName.auth);
                             }
                           },

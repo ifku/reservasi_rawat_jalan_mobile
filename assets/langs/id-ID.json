@@ -92,7 +92,7 @@
   "detailProfileScreen": {
     "idNumber": "NIK",
     "fullName": "Nama Lengkap",
-    "email": "Alamat Surel",
+    "email": "Email ",
     "phoneNumber": "Nomor Telepon",
     "dateOfBirth": "Tanggal Lahir",
     "gender": "Jenis Kelamin",
@@ -148,7 +148,7 @@
     "signUp": "DAFTAR",
     "orContinueWithEmail": "Atau masuk dengan email",
     "signInWithGoogle": "Masuk dengan Google",
-    "email": "Alamat Surel",
+    "email": "Email ",
     "haveAnAccount": "Sudah memiliki akun? Klik ",
     "click": "Klik",
     "here": "di sini",
@@ -185,5 +185,25 @@
     "completeProfile": "Lengkapi Profil",
     "fullname": "Nama Lengkap",
     "gender": "Jenis Kelamin"
+  },
+  "createReservation": {
+    "reservationDetail": "Detail Reservasi",
+    "selectTheDayAndDateForTheAppointment": "Pilih hari dan tanggal untuk Janji Temu",
+    "patient": "Pasien",
+    "date": "Tanggal",
+    "next": "SELANJUTNYA",
+    "patientDetail": "Detail Pasien",
+    "fullname": "Nama Lengkap",
+    "email": "Email",
+    "phoneNumber": "Nomor Telepon",
+    "addAsPatient": "Tambahkan sebagai pasien",
+    "addAnotherPatient": "Tambahkan Pasien Lain",
+    "listOfFamilyMembers": "Daftar Anggota Keluarga",
+    "choosePatient": "PILIH PASIEN",
+    "addPatientData": "TAMBAH DATA PASIEN",
+    "reservationDate": "Tanggal Reservasi",
+    "selectDate": "Pilih Tanggal",
+    "chooseDate": "PILIH TANGGAL",
+    "makeReservation": "BUAT RESERVASI"
   }
 }

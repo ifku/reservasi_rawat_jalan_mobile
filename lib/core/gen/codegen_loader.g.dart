@@ -201,6 +201,26 @@ class CodegenLoader extends AssetLoader{
     "completeProfile": "Complete Profile",
     "fullname": "Fullnam",
     "gender": "Gender"
+  },
+  "createReservation": {
+    "reservationDetail": "Reservation Detail",
+    "selectTheDayAndDateForTheAppointment": "Select the day and date for the Appointment",
+    "patient": "Patient",
+    "date": "Date",
+    "next": "NEXT",
+    "patientDetail": "Patient Details",
+    "fullname": "Fullname",
+    "email": "Email ",
+    "phoneNumber": "Phone Number",
+    "addAsPatient": "Add as patient",
+    "addAnotherPatient": "Add another patient",
+    "listOfFamilyMembers": "List of family members",
+    "choosePatient": "CHOOSE PATIENT",
+    "addPatientData": "ADD PATIENT DATA",
+    "reservationDate": "Reservation Date",
+    "selectDate": "Select Date",
+    "chooseDate": "CHOOSE DATE",
+    "makeReservation": "MAKE RESERVATION"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -297,7 +317,7 @@ static const Map<String,dynamic> id_ID = {
   "detailProfileScreen": {
     "idNumber": "NIK",
     "fullName": "Nama Lengkap",
-    "email": "Alamat Surel",
+    "email": "Email ",
     "phoneNumber": "Nomor Telepon",
     "dateOfBirth": "Tanggal Lahir",
     "gender": "Jenis Kelamin",
@@ -353,7 +373,7 @@ static const Map<String,dynamic> id_ID = {
     "signUp": "DAFTAR",
     "orContinueWithEmail": "Atau masuk dengan email",
     "signInWithGoogle": "Masuk dengan Google",
-    "email": "Alamat Surel",
+    "email": "Email ",
     "haveAnAccount": "Sudah memiliki akun? Klik ",
     "click": "Klik",
     "here": "di sini",
@@ -390,6 +410,26 @@ static const Map<String,dynamic> id_ID = {
     "completeProfile": "Lengkapi Profil",
     "fullname": "Nama Lengkap",
     "gender": "Jenis Kelamin"
+  },
+  "createReservation": {
+    "reservationDetail": "Detail Reservasi",
+    "selectTheDayAndDateForTheAppointment": "Pilih hari dan tanggal untuk Janji Temu",
+    "patient": "Pasien",
+    "date": "Tanggal",
+    "next": "SELANJUTNYA",
+    "patientDetail": "Detail Pasien",
+    "fullname": "Nama Lengkap",
+    "email": "Email",
+    "phoneNumber": "Nomor Telepon",
+    "addAsPatient": "Tambahkan sebagai pasien",
+    "addAnotherPatient": "Tambahkan Pasien Lain",
+    "listOfFamilyMembers": "Daftar Anggota Keluarga",
+    "choosePatient": "PILIH PASIEN",
+    "addPatientData": "TAMBAH DATA PASIEN",
+    "reservationDate": "Tanggal Reservasi",
+    "selectDate": "Pilih Tanggal",
+    "chooseDate": "PILIH TANGGAL",
+    "makeReservation": "BUAT RESERVASI"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

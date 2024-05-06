@@ -125,7 +125,7 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
             const SizedBox(height: 24.0),
             isAvailable
                 ? RRJPrimaryButton(
-                    onPressed: () {},
+                    onPressed: onChooseDoctor,
                     height: MediaQuery.of(context).size.height * 0.05,
                     width: MediaQuery.of(context).size.width,
                     child: Text(LocaleKeys.detailDoctorScreen_chooseDoctor.tr(),
