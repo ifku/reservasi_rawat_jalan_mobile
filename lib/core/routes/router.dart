@@ -15,6 +15,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/si
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_up/sign_up_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation/current_reservation_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation_detail/current_reservation_detail_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/history/presentation/pages/history_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile/profile_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile_detail/detail_profile_page.dart';
@@ -22,7 +23,6 @@ import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/p
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/clinic_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/create_reservation.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/splash/splash_page.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/history/presentation/pages/history_page.dart';
 
 class AppRouter {
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -67,28 +67,27 @@ class AppRouter {
                 },
                 routes: [
                   GoRoute(
-                    path: RoutePath.clinicDoctorList,
-                    name: RouteName.clinicDoctorList,
-                    pageBuilder: (context, state) {
-                      return canvas(
-                        child:
-                            ChooseDoctorPage(clinicId: state.extra as String),
-                        state: state,
-                      );
-                    },
-                    routes: [
-                      GoRoute(
-                        path: RoutePath.createReservation,
-                        name: RouteName.createReservation,
-                        pageBuilder: (context, state) {
-                          return canvas(
-                            child: const CreateReservationPage(),
-                            state: state,
-                          );
-                        },
-                      ),
-                    ]
-                  ),
+                      path: RoutePath.clinicDoctorList,
+                      name: RouteName.clinicDoctorList,
+                      pageBuilder: (context, state) {
+                        return canvas(
+                          child:
+                              ChooseDoctorPage(clinicId: state.extra as String),
+                          state: state,
+                        );
+                      },
+                      routes: [
+                        GoRoute(
+                          path: RoutePath.createReservation,
+                          name: RouteName.createReservation,
+                          pageBuilder: (context, state) {
+                            return canvas(
+                              child: const CreateReservationPage(),
+                              state: state,
+                            );
+                          },
+                        ),
+                      ]),
                 ],
               ),
               GoRoute(
