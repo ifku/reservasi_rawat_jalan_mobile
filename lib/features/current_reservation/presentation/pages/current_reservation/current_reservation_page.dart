@@ -8,6 +8,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation/bloc/current_reservation_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/widgets/reservation_list_card_shimmer.dart';
 
 class CurrentReservationPage extends StatefulWidget {
   const CurrentReservationPage({super.key});
@@ -43,7 +44,20 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
           },
           builder: (context, state) {
             if (state is CurrentReservationLoading) {
-              return const Center(child: CircularProgressIndicator());
+              return ListView.separated(
+                itemCount: 5,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                separatorBuilder: (BuildContext context, int index) {
+                  return const SizedBox(height: 8.0);
+                },
+                itemBuilder: (BuildContext context, int index) {
+                  return const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ReservationListCardShimmer(),
+                  );
+                },
+              );
             }
             if (state is CurrentReservationAvailable) {
               return Padding(
