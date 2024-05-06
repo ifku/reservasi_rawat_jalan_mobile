@@ -7,6 +7,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presen
 import 'package:reservasi_rawat_jalan_mobile/features/home/presentation/pages/bloc/home_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/bloc/choose_doctor_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/bloc/clinic_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/bloc/create_reservation_bloc.dart';
 
 class BlocProviders {
   static List<BlocProvider> getBlocProviders() {
@@ -20,6 +21,8 @@ class BlocProviders {
       BlocProvider<SignUpBloc>(create: (context) => SignUpBloc()),
       BlocProvider<CurrentReservationBloc>(
           create: (context) => CurrentReservationBloc()),
+      BlocProvider<CreateReservationBloc>(
+          create: (context) => CreateReservationBloc()),
     ];
   }
 }

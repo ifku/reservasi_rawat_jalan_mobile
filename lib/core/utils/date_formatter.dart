@@ -17,4 +17,9 @@ abstract class DateFormatter {
   static String formatHour(DateTime dateTime) {
     return DateFormat('HH::mm').format(dateTime);
   }
+
+  static DateTime parseDateTime(String formattedString,
+      {String format = 'EEEE, dd MMMM yyyy'}) {
+    return DateFormat(format).parse(formattedString);
+  }
 }

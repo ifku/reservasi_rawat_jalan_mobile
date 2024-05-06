@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Intl.defaultLocale = context.locale.toString();
     return MaterialApp.router(
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,

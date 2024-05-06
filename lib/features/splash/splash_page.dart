@@ -35,7 +35,7 @@ class _SplashPageState extends State<SplashPage> {
     final isOnboarded = await onboardRepository.getOnboardStatus();
     if (mounted) {
       if (isOnboarded) {
-        context.goNamed(RouteName.signIn);
+        context.goNamed(RouteName.auth);
       } else {
         context.goNamed(RouteName.onboarding);
       }
