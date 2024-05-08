@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/const/api_constants.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/network/app_exception.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/data_sources/clinic_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/model/api_response.dart';
@@ -16,7 +17,7 @@ class ClinicRemoteDatasource extends ClinicDataSource {
       ApiConstants.clinic,
     );
 
-    return response.fold((error) => Left(error), (data) {
+    return response.fold((error) => Left(AppException(error.toString())), (data) {
       final responseObject =
           ApiListResponse<ClinicModel>.fromJson(data, ClinicModel.fromJson);
       return Right(responseObject.data ?? []);

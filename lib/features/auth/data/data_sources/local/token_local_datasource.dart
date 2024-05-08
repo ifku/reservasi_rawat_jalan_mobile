@@ -15,7 +15,6 @@ class TokenLocalDataSource implements TokenDataSource {
   @override
   Future<Either<Exception, bool>> saveAccessToken(TokenEntity token) async {
     try {
-      print("TokenLocalDataSource Initialized");
       await storage.write(key: 'access_token', value: token.accessToken);
       await storage.write(key: 'token_type', value: token.tokenType);
       await storage.write(key: 'expires_in', value: token.expiresIn.toString());
