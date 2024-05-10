@@ -26,6 +26,9 @@ import 'package:reservasi_rawat_jalan_mobile/features/splash/splash_page.dart';
 
 class AppRouter {
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
+  static final _historyNavigatorKey = GlobalKey<NavigatorState>();
+  static final _activityNavigatorKey = GlobalKey<NavigatorState>();
+  static final _accountNavigatorKey = GlobalKey<NavigatorState>();
 
   static final GoRouter router = GoRouter(
     initialLocation: RoutePath.splash,
@@ -36,6 +39,7 @@ class AppRouter {
 
   static final routes = [
     StatefulShellRoute.indexedStack(
+      parentNavigatorKey: _rootNavigatorKey,
       pageBuilder: (context, state, navigationShell) {
         return canvas(
           child: Navigation(
@@ -69,6 +73,7 @@ class AppRouter {
                   GoRoute(
                       path: RoutePath.clinicDoctorList,
                       name: RouteName.clinicDoctorList,
+                      parentNavigatorKey: _rootNavigatorKey,
                       pageBuilder: (context, state) {
                         return canvas(
                           child:
@@ -80,6 +85,7 @@ class AppRouter {
                         GoRoute(
                           path: RoutePath.createReservation,
                           name: RouteName.createReservation,
+                          parentNavigatorKey: _rootNavigatorKey,
                           pageBuilder: (context, state) {
                             return canvas(
                               child: const CreateReservationPage(),
@@ -93,6 +99,7 @@ class AppRouter {
               GoRoute(
                   path: RoutePath.currentReservation,
                   name: RouteName.currentReservation,
+                  parentNavigatorKey: _rootNavigatorKey,
                   pageBuilder: (context, state) {
                     return canvas(
                       child: const CurrentReservationPage(),
@@ -103,6 +110,7 @@ class AppRouter {
                     GoRoute(
                       path: RoutePath.currentReservationDetail,
                       name: RouteName.currentReservationDetail,
+                      parentNavigatorKey: _rootNavigatorKey,
                       pageBuilder: (context, state) {
                         return canvas(
                           child: const CurrentReservationDetailPage(),
@@ -114,7 +122,7 @@ class AppRouter {
             ],
           ),
         ]),
-        StatefulShellBranch(routes: [
+        StatefulShellBranch(navigatorKey: _historyNavigatorKey, routes: [
           GoRoute(
             path: RoutePath.history,
             name: RouteName.history,
@@ -126,7 +134,7 @@ class AppRouter {
             },
           ),
         ]),
-        StatefulShellBranch(routes: [
+        StatefulShellBranch(navigatorKey: _activityNavigatorKey, routes: [
           GoRoute(
             path: RoutePath.activity,
             name: RouteName.activity,
@@ -138,7 +146,7 @@ class AppRouter {
             },
           ),
         ]),
-        StatefulShellBranch(routes: [
+        StatefulShellBranch(navigatorKey: _accountNavigatorKey, routes: [
           GoRoute(
               path: RoutePath.account,
               name: RouteName.account,

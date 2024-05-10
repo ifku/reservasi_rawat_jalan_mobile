@@ -12,3 +12,12 @@ class SelectedDateChanged extends CreateReservationEvent {
   @override
   List<Object> get props => [selectedDate];
 }
+
+class AddAsPatientChanged extends CreateReservationEvent {
+  final bool isAddAsPatient;
+
+  const AddAsPatientChanged(this.isAddAsPatient);
+
+  @override
+  List<Object> get props => [isAddAsPatient];
+}

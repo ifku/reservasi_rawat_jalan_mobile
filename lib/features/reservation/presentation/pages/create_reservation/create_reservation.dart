@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/bottom_sheet/show_rrj_bottom_sheet.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_button.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/input_field/rrj_input_textfield.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/components/switch/rrj_text_switch.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/components/text/rrj_vertical_text.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/doctor_info_card.dart';
@@ -54,7 +56,7 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
               ),
               const SizedBox(height: 16),
               const DoctorInfoCard(
-                doctorName: "Tes",
+                doctorName: "John Doe",
                 doctorClinic: "Klinik Umum",
               ),
               const SizedBox(height: 36.0),
@@ -85,7 +87,89 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
                           controller: _patientController,
                           label: LocaleKeys.createReservation_patient.tr(),
                           onTap: () {
-                            showRRJBottomSheet(context, child: Container());
+                            showRRJBottomSheet(context,
+                                showDragHandle: false,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      right: 16.0, left: 16.0, bottom: 36.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Center(
+                                        child: Text(
+                                          LocaleKeys
+                                              .createReservation_patientDetail
+                                              .tr(),
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        ),
+                                      ),
+                                      const Divider(thickness: 2),
+                                      const SizedBox(height: 16.0),
+                                      RRJVerticalText(
+                                        title: LocaleKeys
+                                            .createReservation_fullname
+                                            .tr(),
+                                        value: "Muhammad Navis Nasrullah",
+                                        padding:
+                                            const EdgeInsets.only(bottom: 16),
+                                      ),
+                                      RRJVerticalText(
+                                        title: LocaleKeys
+                                            .createReservation_email
+                                            .tr(),
+                                        value: "muhnavis@gmail.com",
+                                        padding:
+                                            const EdgeInsets.only(bottom: 16),
+                                      ),
+                                      RRJVerticalText(
+                                        title: LocaleKeys
+                                            .createReservation_phoneNumber
+                                            .tr(),
+                                        value: "081234536753234",
+                                        padding:
+                                            const EdgeInsets.only(bottom: 16),
+                                      ),
+                                      RRJTextSwitch(
+                                        label: LocaleKeys
+                                            .createReservation_addAsPatient
+                                            .tr(),
+                                        value: false,
+                                        onChanged: (value) {},
+                                      ),
+                                      const SizedBox(height: 16.0),
+                                      const Divider(thickness: 2, height: 1),
+                                      const SizedBox(height: 8.0),
+                                      RRJInputTextField(
+                                          controller: _patientController,
+                                          label: LocaleKeys
+                                              .createReservation_patient
+                                              .tr(),
+                                          readOnly: true,
+                                          borderColor: Theme.of(context)
+                                              .colorScheme
+                                              .onSurface
+                                              .withOpacity(0.3),
+                                          focusedBorderColor: Theme.of(context)
+                                              .colorScheme
+                                              .onSurface
+                                              .withOpacity(0.5),
+                                          suffixIcon: Icon(
+                                            Icons.person_rounded,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .onSurface
+                                                .withOpacity(0.4),
+                                          )),
+                                    ],
+                                  ),
+                                ));
                           },
                           readOnly: true,
                           borderColor: Theme.of(context)
@@ -142,7 +226,8 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
                 height: 48,
                 width: MediaQuery.of(context).size.width,
                 onPressed: () {
-                  log(DateFormatter.parseDateTime(_dateController.text).toString());
+                  log(DateFormatter.parseDateTime(_dateController.text)
+                      .toString());
                 },
                 child: Text(LocaleKeys.createReservation_makeReservation.tr()),
               )

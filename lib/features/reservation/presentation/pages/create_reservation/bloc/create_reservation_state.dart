@@ -17,3 +17,12 @@ final class SelectedDate extends CreateReservationState {
   @override
   List<Object> get props => [selectedDate];
 }
+
+final class AddAsPatient extends CreateReservationState {
+  final bool isAddAsPatient;
+
+  const AddAsPatient(this.isAddAsPatient);
+
+  @override
+  List<Object> get props => [isAddAsPatient];
+}
