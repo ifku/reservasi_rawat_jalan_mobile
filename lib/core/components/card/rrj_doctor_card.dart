@@ -4,23 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
 
 class RRJDoctorCard extends StatelessWidget {
   const RRJDoctorCard(
-      {super.key,
-      required this.doctorName,
-      required this.doctorClinic,
-      required this.doctorAge,
-      required this.doctorRating,
-      this.doctorImage,
-      this.onTap,
-      this.margin});
+      {super.key, this.onTap, this.margin, required this.doctor});
 
-  final String doctorName;
-  final String doctorClinic;
-  final int doctorAge;
-  final double doctorRating;
-  final String? doctorImage;
+  final DoctorEntity doctor;
   final EdgeInsetsGeometry? margin;
   final void Function()? onTap;
 
@@ -50,17 +40,19 @@ class RRJDoctorCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              doctorImage != null
+              doctor.doctorImage != null
                   ? SizedBox(
                       height: 84,
                       width: 84,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: CachedNetworkImage(
-                            placeholder: (context, url) => Assets.raw.loadingAnim.lottie(),
+                            placeholder: (context, url) =>
+                                Assets.raw.loadingAnim.lottie(),
                             errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
-                            imageUrl: doctorImage!, fit: BoxFit.cover),
+                                const Icon(Icons.error),
+                            imageUrl: doctor.doctorImage!,
+                            fit: BoxFit.cover),
                       ),
                     )
                   : Container(
@@ -76,7 +68,7 @@ class RRJDoctorCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(doctorName,
+                  Text(doctor.doctorName,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.labelLarge),
@@ -85,7 +77,7 @@ class RRJDoctorCard extends StatelessWidget {
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: doctorClinic,
+                          text: doctor.clinicName,
                           style: Theme.of(context)
                               .textTheme
                               .bodySmall
@@ -103,7 +95,8 @@ class RRJDoctorCard extends StatelessWidget {
                                   fontWeight: FontWeight.w400),
                         ),
                         TextSpan(
-                          text: "$doctorAge ${LocaleKeys.chooseDoctorScreen_years.tr()}",
+                          text:
+                              "${doctor.doctorAge} ${LocaleKeys.chooseDoctorScreen_years.tr()}",
                           style: Theme.of(context)
                               .textTheme
                               .bodySmall
@@ -125,7 +118,7 @@ class RRJDoctorCard extends StatelessWidget {
                         height: 18,
                       ),
                       const SizedBox(width: 4.0),
-                      Text(doctorRating.toString(),
+                      Text(doctor.doctorRating.toString(),
                           style:
                               Theme.of(context).textTheme.labelMedium?.copyWith(
                                     color: RRJColors.grey200,

@@ -220,7 +220,9 @@ class CodegenLoader extends AssetLoader{
     "reservationDate": "Reservation Date",
     "selectDate": "Select Date",
     "chooseDate": "CHOOSE DATE",
-    "makeReservation": "MAKE RESERVATION"
+    "makeReservation": "MAKE RESERVATION",
+    "nationalIdentityNumber": "NIN",
+    "searchPatientName": "SEARCH FOR PATIENT NAME"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -429,7 +431,9 @@ static const Map<String,dynamic> id_ID = {
     "reservationDate": "Tanggal Reservasi",
     "selectDate": "Pilih Tanggal",
     "chooseDate": "PILIH TANGGAL",
-    "makeReservation": "BUAT RESERVASI"
+    "makeReservation": "BUAT RESERVASI",
+    "nationalIdentityNumber": "NIK",
+    "searchPatientName": "CARI NAMA PASIEN"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

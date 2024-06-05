@@ -19,31 +19,26 @@ class _ClinicPageState extends State<ClinicPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          LocaleKeys.clinicScreen_clinicList.tr(),
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+        ),
+        foregroundColor: Theme.of(context).colorScheme.onSurface,
+      ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text(
-                LocaleKeys.clinicScreen_clinicList.tr(),
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      fontWeight: FontWeight.w600,
-                    ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                LocaleKeys.clinicScreen_findYourClinic.tr(),
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant),
-              ),
-              const SizedBox(height: 18),
               BlocBuilder<ClinicBloc, ClinicState>(
                 builder: (context, state) {
                   if (state is GetClinicLoading) {
-                    return Expanded(
-                      child: Assets.raw.loadingAnim.lottie());
+                    return Expanded(child: Assets.raw.loadingAnim.lottie());
                   }
                   if (state is GetClinicFailure) {
                     return Center(

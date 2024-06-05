@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/user_db_model.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/user_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_db_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_model.dart';
 
 abstract class UserDataSource {
   Future<Either<Exception, UserModel>> completeProfile(String email);

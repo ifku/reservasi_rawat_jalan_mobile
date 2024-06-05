@@ -204,6 +204,8 @@
     "reservationDate": "Reservation Date",
     "selectDate": "Select Date",
     "chooseDate": "CHOOSE DATE",
-    "makeReservation": "MAKE RESERVATION"
+    "makeReservation": "MAKE RESERVATION",
+    "nationalIdentityNumber": "NIN",
+    "searchPatientName": "SEARCH FOR PATIENT NAME"
   }
 }

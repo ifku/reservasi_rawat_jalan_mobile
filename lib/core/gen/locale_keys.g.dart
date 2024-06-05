@@ -188,6 +188,8 @@ abstract class  LocaleKeys {
   static const createReservation_selectDate = 'createReservation.selectDate';
   static const createReservation_chooseDate = 'createReservation.chooseDate';
   static const createReservation_makeReservation = 'createReservation.makeReservation';
+  static const createReservation_nationalIdentityNumber = 'createReservation.nationalIdentityNumber';
+  static const createReservation_searchPatientName = 'createReservation.searchPatientName';
   static const createReservation = 'createReservation';
 
 }

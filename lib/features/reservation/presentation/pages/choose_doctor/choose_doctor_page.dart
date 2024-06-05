@@ -9,6 +9,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/components/card/rrj_doctor_car
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/bloc/choose_doctor_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/doctor_item_shimmer.dart';
 
 class ChooseDoctorPage extends StatefulWidget {
   const ChooseDoctorPage({super.key, required this.clinicId});
@@ -20,6 +21,14 @@ class ChooseDoctorPage extends StatefulWidget {
 }
 
 class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
+  @override
+  void initState() {
+    super.initState();
+    context
+        .read<ChooseDoctorBloc>()
+        .add(GetDoctorByClinicId(clinicId: widget.clinicId));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,28 +86,13 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
                   Text(
                     LocaleKeys.chooseDoctorScreen_findDoctor.tr(),
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant),
+                        color: Theme.of(context).colorScheme.onSurface),
                   ),
                   const SizedBox(height: 18),
                   BlocBuilder<ChooseDoctorBloc, ChooseDoctorState>(
                     builder: (context, state) {
                       if (state is GetDoctorByClinicIdLoading) {
-                        return BaseShimmer(
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: 5,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemBuilder: (context, index) => Container(
-                              margin: const EdgeInsets.only(bottom: 16),
-                              height: 130,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.surface,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                        );
+                        return const DoctorItemShimmer();
                       }
                       if (state is GetDoctorByClinicIdSuccess) {
                         if (state.doctor.isEmpty) {
@@ -121,26 +115,15 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
                           itemCount: state.doctor.length,
                           physics: const NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) => RRJDoctorCard(
-                            doctorName: state.doctor[index].doctorName,
-                            doctorClinic: state.doctor[index].clinicName,
-                            doctorAge: state.doctor[index].doctorAge,
-                            doctorRating:
-                                double.parse(state.doctor[index].doctorRating),
-                            doctorImage: state.doctor[index].doctorImage,
+                            doctor: state.doctor[index],
                             onTap: () => showRRJBottomSheet(context,
                                 showDragHandle: false,
                                 child: RRJChooseDoctorBottomSheet(
-                                  doctorName: state.doctor[index].doctorName,
-                                  doctorSpecialist:
-                                      state.doctor[index].clinicName,
-                                  doctorSIP: state.doctor[index].doctorSip,
-                                  doctorSTR: state.doctor[index].doctorStr,
-                                  doctorImage: state.doctor[index].doctorImage,
-                                  doctorPayment: "",
-                                  isAvailable: state.doctor[index].isAvailable,
+                                  doctor: state.doctor[index],
                                   onChooseDoctor: () {
-                                    context
-                                        .pushNamed(RouteName.createReservation);
+                                    context.pushNamed(
+                                        RouteName.createReservation,
+                                        extra: state.doctor[index]);
                                   },
                                 )),
                             margin: const EdgeInsets.only(bottom: 16),
@@ -157,13 +140,5 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
         ),
       ),
     );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    context
-        .read<ChooseDoctorBloc>()
-        .add(GetDoctorByClinicId(clinicId: widget.clinicId));
   }
 }

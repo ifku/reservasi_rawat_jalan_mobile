@@ -204,6 +204,8 @@
     "reservationDate": "Tanggal Reservasi",
     "selectDate": "Pilih Tanggal",
     "chooseDate": "PILIH TANGGAL",
-    "makeReservation": "BUAT RESERVASI"
+    "makeReservation": "BUAT RESERVASI",
+    "nationalIdentityNumber": "NIK",
+    "searchPatientName": "CARI NAMA PASIEN"
   }
 }

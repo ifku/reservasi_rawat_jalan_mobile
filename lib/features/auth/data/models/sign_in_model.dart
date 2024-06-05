@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/user_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/sign_in_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_model.dart';
 
 SignInModel signInModelFromJson(String str) =>
     SignInModel.fromJson(json.decode(str));

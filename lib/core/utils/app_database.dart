@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/user_db_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_db_model.dart';
 
 class AppDatabase {
   bool _isInitialized = false;

@@ -19,6 +19,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/history/presentation/pages
 import 'package:reservasi_rawat_jalan_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile/profile_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile_detail/detail_profile_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/choose_doctor_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/clinic_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/create_reservation.dart';
@@ -88,7 +89,9 @@ class AppRouter {
                           parentNavigatorKey: _rootNavigatorKey,
                           pageBuilder: (context, state) {
                             return canvas(
-                              child: const CreateReservationPage(),
+                              child: CreateReservationPage(
+                                doctor: state.extra as DoctorEntity,
+                              ),
                               state: state,
                             );
                           },

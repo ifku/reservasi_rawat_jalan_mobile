@@ -6,28 +6,16 @@ import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_
 import 'package:reservasi_rawat_jalan_mobile/core/components/card/rrj_doctor_info_card.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
-
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
 
 class RRJChooseDoctorBottomSheet extends StatelessWidget {
   const RRJChooseDoctorBottomSheet({
     super.key,
-    required this.doctorName,
-    required this.doctorSpecialist,
-    required this.doctorSIP,
-    required this.doctorSTR,
-    required this.doctorPayment,
-    required this.isAvailable,
-    this.doctorImage,
     this.onChooseDoctor,
+    required this.doctor,
   });
 
-  final String doctorName;
-  final String doctorSpecialist;
-  final String doctorSIP;
-  final String doctorSTR;
-  final String doctorPayment;
-  final String? doctorImage;
-  final bool isAvailable;
+  final DoctorEntity doctor;
   final void Function()? onChooseDoctor;
 
   @override
@@ -72,7 +60,7 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
             const Divider(),
             ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
-                child: doctorImage != null
+                child: doctor.doctorImage != null
                     ? CachedNetworkImage(
                         height: MediaQuery.of(context).size.width * 0.3,
                         width: MediaQuery.of(context).size.width * 0.3,
@@ -81,7 +69,7 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
                             Assets.raw.loadingAnim.lottie(),
                         errorWidget: (context, url, error) =>
                             const Icon(Icons.error),
-                        imageUrl: doctorImage!)
+                        imageUrl: doctor.doctorImage!)
                     : Container(
                         height: MediaQuery.of(context).size.width * 0.3,
                         width: MediaQuery.of(context).size.width * 0.3,
@@ -89,14 +77,14 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
                       )),
             const SizedBox(height: 16.0),
             Text(
-              doctorName,
+              doctor.doctorName,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     fontWeight: FontWeight.w500,
                   ),
             ),
             const SizedBox(height: 8.0),
             Text(
-              doctorSpecialist,
+              doctor.clinicName,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     fontWeight: FontWeight.w300,
                   ),
@@ -108,22 +96,22 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
             RRJDoctorInfoCard(
               icon: Assets.icons.iconBriefcase.path,
               title: LocaleKeys.detailDoctorScreen_strNumber.tr(),
-              content: doctorSIP,
+              content: doctor.doctorSip,
             ),
             const SizedBox(height: 20.0),
             RRJDoctorInfoCard(
               icon: Assets.icons.iconHeroCheck.path,
               title: LocaleKeys.detailDoctorScreen_sipNumber.tr(),
-              content: doctorSTR,
+              content: doctor.doctorStr,
             ),
             const SizedBox(height: 20.0),
             RRJDoctorInfoCard(
               icon: Assets.icons.iconPriceTag.path,
               title: LocaleKeys.detailDoctorScreen_paymentMethod.tr(),
-              content: doctorPayment,
+              content: "-",
             ),
             const SizedBox(height: 24.0),
-            isAvailable
+            doctor.isAvailable
                 ? RRJPrimaryButton(
                     onPressed: onChooseDoctor,
                     height: MediaQuery.of(context).size.height * 0.05,

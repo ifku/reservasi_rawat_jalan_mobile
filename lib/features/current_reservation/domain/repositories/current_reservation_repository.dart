@@ -3,5 +3,5 @@ import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain
 
 abstract class CurrentReservationRepository {
   Future<Either<Exception, List<ReservationDetailEntity>>>
-      getCurrentReservation(String patientId);
+      getCurrentReservation(String userId);
 }

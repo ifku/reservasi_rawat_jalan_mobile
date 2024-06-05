@@ -104,7 +104,7 @@ class RRJInputTextField extends StatelessWidget {
                   TextSpan(
                     text: label ?? '',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: Theme.of(context)
                             .colorScheme
                             .onSurface

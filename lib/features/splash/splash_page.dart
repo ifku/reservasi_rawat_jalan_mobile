@@ -40,7 +40,6 @@ class _SplashPageState extends State<SplashPage> {
       if (isOnboarded) {
         token.fold((l) => context.goNamed(RouteName.auth),
             (r) => context.goNamed(RouteName.home));
-        /*context.goNamed(RouteName.auth);*/
       } else {
         context.goNamed(RouteName.onboarding);
       }

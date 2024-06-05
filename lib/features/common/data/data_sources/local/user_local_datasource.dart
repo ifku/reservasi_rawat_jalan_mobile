@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:get_it/get_it.dart';
 import 'package:isar/isar.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/user_datasource.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/user_db_model.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/user_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/data/data_sources/user_datasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_db_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_model.dart';
+
 
 class UserLocalDataSource implements UserDataSource {
   final Isar _isar = GetIt.instance.get<Isar>();

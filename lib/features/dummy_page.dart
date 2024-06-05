@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/doctor_item_shimmer.dart';
 
 class DummyPage extends StatefulWidget {
   const DummyPage({super.key});
@@ -12,9 +13,7 @@ class _DummyPageState extends State<DummyPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.grey,
-      body: Center(
-        // child:
-      ),
+      body: Center(child: DoctorItemShimmer()),
     );
   }
 }

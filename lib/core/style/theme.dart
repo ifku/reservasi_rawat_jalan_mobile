@@ -22,7 +22,7 @@ class RRJThemeData {
         surfaceVariant: RRJColors.grey100,
         inverseSurface: RRJColors.azure900,
         onInverseSurface: RRJColors.azure100,
-        onSurfaceVariant: RRJColors.white,
+        onSurfaceVariant: RRJColors.blue100,
         /*Primary*/
         primary: RRJColors.blue500,
         onPrimary: RRJColors.blue100,

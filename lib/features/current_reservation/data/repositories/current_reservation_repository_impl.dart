@@ -10,7 +10,7 @@ class CurrentReservationRepositoryImpl implements CurrentReservationRepository {
 
   @override
   Future<Either<Exception, List<ReservationDetailModel>>> getCurrentReservation(
-      String patientId) async {
-    return await _currentReservationDataSource.getCurrentReservation(patientId);
+      String userId) async {
+    return await _currentReservationDataSource.getCurrentReservation(userId);
   }
 }

@@ -3,7 +3,7 @@ import 'dart:ui';
 class RRJColors {
   RRJColors._();
 
-  static const Color blue100 = Color(0xFFFAFCFF);
+  static const Color blue100 = Color(0xFFF7F9FC);
   static const Color blue200 = Color(0xFFB0CDFE);
   static const Color blue300 = Color(0xFF629CFE);
   static const Color blue400 = Color(0xFF3A83FD);

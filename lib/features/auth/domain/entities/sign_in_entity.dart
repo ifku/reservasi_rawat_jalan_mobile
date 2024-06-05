@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/user_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/user_entity.dart';
 
 class SignInEntity extends Equatable {
   final String accessToken;

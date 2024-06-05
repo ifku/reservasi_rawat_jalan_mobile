@@ -21,8 +21,7 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
   @override
   void initState() {
     super.initState();
-    context.read<CurrentReservationBloc>().add(const GetCurrentReservation(
-        patientId: '0dbdbfc0-c881-44e5-b460-7ee48566bf3a'));
+    context.read<CurrentReservationBloc>().add(const GetCurrentReservation());
   }
 
   @override
@@ -40,7 +39,9 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
         physics: const BouncingScrollPhysics(),
         child: BlocConsumer<CurrentReservationBloc, CurrentReservationState>(
           listener: (context, state) {
-            // TODO: implement listener
+            if (state is CurrentReservationError) {
+              // TODO: Show error message
+            }
           },
           builder: (context, state) {
             if (state is CurrentReservationLoading) {
@@ -68,7 +69,7 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
                     return RRJReservationListCard(
-                      id: state.data[index].idReservation.substring(10),
+                      id: state.data[index].idReservation,
                       date: state.data[index].reservationDate
                           .toString()
                           .substring(10),
@@ -88,7 +89,6 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -113,7 +113,9 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
                     ),
                     const SizedBox(height: 24),
                     RRJPrimaryButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pop();
+                      },
                       height: 44.0,
                       width: MediaQuery.of(context).size.width,
                       child:

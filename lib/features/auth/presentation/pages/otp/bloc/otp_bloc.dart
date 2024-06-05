@@ -2,12 +2,12 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/user_db_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/sign_in_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/token_entity.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/user_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_db_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/user_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/save_token_usecase.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/save_user_usecase.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/user/save_user_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/sign_in_usecase.dart';
 
 part 'otp_event.dart';

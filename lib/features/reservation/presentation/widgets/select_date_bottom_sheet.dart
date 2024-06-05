@@ -6,7 +6,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_
 import 'package:reservasi_rawat_jalan_mobile/core/components/date_picker/rrj_date_picker.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/bloc/create_reservation_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/bloc/create_reservation_action/create_reservation_action_cubit.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class SelectDateBottomSheet extends StatelessWidget {
@@ -49,6 +49,7 @@ class SelectDateBottomSheet extends StatelessWidget {
           child: RRJDatePicker(
             controller: _datePickerController,
             isEnablePastDates: false,
+            initialSelectedDate: DateTime.now(),
             backgroundColor:
                 Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
             headerStyle: Theme.of(context).textTheme.labelLarge?.copyWith(
@@ -58,8 +59,8 @@ class SelectDateBottomSheet extends StatelessWidget {
             specialDays: const [],
             onSelectionChanged: (date) {
               context
-                  .read<CreateReservationBloc>()
-                  .add(SelectedDateChanged(date.value));
+                  .read<CreateReservationActionCubit>()
+                  .selectedDateChanged(date.value);
             },
           ),
         ),
@@ -67,7 +68,8 @@ class SelectDateBottomSheet extends StatelessWidget {
         const Divider(thickness: 1),
         Padding(
           padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 12.0),
-          child: BlocBuilder<CreateReservationBloc, CreateReservationState>(
+          child: BlocBuilder<CreateReservationActionCubit,
+              CreateReservationActionState>(
             builder: (context, state) {
               return Text(
                   state is SelectedDate

@@ -20,8 +20,7 @@ class RRJTextSwitch extends StatelessWidget {
     return Padding(
       padding: padding ?? const EdgeInsets.all(0),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Text(label,
-            style: Theme.of(context).textTheme.bodyLarge),
+        Text(label, style: Theme.of(context).textTheme.bodyLarge),
         CupertinoSwitch(
             activeColor: Theme.of(context).colorScheme.primary,
             value: value,
