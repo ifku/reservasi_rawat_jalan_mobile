@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "305882542351",
+    "project_id": "reservasi-rawat-jalan",
+    "storage_bucket": "reservasi-rawat-jalan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305882542351:android:3d7de0e148d24c74944e7a",
+        "android_client_info": {
+          "package_name": "com.ifkusyoba.reservasi_rawat_jalan_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0IpJ1Bf4V-18H7F2MZoQtDqZj16zPXWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
