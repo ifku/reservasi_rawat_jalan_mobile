@@ -14,6 +14,7 @@ class RouteName {
   static const String clinicList = 'clinic-list';
   static const String clinicDoctorList = 'clinic-doctor';
   static const String createReservation = 'create-reservation';
+  static const String reservationConfirmation = 'reservation-confirmation';
 
   static const String currentReservation = 'current-reservation';
   static const String currentReservationDetail = 'current-reservation-detail';

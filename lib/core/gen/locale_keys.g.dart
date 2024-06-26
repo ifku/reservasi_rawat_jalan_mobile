@@ -191,5 +191,7 @@ abstract class  LocaleKeys {
   static const createReservation_nationalIdentityNumber = 'createReservation.nationalIdentityNumber';
   static const createReservation_searchPatientName = 'createReservation.searchPatientName';
   static const createReservation = 'createReservation';
+  static const reservationConfirmationScreen_backToHome = 'reservationConfirmationScreen.backToHome';
+  static const reservationConfirmationScreen = 'reservationConfirmationScreen';
 
 }

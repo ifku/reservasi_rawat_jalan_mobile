@@ -223,6 +223,9 @@ class CodegenLoader extends AssetLoader{
     "makeReservation": "MAKE RESERVATION",
     "nationalIdentityNumber": "NIN",
     "searchPatientName": "SEARCH FOR PATIENT NAME"
+  },
+  "reservationConfirmationScreen": {
+    "backToHome": "Back to Home"
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -434,6 +437,9 @@ static const Map<String,dynamic> id_ID = {
     "makeReservation": "BUAT RESERVASI",
     "nationalIdentityNumber": "NIK",
     "searchPatientName": "CARI NAMA PASIEN"
+  },
+  "reservationConfirmationScreen": {
+    "backToHome": "Kembali ke Beranda"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};

@@ -13,6 +13,7 @@ class RoutePath {
   static const String clinicList = 'clinic';
   static const String clinicDoctorList = 'clinic-doctor';
   static const String createReservation = 'create-reservation';
+  static const String reservationConfirmation = 'reservation-confirmation';
 
   static const String currentReservation = 'reservation';
   static const String currentReservationDetail = 'reservation-detail';

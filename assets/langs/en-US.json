@@ -207,5 +207,8 @@
     "makeReservation": "MAKE RESERVATION",
     "nationalIdentityNumber": "NIN",
     "searchPatientName": "SEARCH FOR PATIENT NAME"
+  },
+  "reservationConfirmationScreen": {
+    "backToHome": "Back to Home"
   }
 }

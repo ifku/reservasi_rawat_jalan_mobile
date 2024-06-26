@@ -1,18 +1,16 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/bottom_sheet/show_rrj_bottom_sheet.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_button.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/rrj_show_loading.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/input_field/rrj_input_textfield.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/switch/rrj_text_switch.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/text/rrj_vertical_text.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/dto/reservation_dto.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/bloc/create_reservation/create_reservation_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/bloc/create_reservation_action/create_reservation_action_cubit.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/doctor_info_card.dart';
@@ -64,6 +62,18 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
             if (state is FetchPatientDataSuccess) {
               _patientIdController.text = state.patientData[0].idPatient;
               _patientController.text = state.patientData[0].patientFullname;
+            }
+            if (state is CreateReservationLoading) {
+              showRRJLoading(
+                context,
+                loadingWidget: const Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
+            }
+            if (state is CreateReservationSuccess) {
+              hideRRJLoading(context);
+
             }
           },
           builder: (context, state) {
@@ -367,13 +377,6 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
                       height: 48,
                       width: MediaQuery.of(context).size.width,
                       onPressed: () {
-                        log("Patient Id ${_patientIdController.text}",
-                            name: "DebugPatientId");
-                        log("Doctor Id: ${widget.doctor.idDoctor}",
-                            name: "DebugDoctorId");
-                        log(DateFormatter.parseDateTime(_dateController.text)
-                            .toString());
-
                         context.read<CreateReservationBloc>().add(
                             CreateReservation(
                                 reservationInsuranceType: "Personal",

@@ -36,12 +36,17 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "${LocaleKeys.homeScreen_halo.tr()}, Ifku Syoba!",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge
-                      ?.copyWith(fontWeight: FontWeight.w600, fontSize: 18.0),
+                BlocBuilder<HomeBloc, HomeState>(
+                  builder: (context, state) {
+                    if (state is HomeSuccess) {
+                      return Text(
+                        "${LocaleKeys.homeScreen_halo.tr()}, ${state.user.userName}",
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            fontWeight: FontWeight.w600, fontSize: 18.0),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  },
                 ),
                 const SizedBox(height: 12.0),
                 Text(
