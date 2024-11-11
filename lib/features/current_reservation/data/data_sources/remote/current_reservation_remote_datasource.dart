@@ -4,7 +4,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/model/api_response.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/app_exception.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/data/data_sources/current_reservation_dataasource.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/data/data_sources/current_reservation_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/data/models/reservation_detail_model.dart';
 
 class CurrentReservationRemoteDataSource

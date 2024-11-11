@@ -11,4 +11,6 @@ class ApiConstants {
   static const String reservationByUserId = "/reservation/user/";
   static const String createReservation = "/reservation/";
   static const String patientByUserId = "/patient/";
+
+  static const String advanceFiltering = "/reservation/filter/advance-filter";
 }

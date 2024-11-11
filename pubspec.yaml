@@ -84,12 +84,12 @@ flutter:
       fonts:
         - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Ultralight.otf
           weight: 100
-        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-UltralightItalic.otf
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-UltralightItalic.otf
           style: italic
           weight: 100
-        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-Thin.otf
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Thin.otf
           weight: 200
-        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-ThinItalic.otf
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-ThinItalic.otf
           style: italic
           weight: 200
         - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Light.otf
@@ -114,16 +114,16 @@ flutter:
           weight: 600
         - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Bold.otf
           weight: 700
-        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-BoldItalic.otf
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-BoldItalic.otf
           style: italic
           weight: 700
-        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-Black.otf
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Black.otf
           weight: 800
-        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-BlackItalic.otf
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-BlackItalic.otf
           style: italic
           weight: 800
-        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-Heavy.otf
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-Heavy.otf
           weight: 900
-        - asset: assets/fonts/Sf-Pro/Sf-Pro-Display-HeavyItalic.otf
+        - asset: assets/fonts/Sf-Pro/SF-Pro-Display-HeavyItalic.otf
           style: italic
           weight: 900

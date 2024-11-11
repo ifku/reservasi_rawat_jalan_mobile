@@ -27,17 +27,15 @@ class ReservationDetailModel extends ReservationDetailEntity {
 
   factory ReservationDetailModel.fromJson(Map<String, dynamic> json) =>
       ReservationDetailModel(
-        idReservation: json["id_reservation"] ?? "",
-        reservationStatus: json["reservation_status"] ?? "",
-        reservationInsuranceType: json["reservation_insurance_type"] ?? "",
-        reservationDate:
-            DateTime.parse(json["reservation_date"]) ?? DateTime.now(),
-        patientFullName: json["patient_fullname"] ?? "",
-        doctorName: json["doctor_name"] ?? "",
-        clinicName: json["clinic_name"] ?? "",
-        createdAt: DateTime.parse(json["created_at"]) ?? DateTime.now(),
-        updatedAt: DateTime.parse(json["updated_at"]) ?? DateTime.now(),
-      );
+          idReservation: json["id_reservation"] ?? "",
+          reservationStatus: json["reservation_status"] ?? "",
+          reservationInsuranceType: json["reservation_insurance_type"] ?? "",
+          reservationDate: DateTime.parse(json["reservation_date"]),
+          patientFullName: json["patient_fullname"] ?? "",
+          doctorName: json["doctor_name"] ?? "",
+          clinicName: json["clinic_name"] ?? "",
+          createdAt: DateTime.parse(json["created_at"]),
+          updatedAt: DateTime.parse(json["updated_at"]));
 
   Map<String, dynamic> toJson() => {
         "id_reservation": idReservation,

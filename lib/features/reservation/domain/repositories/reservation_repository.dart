@@ -5,4 +5,5 @@ import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entitie
 abstract class ReservationRepository {
   Future<Either<Exception, ReservationEntity>> createReservation(
       {required ReservationDto payload});
+
 }

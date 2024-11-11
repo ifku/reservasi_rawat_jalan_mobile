@@ -44,4 +44,9 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# FVM Version Cache
+.fvm/
 
+# Sonarqube
+sonar-project.properties
+tests.output

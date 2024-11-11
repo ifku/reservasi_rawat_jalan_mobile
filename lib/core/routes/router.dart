@@ -78,7 +78,7 @@ class AppRouter {
                       pageBuilder: (context, state) {
                         return canvas(
                           child:
-                              ChooseDoctorPage(clinicId: state.extra as String),
+                              ChooseDoctorPage(clinicId: state.extra! as String),
                           state: state,
                         );
                       },
@@ -90,7 +90,7 @@ class AppRouter {
                           pageBuilder: (context, state) {
                             return canvas(
                               child: CreateReservationPage(
-                                doctor: state.extra as DoctorEntity,
+                                doctor: state.extra! as DoctorEntity,
                               ),
                               state: state,
                             );
@@ -225,7 +225,7 @@ class AppRouter {
             name: RouteName.otp,
             pageBuilder: (context, state) {
               final Map<String, String?> extraData =
-                  state.extra as Map<String, String?>;
+                  state.extra! as Map<String, String?>;
               return canvas(
                 child: OtpPage(
                   email: extraData['email'] as String,
@@ -241,7 +241,7 @@ class AppRouter {
         name: RouteName.completeProfile,
         pageBuilder: (context, state) {
           final Map<String, String?> extraData =
-              state.extra as Map<String, String?>;
+              state.extra! as Map<String, String?>;
           return canvas(
             child: CompleteProfilePage(
               email: extraData['email'] as String,

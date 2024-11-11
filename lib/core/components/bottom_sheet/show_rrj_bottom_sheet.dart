@@ -26,14 +26,16 @@ Future<void> showRRJBottomSheet(
       ),
     ),
     builder: (context) {
-      return Wrap(
-        children: [
-          Padding(
-              padding: padding ??
-                  EdgeInsets.fromLTRB(16, 0, 16,
-                      MediaQuery.of(context).viewInsets.bottom + 20)),
-          child,
-        ],
+      return SingleChildScrollView(
+        child: Wrap(
+          children: [
+            Padding(
+                padding: padding ??
+                    EdgeInsets.fromLTRB(16, 0, 16,
+                        MediaQuery.of(context).viewInsets.bottom + 20)),
+            child,
+          ],
+        ),
       );
     },
   );
