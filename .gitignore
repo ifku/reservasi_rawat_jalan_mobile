@@ -50,4 +50,3 @@ app.*.map.json
 # Sonarqube
 sonar-project.properties
 tests.output
-.scannerwork
