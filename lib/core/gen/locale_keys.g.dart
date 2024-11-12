@@ -193,5 +193,17 @@ abstract class  LocaleKeys {
   static const createReservation = 'createReservation';
   static const reservationConfirmationScreen_backToHome = 'reservationConfirmationScreen.backToHome';
   static const reservationConfirmationScreen = 'reservationConfirmationScreen';
+  static const validation_invalidNIK = 'validation.invalidNIK';
+  static const validation_invalidNIKFormat = 'validation.invalidNIKFormat';
+  static const validation_invalidFullname = 'validation.invalidFullname';
+  static const validation_invalidPhone = 'validation.invalidPhone';
+  static const validation_invalidPhoneFormat = 'validation.invalidPhoneFormat';
+  static const validation_invalidAddress = 'validation.invalidAddress';
+  static const validation_invalidGender = 'validation.invalidGender';
+  static const validation_invalidGenderFormat = 'validation.invalidGenderFormat';
+  static const validation_invalidDateOfBirth = 'validation.invalidDateOfBirth';
+  static const validation_invalidDateOfBirthFuture = 'validation.invalidDateOfBirthFuture';
+  static const validation_invalidDateOfBirthFormat = 'validation.invalidDateOfBirthFormat';
+  static const validation = 'validation';
 
 }

@@ -210,5 +210,18 @@
   },
   "reservationConfirmationScreen": {
     "backToHome": "Kembali ke Beranda"
+  },
+  "validation": {
+    "invalidNIK": "Nomor Induk Kependudukan (NIK) wajib diisi.",
+    "invalidNIKFormat": "NIK harus terdiri dari 16 karakter angka.",
+    "invalidFullname": "Nama lengkap wajib diisi.",
+    "invalidPhone": "Nomor telepon wajib diisi.",
+    "invalidPhoneFormat": "Nomor telepon harus terdiri dari minimal 10 digit.",
+    "invalidAddress": "Alamat wajib diisi.",
+    "invalidGender": "Jenis kelamin wajib diisi.",
+    "invalidGenderFormat": "Jenis kelamin harus 'Laki-laki' atau 'Perempuan'.",
+    "invalidDateOfBirth": "Tanggal lahir wajib diisi.",
+    "invalidDateOfBirthFuture": "Tanggal lahir tidak boleh di masa depan.",
+    "invalidDateOfBirthFormat": "Tanggal lahir harus dalam format YYYY-MM-DD."
   }
 }

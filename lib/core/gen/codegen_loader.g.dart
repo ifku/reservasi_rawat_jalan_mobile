@@ -226,6 +226,19 @@ class CodegenLoader extends AssetLoader{
   },
   "reservationConfirmationScreen": {
     "backToHome": "Back to Home"
+  },
+  "validation": {
+    "invalidNIK": "National Identity Number (NIK) is required.",
+    "invalidNIKFormat": "NIK must be exactly 16 numeric characters.",
+    "invalidFullname": "Full name is required.",
+    "invalidPhone": "Phone number is required.",
+    "invalidPhoneFormat": "Phone number must contain at least 10 digits.",
+    "invalidAddress": "Address is required.",
+    "invalidGender": "Gender is required.",
+    "invalidGenderFormat": "Gender must be 'Male' or 'Female'.",
+    "invalidDateOfBirth": "Date of birth is required.",
+    "invalidDateOfBirthFuture": "Date of birth cannot be in the future.",
+    "invalidDateOfBirthFormat": "Date of birth must be in the format YYYY-MM-DD."
   }
 };
 static const Map<String,dynamic> id_ID = {
@@ -440,6 +453,19 @@ static const Map<String,dynamic> id_ID = {
   },
   "reservationConfirmationScreen": {
     "backToHome": "Kembali ke Beranda"
+  },
+  "validation": {
+    "invalidNIK": "Nomor Induk Kependudukan (NIK) wajib diisi.",
+    "invalidNIKFormat": "NIK harus terdiri dari 16 karakter angka.",
+    "invalidFullname": "Nama lengkap wajib diisi.",
+    "invalidPhone": "Nomor telepon wajib diisi.",
+    "invalidPhoneFormat": "Nomor telepon harus terdiri dari minimal 10 digit.",
+    "invalidAddress": "Alamat wajib diisi.",
+    "invalidGender": "Jenis kelamin wajib diisi.",
+    "invalidGenderFormat": "Jenis kelamin harus 'Laki-laki' atau 'Perempuan'.",
+    "invalidDateOfBirth": "Tanggal lahir wajib diisi.",
+    "invalidDateOfBirthFuture": "Tanggal lahir tidak boleh di masa depan.",
+    "invalidDateOfBirthFormat": "Tanggal lahir harus dalam format YYYY-MM-DD."
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "id_ID": id_ID};
