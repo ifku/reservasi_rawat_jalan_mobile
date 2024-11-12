@@ -6,23 +6,25 @@ import 'package:reservasi_rawat_jalan_mobile/features/home/data/models/news_mode
 import 'package:reservasi_rawat_jalan_mobile/features/home/data/models/upcoming_schedule_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/domain/use_cases/get_news_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/domain/use_cases/get_upcoming_schedule_usecase.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  final GetNewsUseCase getNews = locator<GetNewsUseCase>();
-  final GetUpcomingScheduleUseCase getUpcomingSchedule =
-      locator<GetUpcomingScheduleUseCase>();
-  final GetUserUseCase _getUserUseCase = locator<GetUserUseCase>();
+  final GetNewsUseCase _getNewsUseCase;
+  final GetUpcomingScheduleUseCase _getUpcomingSchedule;
+  final GetUserUseCase _getUserUseCase;
 
-  HomeBloc() : super(HomeLoading()) {
+  HomeBloc(
+    this._getNewsUseCase,
+    this._getUpcomingSchedule,
+    this._getUserUseCase,
+  ) : super(HomeLoading()) {
     on<FetchHomeData>((event, emit) async {
       emit(HomeLoading());
 
-      final newsResult = await getNews.call(null);
-      final upcomingScheduleResult = await getUpcomingSchedule.call(null);
+      final newsResult = await _getNewsUseCase.call(null);
+      final upcomingScheduleResult = await _getUpcomingSchedule.call(null);
 
       if (newsResult.isLeft() || upcomingScheduleResult.isLeft()) {
         emit(const HomeFailure(message: "Error fetching data"));
@@ -33,7 +35,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         final userData = user.fold((l) => null, (r) => r);
 
         emit(HomeSuccess(
-            news: newsData, upcomingSchedule: upcomingScheduleData, user: userData!));
+            news: newsData,
+            upcomingSchedule: upcomingScheduleData,
+            user: userData!));
       }
     });
   }

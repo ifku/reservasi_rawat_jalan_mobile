@@ -28,106 +28,115 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          foregroundColor: Theme.of(context).colorScheme.onSurface,
-          title: Text(LocaleKeys.reservationScreen_reservation.tr(),
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyLarge
-                  ?.copyWith(fontSize: 18.0, fontWeight: FontWeight.w600))),
+        foregroundColor: Theme.of(context).colorScheme.onSurface,
+        title: Text(
+          LocaleKeys.reservationScreen_reservation.tr(),
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
+        ),
+      ),
       body: SafeArea(
-          child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: BlocConsumer<CurrentReservationBloc, CurrentReservationState>(
-          listener: (context, state) {
-            if (state is CurrentReservationError) {
-              // TODO: Show error message
-            }
-          },
-          builder: (context, state) {
-            if (state is CurrentReservationLoading) {
-              return ListView.separated(
-                itemCount: 5,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                separatorBuilder: (BuildContext context, int index) {
-                  return const SizedBox(height: 8.0);
-                },
-                itemBuilder: (BuildContext context, int index) {
-                  return const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ReservationListCardShimmer(),
-                  );
-                },
-              );
-            }
-            if (state is CurrentReservationAvailable) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListView.builder(
-                  itemCount: state.data.length,
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: BlocConsumer<CurrentReservationBloc, CurrentReservationState>(
+            listener: (context, state) {
+              if (state is CurrentReservationError) {
+                // TODO: Show error message
+              }
+            },
+            builder: (context, state) {
+              if (state is CurrentReservationLoading) {
+                return ListView.separated(
+                  itemCount: 5,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
+                  separatorBuilder: (BuildContext context, int index) {
+                    return const SizedBox(height: 8.0);
+                  },
                   itemBuilder: (BuildContext context, int index) {
-                    return RRJReservationListCard(
-                      id: state.data[index].idReservation,
-                      date: state.data[index].reservationDate
-                          .toString()
-                          .substring(10),
-                      patientName: state.data[index].patientFullName,
-                      clinic: state.data[index].clinicName,
-                      serviceHour: state.data[index].reservationStatus,
-                      doctorName: state.data[index].doctorName,
-                      onPressed: () {
-                        context.pushNamed(RouteName.currentReservationDetail);
-                      },
+                    return const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: ReservationListCardShimmer(),
                     );
                   },
+                );
+              }
+              if (state is CurrentReservationAvailable) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListView.builder(
+                    itemCount: state.data.length,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (BuildContext context, int index) {
+                      return RRJReservationListCard(
+                        id: state.data[index].idReservation,
+                        date: state.data[index].reservationDate
+                            .toString()
+                            .substring(10),
+                        patientName: state.data[index].patientFullName,
+                        clinic: state.data[index].clinicName,
+                        serviceHour: state.data[index].reservationStatus,
+                        doctorName: state.data[index].doctorName,
+                        onPressed: () {
+                          context.pushNamed(RouteName.currentReservationDetail);
+                        },
+                      );
+                    },
+                  ),
+                );
+              }
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Assets.images.imageAttendance.svg(
+                        fit: BoxFit.cover,
+                      ),
+                      const SizedBox(height: 16.0),
+                      Text(
+                        LocaleKeys.reservationScreen_noReservation.tr(),
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                      ),
+                      const SizedBox(height: 8.0),
+                      Text(
+                        LocaleKeys.reservationScreen_noBook.tr(),
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withOpacity(0.5),
+                              fontWeight: FontWeight.w300,
+                            ),
+                      ),
+                      const SizedBox(height: 24),
+                      RRJPrimaryButton(
+                        onPressed: () {
+                          context.pop();
+                        },
+                        height: 44.0,
+                        width: MediaQuery.of(context).size.width,
+                        child: Text(
+                          LocaleKeys.activityScreen_makeAReservation.tr(),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
-            }
-            return Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Assets.images.imageAttendance.svg(
-                      fit: BoxFit.cover,
-                    ),
-                    const SizedBox(height: 16.0),
-                    Text(LocaleKeys.reservationScreen_noReservation.tr(),
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            fontSize: 18.0, fontWeight: FontWeight.w600)),
-                    const SizedBox(height: 8.0),
-                    Text(
-                      LocaleKeys.reservationScreen_noBook.tr(),
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            color: Theme.of(context)
-                                .colorScheme
-                                .onSurface
-                                .withOpacity(0.5),
-                            fontWeight: FontWeight.w300,
-                          ),
-                    ),
-                    const SizedBox(height: 24),
-                    RRJPrimaryButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      height: 44.0,
-                      width: MediaQuery.of(context).size.width,
-                      child:
-                          Text(LocaleKeys.activityScreen_makeAReservation.tr()),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
+            },
+          ),
         ),
-      )),
+      ),
     );
   }
 }

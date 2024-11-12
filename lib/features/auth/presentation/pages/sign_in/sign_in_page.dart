@@ -36,20 +36,25 @@ class _SignInPageState extends State<SignInPage> {
         listener: (context, state) {
           if (state is SignInSuccess) {
             hideRRJLoading(context);
-            context.goNamed(RouteName.otp, extra: {
-              "email": _emailController.text,
-            });
+            context.goNamed(
+              RouteName.otp,
+              extra: {
+                "email": _emailController.text,
+              },
+            );
           }
           if (state is SignInLoading) {
-            showRRJLoading(context,
-                barrierDismissible: true,
-                overlayColor:
-                    Theme.of(context).colorScheme.surface.withOpacity(0.5),
-                loadingWidget: Assets.raw.loadingAnim.lottie(
-                  height: 500,
-                  width: 500,
-                  alignment: Alignment.center,
-                ));
+            showRRJLoading(
+              context,
+              barrierDismissible: true,
+              overlayColor:
+                  Theme.of(context).colorScheme.surface.withOpacity(0.5),
+              loadingWidget: Assets.raw.loadingAnim.lottie(
+                height: 500,
+                width: 500,
+                alignment: Alignment.center,
+              ),
+            );
           }
           if (state is SignInFailure) {
             hideRRJLoading(context);

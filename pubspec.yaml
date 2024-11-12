@@ -53,6 +53,7 @@ dev_dependencies:
   flutter_lints: ^3.0.1
   isar_generator: *isar_version
   json_serializable: ^6.7.1
+  mocktail: ^1.0.4
 
 flutter_launcher_icons:
   android: "launcher_icon"

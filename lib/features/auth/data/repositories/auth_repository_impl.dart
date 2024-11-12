@@ -1,13 +1,14 @@
 import 'package:dartz/dartz.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/auth_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/otp_model.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/signup_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/sign_in_model.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/signup_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
-  final AuthDataSource _authDataSource = locator<AuthDataSource>();
+  final AuthDataSource _authDataSource;
+
+  AuthRepositoryImpl(this._authDataSource);
 
   @override
   Future<Either<Exception, SignUpModel>> signUp(
@@ -16,7 +17,8 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Exception, SignInModel>> signIn(String email, String otp) async {
+  Future<Either<Exception, SignInModel>> signIn(
+      String email, String otp) async {
     return await _authDataSource.signIn(email, otp);
   }
 

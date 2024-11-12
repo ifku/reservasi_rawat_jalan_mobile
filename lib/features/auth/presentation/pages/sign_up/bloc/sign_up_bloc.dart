@@ -1,17 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/sign_up_usecase.dart';
 
 part 'sign_up_event.dart';
-
 part 'sign_up_state.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  final SignUpUseCase _signUpUseCase = locator<SignUpUseCase>();
+  final SignUpUseCase _signUpUseCase;
 
-  SignUpBloc() : super(SignUpInitial()) {
+  SignUpBloc(this._signUpUseCase) : super(SignUpInitial()) {
     on<SignUp>((event, emit) async {
       emit(SignUpLoading());
       try {

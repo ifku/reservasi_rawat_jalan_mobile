@@ -24,27 +24,51 @@ final locator = GetIt.instance;
 Future<void> setupServiceLocator() async {
   /*Network*/
   locator.registerLazySingleton<Dio>(
-      () => DioClient("${dotenv.env['API_BASE_URL']}").create());
+    () => DioClient("${dotenv.env['API_BASE_URL']}").create(),
+  );
   locator.registerLazySingleton<AppHttpClient>(
-      () => AppHttpClient(dio: locator.get<Dio>()));
+    () => AppHttpClient(
+      dio: locator.get<Dio>(),
+    ),
+  );
 
   /*Local Database*/
   final appDatabase = AppDatabase();
   await appDatabase.initialize();
-  locator.registerLazySingleton<AppDatabase>(() => AppDatabase());
+  locator.registerLazySingleton<AppDatabase>(
+    () => AppDatabase(),
+  );
   locator.registerLazySingleton<Isar>(() => appDatabase.isar);
   locator.registerLazySingleton<FlutterSecureStorage>(
-      () => const FlutterSecureStorage());
+    () => const FlutterSecureStorage(),
+  );
 
   /*Notification*/
   locator.registerLazySingleton<FirebaseMessagingService>(
-      () => FirebaseMessagingService());
+    () => FirebaseMessagingService(),
+  );
 
   /*User*/
-  locator.registerLazySingleton<UserDataSource>(() => UserLocalDataSource());
-  locator.registerLazySingleton<UserRepository>(() => UserRepositoryImpl());
-  locator.registerLazySingleton<SaveUserUseCase>(() => SaveUserUseCase());
-  locator.registerLazySingleton<GetUserUseCase>(() => GetUserUseCase());
+  locator.registerLazySingleton<UserDataSource>(
+    () => UserLocalDataSource(
+      locator.get<Isar>(),
+    ),
+  );
+  locator.registerLazySingleton<UserRepository>(
+    () => UserRepositoryImpl(
+      locator.get<UserDataSource>(),
+    ),
+  );
+  locator.registerLazySingleton<SaveUserUseCase>(
+    () => SaveUserUseCase(
+      locator.get<UserRepository>(),
+    ),
+  );
+  locator.registerLazySingleton<GetUserUseCase>(
+    () => GetUserUseCase(
+      locator.get<UserRepository>(),
+    ),
+  );
 
   /*Module*/
   commonModule();

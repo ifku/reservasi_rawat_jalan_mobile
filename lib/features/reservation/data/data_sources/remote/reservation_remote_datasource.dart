@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/const/api_constants.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/model/api_response.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/app_exception.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
@@ -9,7 +8,9 @@ import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/models/re
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/dto/reservation_dto.dart';
 
 class ReservationRemoteDataSource implements ReservationDataSource {
-  final AppHttpClient client = locator<AppHttpClient>();
+  final AppHttpClient client;
+
+  ReservationRemoteDataSource(this.client);
 
   @override
   Future<Either<Exception, ReservationModel>> createReservation(

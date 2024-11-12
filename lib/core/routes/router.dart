@@ -228,7 +228,7 @@ class AppRouter {
                   state.extra! as Map<String, String?>;
               return canvas(
                 child: OtpPage(
-                  email: extraData['email'] as String,
+                  email: extraData['email']!,
                   nik: extraData['nik'],
                 ),
                 state: state,
@@ -244,7 +244,7 @@ class AppRouter {
               state.extra! as Map<String, String?>;
           return canvas(
             child: CompleteProfilePage(
-              email: extraData['email'] as String,
+              email: extraData['email']!,
               nik: extraData['nik'],
             ),
             state: state,

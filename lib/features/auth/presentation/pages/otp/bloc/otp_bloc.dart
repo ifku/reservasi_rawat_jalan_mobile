@@ -1,31 +1,35 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/sign_in_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/entities/token_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/save_token_usecase.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/sign_in_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_db_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/user_entity.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/save_token_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/user/save_user_usecase.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/sign_in_usecase.dart';
 
 part 'otp_event.dart';
 part 'otp_state.dart';
 
 class OtpBloc extends Bloc<OtpEvent, OtpState> {
-  final SignInUseCase _signInUseCase = locator<SignInUseCase>();
-  final SaveUserUseCase _saveUserUseCase = locator<SaveUserUseCase>();
-  final SaveTokenUseCase _saveTokenUseCase = locator<SaveTokenUseCase>();
+  final SignInUseCase _signInUseCase;
+  final SaveUserUseCase _saveUserUseCase;
+  final SaveTokenUseCase _saveTokenUseCase;
 
-  OtpBloc() : super(OtpInitial()) {
+  OtpBloc(
+    this._signInUseCase,
+    this._saveUserUseCase,
+    this._saveTokenUseCase,
+  ) : super(OtpInitial()) {
     on<ValidateOtp>((event, emit) async {
       emit(VerifyOtpLoading());
       try {
-        final result = await _signInUseCase.call(Tuple2(event.email, event.otp));
+        final result =
+            await _signInUseCase.call(Tuple2(event.email, event.otp));
         result.fold(
-              (l) => emit(VerifyOtpFailure(error: l.toString())),
-              (r) {
+          (l) => emit(VerifyOtpFailure(error: l.toString())),
+          (r) {
             final userDbModel = _mapUserEntityToDbModel(r.user);
             _saveUserUseCase.call(userDbModel);
 
@@ -41,8 +45,6 @@ class OtpBloc extends Bloc<OtpEvent, OtpState> {
         emit(VerifyOtpFailure(error: e.toString()));
       }
     });
-
-
   }
 }
 

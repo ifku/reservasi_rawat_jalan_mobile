@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/const/api_constants.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/model/api_response.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/app_exception.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
@@ -10,12 +9,12 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/sign_in_m
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/models/signup_model.dart';
 
 class AuthRemoteDataSource implements AuthDataSource {
-  final AppHttpClient client = locator<AppHttpClient>();
-
+  final AppHttpClient _client;
+  AuthRemoteDataSource(this._client);
   @override
   Future<Either<Exception, SignUpModel>> signUp(
       String email, String nik) async {
-    final response = await client.post(
+    final response = await _client.post(
       ApiConstants.signUp,
       data: {
         'user_email': email,
@@ -37,7 +36,7 @@ class AuthRemoteDataSource implements AuthDataSource {
   @override
   Future<Either<Exception, SignInModel>> signIn(
       String email, String otp) async {
-    final response = await client.post(
+    final response = await _client.post(
       ApiConstants.signIn,
       data: {
         'user_email': email,
@@ -57,7 +56,7 @@ class AuthRemoteDataSource implements AuthDataSource {
 
   @override
   Future<Either<Exception, OtpModel>> sendOtp(String email) async {
-    final response = await client.post(
+    final response = await _client.post(
       ApiConstants.sendOtp,
       data: {
         'user_email': email,

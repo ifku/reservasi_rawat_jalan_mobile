@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/patient_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/patient/get_patient_by_userid_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/user/get_user_usecase.dart';
@@ -10,19 +7,20 @@ import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entitie
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/use_cases/reservation/create_reservation.dart';
 
 part 'create_reservation_event.dart';
-
 part 'create_reservation_state.dart';
 
 class CreateReservationBloc
     extends Bloc<CreateReservationEvent, CreateReservationState> {
-  final GetPatientByUserIdUseCase _getPatientByUserIdUseCase =
-      locator<GetPatientByUserIdUseCase>();
-  final GetUserUseCase _getUserUseCase = locator<GetUserUseCase>();
+  final GetPatientByUserIdUseCase _getPatientByUserIdUseCase;
+  final GetUserUseCase _getUserUseCase;
 
-  final CreateReservationUseCase _createReservationUseCase =
-      locator<CreateReservationUseCase>();
+  final CreateReservationUseCase _createReservationUseCase;
 
-  CreateReservationBloc() : super(CreateReservationInitial()) {
+  CreateReservationBloc(
+    this._getPatientByUserIdUseCase,
+    this._getUserUseCase,
+    this._createReservationUseCase,
+  ) : super(CreateReservationInitial()) {
     on<CreateReservation>((event, emit) async {
       emit(const CreateReservationLoading());
       final userId = await getPatientId();

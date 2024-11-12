@@ -13,14 +13,27 @@ import 'package:reservasi_rawat_jalan_mobile/features/home/domain/use_cases/get_
 final locator = GetIt.instance;
 
 void homeModule() {
-  locator.registerLazySingleton<NewsDataSource>(() => NewsFakeDataSource());
-  locator.registerLazySingleton<NewsRepository>(() => NewsRepositoryImpl());
-  locator.registerLazySingleton<GetNewsUseCase>(() => GetNewsUseCase());
+  locator.registerLazySingleton<NewsDataSource>(
+    () => NewsFakeDataSource(),
+  );
+  locator.registerLazySingleton<NewsRepository>(
+    () => NewsRepositoryImpl(
+      locator.get<NewsDataSource>(),
+    ),
+  );
+  locator.registerLazySingleton<GetNewsUseCase>(
+    () => GetNewsUseCase(
+      locator.get<NewsRepository>(),
+    ),
+  );
 
   locator.registerLazySingleton<UpcomingScheduleDatasource>(
-          () => UpcomingScheduleFakeDataSource());
+    () => UpcomingScheduleFakeDataSource(),
+  );
   locator.registerLazySingleton<UpcomingScheduleRepository>(
-          () => UpcomingScheduleRepositoryImpl());
+    () => UpcomingScheduleRepositoryImpl(),
+  );
   locator.registerLazySingleton<GetUpcomingScheduleUseCase>(
-          () => GetUpcomingScheduleUseCase());
+    () => GetUpcomingScheduleUseCase(),
+  );
 }

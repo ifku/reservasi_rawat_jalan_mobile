@@ -12,25 +12,25 @@ class UserModel extends UserEntity {
     required super.userGender,
     required super.userDateOfBirth,
     required super.isCompleteProfile,
-    required super.refreshToken,
+    super.refreshToken,
     required super.createdAt,
     required super.updatedAt,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         idUser: json["id_user"],
-        userName: json["user_name"] ?? "",
-        userFullName: json["user_fullname"] ?? "",
+        userName: json["user_name"] ?? '',
+        userFullName: json["user_fullname"] ?? '',
         userNik: json["user_nik"],
-        userEmail: json["user_email"] ?? "",
-        userPhone: json["user_phone"] ?? "",
-        userAddress: json["user_address"] ?? "",
+        userEmail: json["user_email"] ?? '',
+        userPhone: json["user_phone"] ?? '',
+        userAddress: json["user_address"] ?? '',
         userGender: json["user_gender"],
         userDateOfBirth: json["user_date_of_birth"] != null
             ? DateTime.parse(json["user_date_of_birth"])
             : DateTime.now(),
         isCompleteProfile: json["is_complete_profile"],
-        refreshToken: json["refresh_token"] ?? "",
+        refreshToken: json["refresh_token"] ?? '',
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
       );

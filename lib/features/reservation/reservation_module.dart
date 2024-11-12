@@ -1,6 +1,5 @@
-
-
 import 'package:get_it/get_it.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/data_sources/clinic_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/data_sources/doctor_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/data/data_sources/remote/clinic_remote_datasource.dart';
@@ -18,23 +17,49 @@ import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/use_cas
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/use_cases/reservation/create_reservation.dart';
 
 final locator = GetIt.instance;
+
 void reservationModule() {
-  locator
-      .registerLazySingleton<ClinicDataSource>(() => ClinicRemoteDatasource());
-  locator.registerLazySingleton<ClinicRepository>(() => ClinicRepositoryImpl());
-  locator
-      .registerLazySingleton<GetAllClinicUseCase>(() => GetAllClinicUseCase());
+  locator.registerLazySingleton<ClinicDataSource>(
+    () => ClinicRemoteDatasource(
+      locator.get<AppHttpClient>(),
+    ),
+  );
+  locator.registerLazySingleton<ClinicRepository>(
+    () => ClinicRepositoryImpl(
+      locator.get<ClinicDataSource>(),
+    ),
+  );
+  locator.registerLazySingleton<GetAllClinicUseCase>(
+    () => GetAllClinicUseCase(
+      locator.get<ClinicRepository>(),
+    ),
+  );
 
   locator.registerLazySingleton<ReservationDataSource>(
-          () => ReservationRemoteDataSource());
+    () => ReservationRemoteDataSource(
+      locator.get<AppHttpClient>(),
+    ),
+  );
   locator.registerLazySingleton<ReservationRepository>(
-          () => ReservationRepositoryImpl());
+    () => ReservationRepositoryImpl(),
+  );
   locator.registerLazySingleton<CreateReservationUseCase>(
-          () => CreateReservationUseCase());
+    () => CreateReservationUseCase(),
+  );
 
-  locator
-      .registerLazySingleton<DoctorDatasource>(() => DoctorRemoteDataSource());
-  locator.registerLazySingleton<DoctorRepository>(() => DoctorRepositoryImpl());
+  locator.registerLazySingleton<DoctorDatasource>(
+    () => DoctorRemoteDataSource(
+      locator.get<AppHttpClient>(),
+    ),
+  );
+  locator.registerLazySingleton<DoctorRepository>(
+    () => DoctorRepositoryImpl(
+      locator.get<DoctorDatasource>(),
+    ),
+  );
   locator.registerLazySingleton<GetDoctorByClinicIdUseCase>(
-          () => GetDoctorByClinicIdUseCase());
+    () => GetDoctorByClinicIdUseCase(
+      locator.get<DoctorRepository>(),
+    ),
+  );
 }

@@ -124,6 +124,6 @@ class ChooseDoctorFakeDatasource extends DoctorDatasource {
     await Future.delayed(const Duration(seconds: 3));
     List<DoctorModel> doctorsInClinic =
         doctorModels.where((doctor) => doctor.clinicId == id).toList();
-    return Right(doctorsInClinic ?? []);
+    return Right(doctorsInClinic);
   }
 }

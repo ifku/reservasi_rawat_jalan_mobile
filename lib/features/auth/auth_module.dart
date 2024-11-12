@@ -1,4 +1,6 @@
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/network/http_client.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/auth_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/local/onboard_local_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/data/data_sources/local/token_local_datasource.dart';
@@ -17,21 +19,69 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/save
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/send_otp_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/sign_in_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/domain/use_cases/sign_up_usecase.dart';
-final locator = GetIt.instance;
-void authModule() {
-  locator.registerLazySingleton<AuthDataSource>(() => AuthRemoteDataSource());
-  locator.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl());
-  locator.registerLazySingleton<SignUpUseCase>(() => SignUpUseCase());
-  locator.registerLazySingleton<SignInUseCase>(() => SignInUseCase());
-  locator.registerLazySingleton<SendOtpUseCase>(() => SendOtpUseCase());
-  locator
-      .registerLazySingleton<OnboardDataSource>(() => OnboardLocalDataSource());
-  locator
-      .registerLazySingleton<OnboardRepository>(() => OnboardRepositoryImpl());
 
-  locator.registerLazySingleton<TokenDataSource>(() => TokenLocalDataSource());
-  locator.registerLazySingleton<TokenRepository>(() => TokenRepositoryImpl());
-  locator.registerLazySingleton<GetTokenUseCase>(() => GetTokenUseCase());
-  locator.registerLazySingleton<SaveTokenUseCase>(() => SaveTokenUseCase());
-  locator.registerLazySingleton<DeleteTokenUseCase>(() => DeleteTokenUseCase());
+final locator = GetIt.instance;
+
+void authModule() {
+  locator.registerLazySingleton<AuthDataSource>(
+    () => AuthRemoteDataSource(
+      locator.get<AppHttpClient>(),
+    ),
+  );
+  locator.registerLazySingleton<AuthRepository>(
+    () => AuthRepositoryImpl(
+      locator.get<AuthDataSource>(),
+    ),
+  );
+  locator.registerLazySingleton<SignUpUseCase>(
+    () => SignUpUseCase(
+      locator.get<AuthRepository>(),
+    ),
+  );
+  locator.registerLazySingleton<SignInUseCase>(
+    () => SignInUseCase(
+      locator.get<AuthRepository>(),
+    ),
+  );
+  locator.registerLazySingleton<SendOtpUseCase>(
+    () => SendOtpUseCase(
+      locator.get<AuthRepository>(),
+    ),
+  );
+  locator.registerLazySingleton<OnboardDataSource>(
+    () => OnboardLocalDataSource(
+      locator.get<FlutterSecureStorage>(),
+    ),
+  );
+  locator.registerLazySingleton<OnboardRepository>(
+    () => OnboardRepositoryImpl(
+      locator.get<OnboardDataSource>(),
+    ),
+  );
+
+  locator.registerLazySingleton<TokenDataSource>(
+    () => TokenLocalDataSource(
+      locator.get<FlutterSecureStorage>(),
+    ),
+  );
+  locator.registerLazySingleton<TokenRepository>(
+    () => TokenRepositoryImpl(
+      locator.get<TokenDataSource>(),
+    ),
+  );
+  locator.registerLazySingleton<GetTokenUseCase>(
+    () => GetTokenUseCase(
+      locator.get<TokenRepository>(),
+    ),
+  );
+  locator.registerLazySingleton<SaveTokenUseCase>(
+    () => SaveTokenUseCase(
+      locator.get<TokenRepository>(),
+    ),
+  );
+  locator.registerLazySingleton<DeleteTokenUseCase>(
+    () => DeleteTokenUseCase(
+      locator.get<TokenRepository>(),
+    ),
+  );
 }

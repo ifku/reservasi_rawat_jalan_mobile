@@ -1,12 +1,13 @@
 import 'package:dartz/dartz.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/data/data_sources/user_datasource.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_db_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/data/models/user_model.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/repositories/user_repository.dart';
 
 class UserRepositoryImpl implements UserRepository {
-  final UserDataSource _userDataSource = locator<UserDataSource>();
+  final UserDataSource _userDataSource;
+
+  UserRepositoryImpl(this._userDataSource);
 
   @override
   Future<Either<Exception, UserModel>> completeProfile(String email) {
