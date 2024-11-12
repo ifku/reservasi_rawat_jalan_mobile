@@ -1,16 +1,20 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:reservasi_rawat_jalan_mobile/firebase_options.dart';
 import 'package:reservasi_rawat_jalan_mobile/main.dart';
 
 void main() {
   setUpAll(() async {
     // Initialize Firebase for tests
     TestWidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp();
+    await dotenv.load(fileName: ".env");
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
 
-    // Ensure EasyLocalization is initialized
     await EasyLocalization.ensureInitialized();
   });
 

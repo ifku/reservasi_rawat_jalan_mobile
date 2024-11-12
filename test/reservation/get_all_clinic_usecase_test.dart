@@ -1,13 +1,10 @@
-/*
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:reservasi_rawat_jalan_mobile/core/injection/locator.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/clinic_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/repositories/clinic_repository.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/use_cases/clinic/get_all_clinic_usecase.dart';
 
-// Mock class for ClinicRepository
 class MockClinicRepository extends Mock implements ClinicRepository {}
 
 void main() {
@@ -15,22 +12,12 @@ void main() {
   late GetAllClinicUseCase getAllClinicUseCase;
 
   setUp(() {
-    // Initialize mock repository and use case
     mockClinicRepository = MockClinicRepository();
-    getAllClinicUseCase = GetAllClinicUseCase();
-
-    // Register the mock in the locator
-    locator.registerFactory<ClinicRepository>(() => mockClinicRepository);
-  });
-
-  tearDown(() {
-    // Reset the locator
-    locator.reset();
+    getAllClinicUseCase = GetAllClinicUseCase(mockClinicRepository);
   });
 
   group('GetAllClinicUseCase', () {
-    // Example data matching your clinic entity structure
-    final List<ClinicEntity> testClinics = [
+    final clinicEntities = <ClinicEntity>[
       ClinicEntity(
         idClinic: "178d4b7d-4170-4571-96a1-20d15a904cf6",
         clinicName: "Klinik Umum",
@@ -50,33 +37,36 @@ void main() {
     test(
         'should return a list of clinics when the repository call is successful',
         () async {
-      // Arrange: Mock the repository to return a list of clinics
+      // Arrange
       when(() => mockClinicRepository.getAllClinic())
-          .thenAnswer((_) async => Right(testClinics));
+          .thenAnswer((_) async => Right(clinicEntities));
 
-      // Act: Call the use case
+      // Act
       final result = await getAllClinicUseCase.call(null);
 
-      // Assert: Verify the result and interactions
-      expect(result, Right(testClinics));
+      // Assert
+      expect(result, equals(Right(clinicEntities)));
       verify(() => mockClinicRepository.getAllClinic()).called(1);
       verifyNoMoreInteractions(mockClinicRepository);
     });
 
-    test('should return an exception when the repository call fails', () async {
-      // Arrange: Mock the repository to return an exception
-      final exception = Exception("Failed to fetch clinics");
+    test('should return an error when the repository call fails', () async {
+      // Arrange
+      const errorMessage = "Failed to fetch clinics";
       when(() => mockClinicRepository.getAllClinic())
-          .thenAnswer((_) async => Left(exception));
+          .thenAnswer((_) async => Left(Exception(errorMessage)));
 
-      // Act: Call the use case
+      // Act
       final result = await getAllClinicUseCase.call(null);
 
-      // Assert: Verify the result and interactions
-      expect(result, Left(exception));
+      // Assert
+      expect(result.isLeft(), true);
+      expect(
+        result.fold((l) => l, (r) => null),
+        isA<Exception>(),
+      );
       verify(() => mockClinicRepository.getAllClinic()).called(1);
       verifyNoMoreInteractions(mockClinicRepository);
     });
   });
 }
-*/

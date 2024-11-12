@@ -4,9 +4,9 @@ import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entitie
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/repositories/clinic_repository.dart';
 
 class GetAllClinicUseCase implements UseCase<List<ClinicEntity>, void> {
-  final ClinicRepository _clinicRepository;
 
   GetAllClinicUseCase(this._clinicRepository);
+  final ClinicRepository _clinicRepository;
 
   @override
   Future<Either<Exception, List<ClinicEntity>>> call(void params) async {
