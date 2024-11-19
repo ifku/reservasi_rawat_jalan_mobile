@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_button.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/date_picker/rrj_date_picker.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
@@ -14,11 +13,13 @@ class SelectDateBottomSheet extends StatelessWidget {
     super.key,
     required DateRangePickerController datePickerController,
     required TextEditingController dateController,
+    required this.onSubmit,
   })  : _datePickerController = datePickerController,
         _dateController = dateController;
 
   final DateRangePickerController _datePickerController;
   final TextEditingController _dateController;
+  final VoidCallback onSubmit;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,8 @@ class SelectDateBottomSheet extends StatelessWidget {
           child: Text(
             LocaleKeys.createReservation_reservationDate.tr(),
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         const Divider(thickness: 1),
@@ -40,8 +41,8 @@ class SelectDateBottomSheet extends StatelessWidget {
           padding: const EdgeInsets.only(left: 20.0),
           child: Text(LocaleKeys.createReservation_selectDate.tr(),
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w600,
-                  )),
+                fontWeight: FontWeight.w600,
+              )),
         ),
         const SizedBox(height: 16.0),
         Padding(
@@ -51,11 +52,11 @@ class SelectDateBottomSheet extends StatelessWidget {
             isEnablePastDates: false,
             initialSelectedDate: DateTime.now(),
             backgroundColor:
-                Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
+            Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
             headerStyle: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                ),
+              fontWeight: FontWeight.w600,
+              fontSize: 16,
+            ),
             specialDays: const [],
             onSelectionChanged: (date) {
               context
@@ -87,7 +88,7 @@ class SelectDateBottomSheet extends StatelessWidget {
             onPressed: () {
               _dateController.text = DateFormatter.formatDateTime(
                   _datePickerController.selectedDate!);
-              context.pop();
+              onSubmit();
             },
             child: Text(LocaleKeys.createReservation_selectDate.tr()),
           ),

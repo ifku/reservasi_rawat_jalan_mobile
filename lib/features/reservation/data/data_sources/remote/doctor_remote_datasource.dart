@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/const/api_constants.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/model/api_response.dart';
@@ -10,9 +12,14 @@ class DoctorRemoteDataSource implements DoctorDatasource {
   final AppHttpClient _client;
   DoctorRemoteDataSource(this._client);
   @override
-  Future<Either<Exception, List<DoctorModel>>> getDoctorByClinicId(String id) async {
+  Future<Either<Exception, List<DoctorModel>>> getAvailableDoctorsByClinicAndDate(String clinicId, DateTime date) async {
+    log('getAvailable Doctors By Clinic And Date $clinicId, $date');
     final response = await _client.get(
-      "${ApiConstants.doctorByClinicId}$id",
+      "${ApiConstants.doctorByClinicId}",
+      queryParameters: {
+        'clinic_id': clinicId,
+        'date': date.toIso8601String(),
+      },
     );
 
     return response.fold((error) => Left(AppException(error.toString())), (data) {

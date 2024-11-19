@@ -111,24 +111,17 @@ class RRJChooseDoctorBottomSheet extends StatelessWidget {
               content: "-",
             ),
             const SizedBox(height: 24.0),
-            doctor.isAvailable
-                ? RRJPrimaryButton(
-                    onPressed: onChooseDoctor,
-                    height: MediaQuery.of(context).size.height * 0.05,
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(LocaleKeys.detailDoctorScreen_chooseDoctor.tr(),
-                        style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                              color: Theme.of(context).colorScheme.onPrimary,
-                            )),
-                  )
-                : RRJPrimaryButton(
-                    height: MediaQuery.of(context).size.height * 0.05,
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(LocaleKeys.detailDoctorScreen_chooseDoctor.tr(),
-                        style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                              color: Theme.of(context).colorScheme.onPrimary,
-                            )),
-                  )
+            RRJPrimaryButton(
+              onPressed: onChooseDoctor,
+              height: MediaQuery.of(context).size.height * 0.05,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                LocaleKeys.detailDoctorScreen_chooseDoctor.tr(),
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+              ),
+            )
           ],
         ),
       ),

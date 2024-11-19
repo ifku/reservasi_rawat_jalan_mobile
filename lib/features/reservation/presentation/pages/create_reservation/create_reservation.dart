@@ -15,7 +15,6 @@ import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/p
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/bloc/create_reservation_action/create_reservation_action_cubit.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/doctor_info_card.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/patien_search.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/select_date_bottom_sheet.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class CreateReservationPage extends StatefulWidget {
@@ -73,7 +72,6 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
             }
             if (state is CreateReservationSuccess) {
               hideRRJLoading(context);
-
             }
           },
           builder: (context, state) {
@@ -109,7 +107,7 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
                     ),
                     const SizedBox(height: 36.0),
                     Container(
-                      height: 190,
+                      height: 210,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.surface,
@@ -338,36 +336,26 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
                                 )),
                             const SizedBox(height: 16),
                             RRJInputTextField(
-                                controller: _dateController,
-                                label: LocaleKeys.createReservation_date.tr(),
-                                textStyle:
-                                    Theme.of(context).textTheme.labelLarge,
-                                onTap: () {
-                                  showRRJBottomSheet(
-                                    context,
-                                    showDragHandle: false,
-                                    child: SelectDateBottomSheet(
-                                        datePickerController:
-                                            _datePickerController,
-                                        dateController: _dateController),
-                                  );
-                                },
-                                readOnly: true,
-                                borderColor: Theme.of(context)
+                              controller: _dateController,
+                              label: LocaleKeys.createReservation_date.tr(),
+                              textStyle: Theme.of(context).textTheme.labelLarge,
+                              readOnly: true,
+                              borderColor: Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withOpacity(0.3),
+                              focusedBorderColor: Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withOpacity(0.5),
+                              suffixIcon: Icon(
+                                Icons.calendar_month_rounded,
+                                color: Theme.of(context)
                                     .colorScheme
                                     .onSurface
-                                    .withOpacity(0.3),
-                                focusedBorderColor: Theme.of(context)
-                                    .colorScheme
-                                    .onSurface
-                                    .withOpacity(0.5),
-                                suffixIcon: Icon(
-                                  Icons.calendar_month_rounded,
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onSurface
-                                      .withOpacity(0.4),
-                                )),
+                                    .withOpacity(0.4),
+                              ),
+                            ),
                           ],
                         ),
                       ),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,9 +14,11 @@ import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/p
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/doctor_item_shimmer.dart';
 
 class ChooseDoctorPage extends StatefulWidget {
-  const ChooseDoctorPage({super.key, required this.clinicId});
+  const ChooseDoctorPage(
+      {super.key, required this.clinicId, required this.date});
 
   final String clinicId;
+  final DateTime date;
 
   @override
   State<ChooseDoctorPage> createState() => _ChooseDoctorPageState();
@@ -26,7 +30,7 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
     super.initState();
     context
         .read<ChooseDoctorBloc>()
-        .add(GetDoctorByClinicId(clinicId: widget.clinicId));
+        .add(GetDoctorByClinicId(clinicId: widget.clinicId, date: widget.date));
   }
 
   @override
@@ -35,9 +39,12 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: () async {
-            context
-                .read<ChooseDoctorBloc>()
-                .add(GetDoctorByClinicId(clinicId: widget.clinicId));
+            context.read<ChooseDoctorBloc>().add(
+                  GetDoctorByClinicId(
+                    clinicId: widget.clinicId,
+                    date: widget.date,
+                  ),
+                );
           },
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
@@ -61,7 +68,16 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
                           ),
                         );
                       }
+                      if(state is GetDoctorByClinicIdFailed) {
+                        return Text(
+                          state.message,
+                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                        );
+                      }
                       if (state is GetDoctorByClinicIdSuccess) {
+                        log('Doctor: ${state.doctor}');
                         if (state.doctor.isEmpty) {
                           return Text(
                             LocaleKeys.chooseDoctorScreen_doctorNotFound.tr(),

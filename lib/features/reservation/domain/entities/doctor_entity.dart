@@ -9,9 +9,6 @@ class DoctorEntity extends Equatable {
   final String doctorRating;
   final String? doctorImage;
   final String clinicId;
-
-  final bool isAvailable;
-
   final String clinicName;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -25,7 +22,6 @@ class DoctorEntity extends Equatable {
     required this.doctorRating,
     required this.doctorImage,
     required this.clinicId,
-    required this.isAvailable,
     required this.clinicName,
     required this.createdAt,
     required this.updatedAt,
