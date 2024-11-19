@@ -76,9 +76,16 @@ class AppRouter {
                       name: RouteName.clinicDoctorList,
                       parentNavigatorKey: _rootNavigatorKey,
                       pageBuilder: (context, state) {
+                        final args = state.extra as Map<String, dynamic>;
+
+                        final String clinicId = args['clinicId'] as String;
+                        final DateTime selectedDate = args['date'] as DateTime; // Directly cast as DateTime
+
                         return canvas(
-                          child:
-                              ChooseDoctorPage(clinicId: state.extra! as String),
+                          child: ChooseDoctorPage(
+                            clinicId: clinicId,
+                            date: selectedDate,
+                          ),
                           state: state,
                         );
                       },

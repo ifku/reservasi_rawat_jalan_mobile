@@ -2,11 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/components/bottom_sheet/show_rrj_bottom_sheet.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/clinic_item/rrj_clinic_item.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/routes/router_name.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/bloc/clinic_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/widgets/select_date_bottom_sheet.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class ClinicPage extends StatefulWidget {
   const ClinicPage({super.key});
@@ -16,6 +19,10 @@ class ClinicPage extends StatefulWidget {
 }
 
 class _ClinicPageState extends State<ClinicPage> {
+  final TextEditingController _dateController = TextEditingController();
+  final DateRangePickerController _datePickerController =
+      DateRangePickerController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,18 +59,35 @@ class _ClinicPageState extends State<ClinicPage> {
                           physics: const BouncingScrollPhysics(),
                           gridDelegate:
                               const SliverGridDelegateWithMaxCrossAxisExtent(
-                                  crossAxisSpacing: 16,
-                                  mainAxisSpacing: 16,
-                                  childAspectRatio: 2,
-                                  maxCrossAxisExtent: 200),
+                            crossAxisSpacing: 16,
+                            mainAxisSpacing: 16,
+                            childAspectRatio: 2,
+                            maxCrossAxisExtent: 200,
+                          ),
                           itemCount: state.clinics.length,
                           itemBuilder: (context, index) {
                             return RRJClinicItem(
                               onTap: () {
-                                context.goNamed(RouteName.clinicDoctorList,
-                                    extra: state.clinics
-                                        .elementAt(index)
-                                        .idClinic);
+                                showRRJBottomSheet(
+                                  context,
+                                  showDragHandle: false,
+                                  child: SelectDateBottomSheet(
+                                    datePickerController: _datePickerController,
+                                    dateController: _dateController,
+                                    onSubmit: () {
+                                      context.goNamed(
+                                        RouteName.clinicDoctorList,
+                                        extra: {
+                                          'clinicId': state.clinics
+                                              .elementAt(index)
+                                              .idClinic,
+                                          'date':
+                                              _datePickerController.selectedDate
+                                        },
+                                      );
+                                    },
+                                  ),
+                                );
                               },
                               icon: state.clinics.elementAt(index).clinicIcon,
                               label: state.clinics.elementAt(index).clinicName,

@@ -6,9 +6,10 @@ abstract class ChooseDoctorEvent extends Equatable {
 
 class GetDoctorByClinicId extends ChooseDoctorEvent {
   final String clinicId;
+  final DateTime date;
 
-  const GetDoctorByClinicId({required this.clinicId});
+  const GetDoctorByClinicId({required this.clinicId, required this.date});
 
   @override
-  List<Object> get props => [clinicId];
+  List<Object> get props => [clinicId, date];
 }
