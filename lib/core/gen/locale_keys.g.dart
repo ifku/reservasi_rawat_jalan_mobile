@@ -190,6 +190,11 @@ abstract class  LocaleKeys {
   static const createReservation_makeReservation = 'createReservation.makeReservation';
   static const createReservation_nationalIdentityNumber = 'createReservation.nationalIdentityNumber';
   static const createReservation_searchPatientName = 'createReservation.searchPatientName';
+  static const createReservation_reservationSuccess = 'createReservation.reservationSuccess';
+  static const createReservation_reservationSavedMessage = 'createReservation.reservationSavedMessage';
+  static const createReservation_backToHome = 'createReservation.backToHome';
+  static const createReservation_cancelReservation = 'createReservation.cancelReservation';
+  static const createReservation_cancelReservationMessage = 'createReservation.cancelReservationMessage';
   static const createReservation = 'createReservation';
   static const reservationConfirmationScreen_backToHome = 'reservationConfirmationScreen.backToHome';
   static const reservationConfirmationScreen = 'reservationConfirmationScreen';

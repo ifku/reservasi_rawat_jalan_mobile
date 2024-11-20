@@ -222,7 +222,12 @@ class CodegenLoader extends AssetLoader{
     "chooseDate": "CHOOSE DATE",
     "makeReservation": "MAKE RESERVATION",
     "nationalIdentityNumber": "NIN",
-    "searchPatientName": "SEARCH FOR PATIENT NAME"
+    "searchPatientName": "SEARCH FOR PATIENT NAME",
+    "reservationSuccess": "Reservation Success!",
+    "reservationSavedMessage": "Thank you! Your reservation has been successfully saved!",
+    "backToHome": "Back to Home",
+    "cancelReservation": "Cancel Reservation?",
+    "cancelReservationMessage": "This cancellation is irreversible. You will need to make another reservation if you wish to proceed."
   },
   "reservationConfirmationScreen": {
     "backToHome": "Back to Home"
@@ -449,7 +454,12 @@ static const Map<String,dynamic> id_ID = {
     "chooseDate": "PILIH TANGGAL",
     "makeReservation": "BUAT RESERVASI",
     "nationalIdentityNumber": "NIK",
-    "searchPatientName": "CARI NAMA PASIEN"
+    "searchPatientName": "CARI NAMA PASIEN",
+    "reservationSuccess": "Reservasi Berhasil!",
+    "reservationSavedMessage": "Terima kasih! Reservasi yang Anda lakukan telah berhasil disimpan!",
+    "backToHome": "Kembali ke Beranda",
+    "cancelReservation": "Batalkan Reservasi?",
+    "cancelReservationMessage": "Pembatalan ini tidak dapat diubah. Anda harus membuat reservasi ulang jika ingin melanjutkan."
   },
   "reservationConfirmationScreen": {
     "backToHome": "Kembali ke Beranda"

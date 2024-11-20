@@ -206,7 +206,12 @@
     "chooseDate": "PILIH TANGGAL",
     "makeReservation": "BUAT RESERVASI",
     "nationalIdentityNumber": "NIK",
-    "searchPatientName": "CARI NAMA PASIEN"
+    "searchPatientName": "CARI NAMA PASIEN",
+    "reservationSuccess":  "Reservasi Berhasil!",
+    "reservationSavedMessage": "Terima kasih! Reservasi yang Anda lakukan telah berhasil disimpan!",
+    "backToHome": "Kembali ke Beranda",
+    "cancelReservation": "Batalkan Reservasi?",
+    "cancelReservationMessage": "Pembatalan ini tidak dapat diubah. Anda harus membuat reservasi ulang jika ingin melanjutkan."
   },
   "reservationConfirmationScreen": {
     "backToHome": "Kembali ke Beranda"

@@ -77,8 +77,8 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
               if (state is CreateReservationLoading) {
                 showRRJLoading(
                   context,
-                  loadingWidget: const Center(
-                    child: CircularProgressIndicator(),
+                  loadingWidget: Center(
+                    child: Assets.raw.loadingAnim.lottie(),
                   ),
                 );
               }
@@ -88,11 +88,12 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
                   context,
                   barrierDismissible: false,
                   child: RRJInfoDialog(
-                    title: "Reservasi Berhasil!",
-                    message:
-                        "Terima kasih! Reservasi yang Anda lakukan telah berhasil disimpan!",
+                    title: LocaleKeys.createReservation_reservationSuccess.tr(),
+                    message: LocaleKeys
+                        .createReservation_reservationSavedMessage
+                        .tr(),
                     closeButtonColor: Theme.of(context).colorScheme.secondary,
-                    buttonTitle: "Kembali ke Beranda",
+                    buttonTitle: LocaleKeys.createReservation_backToHome.tr(),
                     onClose: () {
                       context.goNamed(RouteName.home);
                     },
@@ -431,9 +432,8 @@ Future<bool> _onWillPop(BuildContext context) async {
     context,
     barrierDismissible: false,
     child: RRJConfirmationDialog(
-      title: "Batalkan Reservasi?",
-      message:
-          "Pembatalan ini tidak dapat diubah. Anda harus membuat reservasi ulang jika ingin melanjutkan.",
+      title: LocaleKeys.createReservation_cancelReservation.tr(),
+      message: LocaleKeys.createReservation_cancelReservationMessage.tr(),
       icon: Assets.icons.iconTrash.svg(
         colorFilter: ColorFilter.mode(
           Theme.of(context).colorScheme.error,
