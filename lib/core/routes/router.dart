@@ -79,7 +79,7 @@ class AppRouter {
                         final args = state.extra as Map<String, dynamic>;
 
                         final String clinicId = args['clinicId'] as String;
-                        final DateTime selectedDate = args['date'] as DateTime; // Directly cast as DateTime
+                        final selectedDate = DateTime.parse(args['date'] as String);
 
                         return canvas(
                           child: ChooseDoctorPage(
@@ -95,9 +95,13 @@ class AppRouter {
                           name: RouteName.createReservation,
                           parentNavigatorKey: _rootNavigatorKey,
                           pageBuilder: (context, state) {
+                            final args = state.extra as Map<String, dynamic>;
+                            final DoctorEntity doctor = args['doctor'] as DoctorEntity;
+                            final selectedDate = DateTime.parse(args['date'] as String);
                             return canvas(
                               child: CreateReservationPage(
-                                doctor: state.extra! as DoctorEntity,
+                                doctor: doctor,
+                                date: selectedDate,
                               ),
                               state: state,
                             );

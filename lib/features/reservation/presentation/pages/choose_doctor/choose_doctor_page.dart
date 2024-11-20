@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -68,16 +66,16 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
                           ),
                         );
                       }
-                      if(state is GetDoctorByClinicIdFailed) {
+                      if (state is GetDoctorByClinicIdFailed) {
                         return Text(
                           state.message,
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style:
+                              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                  ),
                         );
                       }
                       if (state is GetDoctorByClinicIdSuccess) {
-                        log('Doctor: ${state.doctor}');
                         if (state.doctor.isEmpty) {
                           return Text(
                             LocaleKeys.chooseDoctorScreen_doctorNotFound.tr(),
@@ -138,8 +136,12 @@ class _ChooseDoctorPageState extends State<ChooseDoctorPage> {
                                   doctor: state.doctor[index],
                                   onChooseDoctor: () {
                                     context.pushNamed(
-                                        RouteName.createReservation,
-                                        extra: state.doctor[index]);
+                                      RouteName.createReservation,
+                                      extra: {
+                                        'doctor': state.doctor[index],
+                                        'date': widget.date.toIso8601String(),
+                                      },
+                                    );
                                   },
                                 )),
                             margin: const EdgeInsets.only(bottom: 16),

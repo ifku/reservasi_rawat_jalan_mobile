@@ -55,10 +55,17 @@ class _OtpPageState extends State<OtpPage> {
               showRRJDialog(
                 context,
                 child: RRJInfoDialog(
-                    title: "Error",
-                    message: state.error,
-                    iconColor: Theme.of(context).colorScheme.error,
-                    icon: Assets.icons.iconError.path),
+                  title: "Error",
+                  message: state.error,
+                  icon: Assets.icons.iconError.svg(
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.error,
+                      BlendMode.srcIn,
+                    ),
+                    width: 50.0,
+                    height: 50.0,
+                  ),
+                ),
               );
             }
           },

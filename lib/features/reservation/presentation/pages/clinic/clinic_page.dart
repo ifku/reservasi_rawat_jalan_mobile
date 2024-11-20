@@ -82,7 +82,7 @@ class _ClinicPageState extends State<ClinicPage> {
                                               .elementAt(index)
                                               .idClinic,
                                           'date':
-                                              _datePickerController.selectedDate
+                                              _datePickerController.selectedDate?.toIso8601String()
                                         },
                                       );
                                     },
