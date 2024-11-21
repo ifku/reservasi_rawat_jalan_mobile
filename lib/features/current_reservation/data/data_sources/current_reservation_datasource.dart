@@ -4,4 +4,5 @@ import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/data/m
 abstract class CurrentReservationDataSource {
   Future<Either<Exception, List<ReservationDetailModel>>> getCurrentReservation(String userId);
   Future<Either<Exception, ReservationDetailModel>> getCurrentReservationById(String reservationId);
+  Stream<int> getCurrentQueueNumber(String doctorId);
 }

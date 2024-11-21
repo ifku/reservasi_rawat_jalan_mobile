@@ -19,4 +19,9 @@ class CurrentReservationRepositoryImpl implements CurrentReservationRepository {
   Future<Either<Exception, ReservationDetailEntity>> getCurrentReservationById(String reservationId) async {
     return await _currentReservationDataSource.getCurrentReservationById(reservationId);
   }
+
+  @override
+  Stream<int> getCurrentQueueNumber(String doctorId) {
+    return _currentReservationDataSource.getCurrentQueueNumber(doctorId);
+  }
 }

@@ -7,6 +7,7 @@ class ReservationDetailEntity extends Equatable {
   final DateTime reservationDate;
   final int queueNumber;
   final String patientFullName;
+  final String doctorId;
   final String doctorName;
   final String clinicName;
   final DateTime createdAt;
@@ -19,6 +20,7 @@ class ReservationDetailEntity extends Equatable {
     required this.reservationDate,
     required this.queueNumber,
     required this.patientFullName,
+    required this.doctorId,
     required this.doctorName,
     required this.clinicName,
     required this.createdAt,
@@ -33,6 +35,7 @@ class ReservationDetailEntity extends Equatable {
         reservationDate,
         queueNumber,
         patientFullName,
+        doctorId,
         doctorName,
         clinicName,
         createdAt,

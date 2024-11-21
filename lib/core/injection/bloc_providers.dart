@@ -12,8 +12,10 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/si
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/patient/get_patient_by_userid_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/user/get_user_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/user/save_user_usecase.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain/use_cases/get_current_queue_number_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain/use_cases/get_current_reservation_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation/bloc/current_reservation_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation_detail/bloc/reservation_detail_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/doctor_schedule/domain/usecase/get_all_doctor_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/doctor_schedule/presentation/pages/bloc/doctor_list_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/domain/use_cases/get_news_usecase.dart';
@@ -85,6 +87,11 @@ class BlocProviders {
       BlocProvider<DoctorListBloc>(
         create: (context) => DoctorListBloc(
           locator.get<GetAllDoctorUseCase>(),
+        ),
+      ),
+      BlocProvider<ReservationDetailBloc>(
+        create: (context) => ReservationDetailBloc(
+          locator.get<GetCurrentQueueNumberUseCase>(),
         ),
       ),
     ];

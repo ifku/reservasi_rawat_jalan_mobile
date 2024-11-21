@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -42,6 +43,10 @@ Future<void> setupServiceLocator() async {
   locator.registerLazySingleton<Isar>(() => appDatabase.isar);
   locator.registerLazySingleton<FlutterSecureStorage>(
     () => const FlutterSecureStorage(),
+  );
+
+  locator.registerLazySingleton<FirebaseFirestore>(
+    () => FirebaseFirestore.instance,
   );
 
   /*Notification*/

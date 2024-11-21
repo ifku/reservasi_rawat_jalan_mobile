@@ -6,4 +6,6 @@ abstract class CurrentReservationRepository {
       getCurrentReservation(String userId);
   Future<Either<Exception, ReservationDetailEntity>> getCurrentReservationById(
       String reservationId);
+
+  Stream<int> getCurrentQueueNumber(String doctorId);
 }

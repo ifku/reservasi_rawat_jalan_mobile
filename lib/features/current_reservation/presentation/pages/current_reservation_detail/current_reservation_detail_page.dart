@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_button.dart';
@@ -9,6 +10,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain/entities/reservation_detail_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation_detail/bloc/reservation_detail_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/widgets/reservation_detail_number.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/widgets/reservation_header_card.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/widgets/reservation_info_item.dart';
@@ -26,6 +28,14 @@ class CurrentReservationDetailPage extends StatefulWidget {
 
 class _CurrentReservationDetailPageState
     extends State<CurrentReservationDetailPage> {
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<ReservationDetailBloc>().add(
+      ListenToQueueNumber(widget.reservationDetail.doctorId),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,12 +75,24 @@ class _CurrentReservationDetailPageState
               right: 0,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: ReservationHeaderCard(
-                  currentQueueNumber: widget.reservationDetail.queueNumber.toString(),
-                  currentQueueEstimation: "0",
+                child: BlocBuilder<ReservationDetailBloc, ReservationDetailState>(
+                  builder: (context, state) {
+                    String currentQueueEstimation = "...";
+                    if (state is QueueNumberUpdated) {
+                      currentQueueEstimation = state.queueNumber.toString();
+                    } else if (state is ReservationDetailError) {
+                      currentQueueEstimation = "Error";
+                    }
+
+                    return ReservationHeaderCard(
+                      currentQueueNumber: widget.reservationDetail.queueNumber.toString(),
+                      currentQueueEstimation: currentQueueEstimation,
+                    );
+                  },
                 ),
               ),
             ),
+
             Positioned(
               bottom: MediaQuery.of(context).size.height * 0.2,
               left: 0,
