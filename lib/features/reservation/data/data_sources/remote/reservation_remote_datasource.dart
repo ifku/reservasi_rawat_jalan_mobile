@@ -15,7 +15,7 @@ class ReservationRemoteDataSource implements ReservationDataSource {
   @override
   Future<Either<Exception, ReservationModel>> createReservation(
       {required ReservationDto payload}) async {
-    final response = await client.post(ApiConstants.createReservation, data: {
+    final response = await client.post(ApiConstants.reservation, data: {
       'reservation_insurance_type': payload.reservationInsuranceType,
       'reservation_date': payload.reservationDate.toIso8601String(),
       'patient_id': payload.patientId,

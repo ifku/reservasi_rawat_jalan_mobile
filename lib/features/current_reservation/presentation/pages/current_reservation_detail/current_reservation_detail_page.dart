@@ -7,14 +7,17 @@ import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/show_rrj_dia
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
+import 'package:reservasi_rawat_jalan_mobile/core/utils/date_formatter.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain/entities/reservation_detail_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/widgets/reservation_detail_number.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/widgets/reservation_header_card.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/widgets/reservation_info_item.dart';
 
 class CurrentReservationDetailPage extends StatefulWidget {
-  final String idReservation;
+  final ReservationDetailEntity reservationDetail;
 
-  const CurrentReservationDetailPage({super.key, required this.idReservation});
+  const CurrentReservationDetailPage(
+      {super.key, required this.reservationDetail});
 
   @override
   State<CurrentReservationDetailPage> createState() =>
@@ -51,7 +54,7 @@ class _CurrentReservationDetailPageState
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 60.0),
                   child: ReservationDetailNumber(
-                    reservationId: widget.idReservation,
+                    reservationId: widget.reservationDetail.idReservation,
                   ),
                 ),
               ),
@@ -60,9 +63,12 @@ class _CurrentReservationDetailPageState
               bottom: MediaQuery.of(context).size.height * 0.56,
               left: 0,
               right: 0,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
-                child: ReservationHeaderCard(),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: ReservationHeaderCard(
+                  currentQueueNumber: widget.reservationDetail.queueNumber.toString(),
+                  currentQueueEstimation: "0",
+                ),
               ),
             ),
             Positioned(
@@ -108,17 +114,22 @@ class _CurrentReservationDetailPageState
                                   ReservationInfoItem(
                                       title: "Dokter Pemeriksa",
                                       icon: Assets.icons.iconPerson3.path,
-                                      content: "Dr. John Doe"),
+                                      content:
+                                          widget.reservationDetail.doctorName),
                                   const SizedBox(height: 12),
                                   ReservationInfoItem(
-                                      title: "Poli Layanan",
-                                      icon: Assets.icons.iconLocation.path,
-                                      content: "Dokter Umum"),
+                                    title: "Poli Layanan",
+                                    icon: Assets.icons.iconLocation.path,
+                                    content:
+                                        widget.reservationDetail.clinicName,
+                                  ),
                                   const SizedBox(height: 12),
                                   ReservationInfoItem(
-                                      title: "Nama Pasien",
-                                      icon: Assets.icons.iconPerson3.path,
-                                      content: "Mochammad Rizky"),
+                                    title: "Nama Pasien",
+                                    icon: Assets.icons.iconPerson3.path,
+                                    content: widget
+                                        .reservationDetail.patientFullName,
+                                  ),
                                 ],
                               ),
                               SizedBox(
@@ -128,19 +139,25 @@ class _CurrentReservationDetailPageState
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   ReservationInfoItem(
-                                      title: "Jenis Asuransi",
-                                      icon: Assets.icons.iconWallet.path,
-                                      content: "BPJS"),
+                                    title: "Jenis Asuransi",
+                                    icon: Assets.icons.iconWallet.path,
+                                    content: widget.reservationDetail
+                                        .reservationInsuranceType,
+                                  ),
                                   const SizedBox(height: 12),
                                   ReservationInfoItem(
-                                      title: "Jam Layanan",
-                                      icon: Assets.icons.iconClock.path,
-                                      content: "00:00"),
+                                    title: "Status Layanan",
+                                    icon: Assets.icons.iconClock.path,
+                                    content: widget.reservationDetail.reservationStatus
+                                  ),
                                   const SizedBox(height: 12),
                                   ReservationInfoItem(
-                                      title: "Tanggal Pemesanan",
-                                      icon: Assets.icons.iconCalendar.path,
-                                      content: "14 April 2024"),
+                                    title: "Tanggal Pemesanan",
+                                    icon: Assets.icons.iconCalendar.path,
+                                    content: DateFormatter.formatDateTime(
+                                      widget.reservationDetail.reservationDate,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ],
@@ -175,7 +192,7 @@ class _CurrentReservationDetailPageState
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               QrImageView(
-                                data: widget.idReservation,
+                                data: widget.reservationDetail.idReservation,
                                 version: QrVersions.auto,
                                 errorStateBuilder: (cxt, err) {
                                   return Container(

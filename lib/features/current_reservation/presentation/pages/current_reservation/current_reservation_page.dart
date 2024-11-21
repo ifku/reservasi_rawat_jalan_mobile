@@ -83,7 +83,7 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
                         onPressed: () {
                           context.pushNamed(
                             RouteName.currentReservationDetail,
-                            extra: state.data[index].idReservation,
+                            extra: state.data[index],
                           );
                         },
                       );

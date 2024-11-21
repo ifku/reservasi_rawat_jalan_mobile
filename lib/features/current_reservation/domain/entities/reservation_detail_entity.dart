@@ -5,6 +5,7 @@ class ReservationDetailEntity extends Equatable {
   final String reservationStatus;
   final String reservationInsuranceType;
   final DateTime reservationDate;
+  final int queueNumber;
   final String patientFullName;
   final String doctorName;
   final String clinicName;
@@ -16,6 +17,7 @@ class ReservationDetailEntity extends Equatable {
     required this.reservationStatus,
     required this.reservationInsuranceType,
     required this.reservationDate,
+    required this.queueNumber,
     required this.patientFullName,
     required this.doctorName,
     required this.clinicName,
@@ -24,5 +26,16 @@ class ReservationDetailEntity extends Equatable {
   });
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [
+        idReservation,
+        reservationStatus,
+        reservationInsuranceType,
+        reservationDate,
+        queueNumber,
+        patientFullName,
+        doctorName,
+        clinicName,
+        createdAt,
+        updatedAt,
+  ];
 }

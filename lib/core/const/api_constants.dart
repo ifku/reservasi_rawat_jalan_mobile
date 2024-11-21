@@ -10,7 +10,7 @@ class ApiConstants {
   static const String doctorByClinicId = "/doctor/available-doctors/";
   static const String reservationByPatientId = "/reservation/patient/";
   static const String reservationByUserId = "/reservation/user/";
-  static const String createReservation = "/reservation/";
+  static const String reservation = "/reservation/";
   static const String patientByUserId = "/patient/";
 
   static const String advanceFiltering = "/reservation/filter/advance-filter";

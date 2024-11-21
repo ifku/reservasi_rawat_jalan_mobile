@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 
 class ReservationHeaderCard extends StatelessWidget {
-  const ReservationHeaderCard(
-      {super.key,
-      this.currentQueueNumber = "0",
-      this.currentQueueEstimation = "00:00"});
+  const ReservationHeaderCard({
+    super.key,
+    this.currentQueueNumber = "0",
+    this.currentQueueEstimation = "0",
+  });
 
   final String currentQueueNumber;
   final String currentQueueEstimation;
@@ -35,7 +36,7 @@ class ReservationHeaderCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  LocaleKeys.reservationScreen_currentReservation.tr(),
+                  LocaleKeys.reservationScreen_yourReservationNumber.tr(),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -73,7 +74,7 @@ class ReservationHeaderCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  LocaleKeys.reservationScreen_estimatedTime.tr(),
+                  LocaleKeys.reservationScreen_currentReservation.tr(),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(

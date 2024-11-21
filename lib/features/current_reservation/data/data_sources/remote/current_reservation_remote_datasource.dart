@@ -9,6 +9,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/data/m
 class CurrentReservationRemoteDataSource
     implements CurrentReservationDataSource {
   final AppHttpClient _client;
+
   CurrentReservationRemoteDataSource(this._client);
 
   @override
@@ -22,5 +23,22 @@ class CurrentReservationRemoteDataSource
           data, ReservationDetailModel.fromJson);
       return Right(responseObject.data ?? []);
     });
+  }
+
+  @override
+  Future<Either<Exception, ReservationDetailModel>> getCurrentReservationById(
+      String reservationId) async {
+    try {
+      final response =
+          await _client.get(ApiConstants.reservation + reservationId);
+      return response.fold((error) => Left(AppException(error.toString())),
+          (data) {
+        final responseObject = ApiResponse<ReservationDetailModel>.fromJson(
+            data, ReservationDetailModel.fromJson);
+        return Right(responseObject.data!);
+      });
+    } catch (e) {
+      return Left(AppException(e.toString()));
+    }
   }
 }

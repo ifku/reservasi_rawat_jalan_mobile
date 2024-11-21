@@ -13,6 +13,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/on
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/otp/otp_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_in/sign_in_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_up/sign_up_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain/entities/reservation_detail_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation/current_reservation_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation_detail/current_reservation_detail_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/doctor_schedule/presentation/pages/doctor_list_page.dart';
@@ -132,7 +133,8 @@ class AppRouter {
                     pageBuilder: (context, state) {
                       return canvas(
                         child: CurrentReservationDetailPage(
-                          idReservation: state.extra as String,
+                          reservationDetail:
+                              state.extra as ReservationDetailEntity,
                         ),
                         state: state,
                       );
@@ -150,8 +152,7 @@ class AppRouter {
                     state: state,
                   );
                 },
-                routes: [
-                ],
+                routes: [],
               ),
             ],
           ),
