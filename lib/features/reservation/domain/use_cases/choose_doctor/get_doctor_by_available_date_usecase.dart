@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dartz/dartz.dart' show Tuple2;
 import 'package:reservasi_rawat_jalan_mobile/core/usecase/usecase.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/doctor_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/repositories/doctor_repository.dart';
 
 class GetDoctorByClinicIdUseCase

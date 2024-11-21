@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/doctor_entity.dart';
 
 class DoctorModel extends DoctorEntity {
   factory DoctorModel.fromRawJson(String str) =>

@@ -15,11 +15,12 @@ import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/si
 import 'package:reservasi_rawat_jalan_mobile/features/auth/presentation/pages/sign_up/sign_up_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation/current_reservation_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation_detail/current_reservation_detail_page.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/doctor_schedule/presentation/pages/doctor_list_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/history/presentation/pages/history_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/presentation/pages/home_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile/profile_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/profile/presentation/pages/profile_detail/detail_profile_page.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/doctor_entity.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/choose_doctor/choose_doctor_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/clinic/clinic_page.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/presentation/pages/create_reservation/create_reservation.dart';
@@ -79,7 +80,8 @@ class AppRouter {
                         final args = state.extra as Map<String, dynamic>;
 
                         final String clinicId = args['clinicId'] as String;
-                        final selectedDate = DateTime.parse(args['date'] as String);
+                        final selectedDate =
+                            DateTime.parse(args['date'] as String);
 
                         return canvas(
                           child: ChooseDoctorPage(
@@ -96,8 +98,10 @@ class AppRouter {
                           parentNavigatorKey: _rootNavigatorKey,
                           pageBuilder: (context, state) {
                             final args = state.extra as Map<String, dynamic>;
-                            final DoctorEntity doctor = args['doctor'] as DoctorEntity;
-                            final selectedDate = DateTime.parse(args['date'] as String);
+                            final DoctorEntity doctor =
+                                args['doctor'] as DoctorEntity;
+                            final selectedDate =
+                                DateTime.parse(args['date'] as String);
                             return canvas(
                               child: CreateReservationPage(
                                 doctor: doctor,
@@ -111,28 +115,42 @@ class AppRouter {
                 ],
               ),
               GoRoute(
-                  path: RoutePath.currentReservation,
-                  name: RouteName.currentReservation,
-                  parentNavigatorKey: _rootNavigatorKey,
-                  pageBuilder: (context, state) {
-                    return canvas(
-                      child: const CurrentReservationPage(),
-                      state: state,
-                    );
-                  },
-                  routes: [
-                    GoRoute(
-                      path: RoutePath.currentReservationDetail,
-                      name: RouteName.currentReservationDetail,
-                      parentNavigatorKey: _rootNavigatorKey,
-                      pageBuilder: (context, state) {
-                        return canvas(
-                          child: const CurrentReservationDetailPage(),
-                          state: state,
-                        );
-                      },
-                    )
-                  ]),
+                path: RoutePath.currentReservation,
+                name: RouteName.currentReservation,
+                parentNavigatorKey: _rootNavigatorKey,
+                pageBuilder: (context, state) {
+                  return canvas(
+                    child: const CurrentReservationPage(),
+                    state: state,
+                  );
+                },
+                routes: [
+                  GoRoute(
+                    path: RoutePath.currentReservationDetail,
+                    name: RouteName.currentReservationDetail,
+                    parentNavigatorKey: _rootNavigatorKey,
+                    pageBuilder: (context, state) {
+                      return canvas(
+                        child: const CurrentReservationDetailPage(),
+                        state: state,
+                      );
+                    },
+                  )
+                ],
+              ),
+              GoRoute(
+                path: RoutePath.doctorList,
+                name: RouteName.doctorList,
+                parentNavigatorKey: _rootNavigatorKey,
+                pageBuilder: (context, state) {
+                  return canvas(
+                    child: const DoctorListPage(),
+                    state: state,
+                  );
+                },
+                routes: [
+                ],
+              ),
             ],
           ),
         ]),

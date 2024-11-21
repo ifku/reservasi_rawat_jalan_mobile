@@ -16,6 +16,7 @@ import 'package:reservasi_rawat_jalan_mobile/features/common/domain/repositories
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/user/get_user_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/user/save_user_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/current_reservation_module.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/doctor_schedule/doctor_schedule_module.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/home_module.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/reservation/reservation_module.dart';
 
@@ -74,6 +75,7 @@ Future<void> setupServiceLocator() async {
   commonModule();
   authModule();
   homeModule();
+  doctorScheduleModule();
   reservationModule();
   currentReservationModule();
 }

@@ -19,6 +19,8 @@ class RouteName {
   static const String currentReservation = 'current-reservation';
   static const String currentReservationDetail = 'current-reservation-detail';
 
+  static const String doctorList = 'doctor';
+
   static const String history = 'history';
   static const String activity = 'activity';
   static const String account = 'account';

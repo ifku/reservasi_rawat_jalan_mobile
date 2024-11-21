@@ -229,6 +229,9 @@ class CodegenLoader extends AssetLoader{
     "cancelReservation": "Cancel Reservation?",
     "cancelReservationMessage": "This cancellation is irreversible. You will need to make another reservation if you wish to proceed."
   },
+  "doctorListScreen": {
+    "doctorList": "Doctor List"
+  },
   "reservationConfirmationScreen": {
     "backToHome": "Back to Home"
   },
@@ -460,6 +463,9 @@ static const Map<String,dynamic> id_ID = {
     "backToHome": "Kembali ke Beranda",
     "cancelReservation": "Batalkan Reservasi?",
     "cancelReservationMessage": "Pembatalan ini tidak dapat diubah. Anda harus membuat reservasi ulang jika ingin melanjutkan."
+  },
+  "doctorListScreen": {
+    "doctorList": "Daftar Dokter"
   },
   "reservationConfirmationScreen": {
     "backToHome": "Kembali ke Beranda"

@@ -196,6 +196,8 @@ abstract class  LocaleKeys {
   static const createReservation_cancelReservation = 'createReservation.cancelReservation';
   static const createReservation_cancelReservationMessage = 'createReservation.cancelReservationMessage';
   static const createReservation = 'createReservation';
+  static const doctorListScreen_doctorList = 'doctorListScreen.doctorList';
+  static const doctorListScreen = 'doctorListScreen';
   static const reservationConfirmationScreen_backToHome = 'reservationConfirmationScreen.backToHome';
   static const reservationConfirmationScreen = 'reservationConfirmationScreen';
   static const validation_invalidNIK = 'validation.invalidNIK';

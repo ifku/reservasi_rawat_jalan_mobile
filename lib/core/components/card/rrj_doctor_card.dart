@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/doctor_entity.dart';
 
 class RRJDoctorCard extends StatelessWidget {
   const RRJDoctorCard(

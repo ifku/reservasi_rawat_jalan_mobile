@@ -6,6 +6,7 @@ class ApiConstants {
   static const String sendOtp = "/auth/send-otp";
 
   static const String clinic = "/clinic";
+  static const String doctor = "/doctor/";
   static const String doctorByClinicId = "/doctor/available-doctors/";
   static const String reservationByPatientId = "/reservation/patient/";
   static const String reservationByUserId = "/reservation/user/";

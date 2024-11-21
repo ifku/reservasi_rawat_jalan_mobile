@@ -6,7 +6,7 @@ import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_
 import 'package:reservasi_rawat_jalan_mobile/core/components/card/rrj_doctor_info_card.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
-import 'package:reservasi_rawat_jalan_mobile/features/reservation/domain/entities/doctor_entity.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/common/domain/entities/doctor_entity.dart';
 
 class RRJChooseDoctorBottomSheet extends StatelessWidget {
   const RRJChooseDoctorBottomSheet({

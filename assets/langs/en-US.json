@@ -213,6 +213,9 @@
     "cancelReservation": "Cancel Reservation?",
     "cancelReservationMessage": "This cancellation is irreversible. You will need to make another reservation if you wish to proceed."
   },
+  "doctorListScreen": {
+    "doctorList": "Doctor List"
+  },
   "reservationConfirmationScreen": {
     "backToHome": "Back to Home"
   },

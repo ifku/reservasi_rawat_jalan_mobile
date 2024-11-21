@@ -28,5 +28,17 @@ class DoctorEntity extends Equatable {
   });
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [
+    idDoctor,
+    doctorName,
+    doctorSip,
+    doctorStr,
+    doctorAge,
+    doctorRating,
+    doctorImage,
+    clinicId,
+    clinicName,
+    createdAt,
+    updatedAt,
+  ];
 }

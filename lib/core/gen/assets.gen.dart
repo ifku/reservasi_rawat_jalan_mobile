@@ -166,6 +166,10 @@ class $AssetsIconsGen {
   SvgGenImage get iconSkincare =>
       const SvgGenImage('assets/icons/icon_skincare.svg');
 
+  /// File path: assets/icons/icon_sort_down.svg
+  SvgGenImage get iconSortDown =>
+      const SvgGenImage('assets/icons/icon_sort_down.svg');
+
   /// File path: assets/icons/icon_star.svg
   SvgGenImage get iconStar => const SvgGenImage('assets/icons/icon_star.svg');
 
@@ -245,6 +249,7 @@ class $AssetsIconsGen {
         iconQrcode,
         iconQuestion,
         iconSkincare,
+        iconSortDown,
         iconStar,
         iconSthetoscope,
         iconSurgeon,

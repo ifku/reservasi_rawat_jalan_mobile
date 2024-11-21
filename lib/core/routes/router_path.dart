@@ -18,6 +18,8 @@ class RoutePath {
   static const String currentReservation = 'reservation';
   static const String currentReservationDetail = 'reservation-detail';
 
+  static const String doctorList = 'doctor';
+
   static const String history = '/history';
   static const String activity = '/activity';
   static const String account = '/account';

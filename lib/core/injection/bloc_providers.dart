@@ -14,6 +14,8 @@ import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/us
 import 'package:reservasi_rawat_jalan_mobile/features/common/domain/use_cases/user/save_user_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/domain/use_cases/get_current_reservation_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/pages/current_reservation/bloc/current_reservation_bloc.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/doctor_schedule/domain/usecase/get_all_doctor_usecase.dart';
+import 'package:reservasi_rawat_jalan_mobile/features/doctor_schedule/presentation/pages/bloc/doctor_list_bloc.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/domain/use_cases/get_news_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/domain/use_cases/get_upcoming_schedule_usecase.dart';
 import 'package:reservasi_rawat_jalan_mobile/features/home/presentation/pages/bloc/home_bloc.dart';
@@ -79,6 +81,11 @@ class BlocProviders {
       ),
       BlocProvider<CreateReservationActionCubit>(
         create: (context) => CreateReservationActionCubit(),
+      ),
+      BlocProvider<DoctorListBloc>(
+        create: (context) => DoctorListBloc(
+          locator.get<GetAllDoctorUseCase>(),
+        ),
       ),
     ];
   }

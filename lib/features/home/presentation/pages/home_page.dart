@@ -79,6 +79,8 @@ class _HomePageState extends State<HomePage> {
                           switch (index) {
                             case 0:
                               context.goNamed(RouteName.clinicList);
+                            case 1:
+                              context.goNamed(RouteName.doctorList);
                             case 2:
                               context.goNamed(RouteName.currentReservation);
                           }

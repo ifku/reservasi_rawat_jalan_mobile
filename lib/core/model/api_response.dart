@@ -61,6 +61,7 @@ class ApiListResponse<T> {
 
 class ListPagingData<T> {
   String? message;
+  bool isSuccess;
   List<T>? data;
   int total;
   int currentPage;
@@ -71,6 +72,7 @@ class ListPagingData<T> {
   ListPagingData({
     this.message,
     this.data,
+    required this.isSuccess,
     required this.total,
     required this.currentPage,
     required this.totalPage,
@@ -78,21 +80,19 @@ class ListPagingData<T> {
     required this.hasPrev,
   });
 
-  factory ListPagingData.fromListResponse({
-    required ApiListResponse<T> listResponse,
-    required int currentPage,
-    required int limit,
-  }) {
-    final totalPage = ((listResponse.total ?? 0) / (limit)).ceil();
-    final hasNextPage = currentPage < totalPage - 1;
+  factory ListPagingData.fromJson(
+      Map<String, dynamic> json,
+      T Function(Map<String, dynamic>) fromJsonT,
+      ) {
     return ListPagingData<T>(
-      message: listResponse.message,
-      data: listResponse.data,
-      currentPage: currentPage,
-      totalPage: totalPage,
-      total: listResponse.total ?? 0,
-      hasNext: hasNextPage,
-      hasPrev: currentPage > 0,
+      message: json['message'],
+      data: (json['data'] as List<dynamic>?)?.map((item) => fromJsonT(item as Map<String, dynamic>)).toList(),
+      isSuccess: json['isSuccess'],
+      total: json['total'],
+      currentPage: json['currentPage'],
+      totalPage: json['totalPage'],
+      hasNext: json['hasNext'],
+      hasPrev: json['hasPrev'],
     );
   }
 }

@@ -207,11 +207,14 @@
     "makeReservation": "BUAT RESERVASI",
     "nationalIdentityNumber": "NIK",
     "searchPatientName": "CARI NAMA PASIEN",
-    "reservationSuccess":  "Reservasi Berhasil!",
+    "reservationSuccess": "Reservasi Berhasil!",
     "reservationSavedMessage": "Terima kasih! Reservasi yang Anda lakukan telah berhasil disimpan!",
     "backToHome": "Kembali ke Beranda",
     "cancelReservation": "Batalkan Reservasi?",
     "cancelReservationMessage": "Pembatalan ini tidak dapat diubah. Anda harus membuat reservasi ulang jika ingin melanjutkan."
+  },
+  "doctorListScreen": {
+    "doctorList": "Daftar Dokter"
   },
   "reservationConfirmationScreen": {
     "backToHome": "Kembali ke Beranda"
