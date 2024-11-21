@@ -53,46 +53,52 @@ class _DoctorListPageState extends State<DoctorListPage> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(14.0),
-        child: BlocConsumer<DoctorListBloc, DoctorListState>(
-          listener: (context, state) {},
-          builder: (context, state) {
-            if (state is DoctorListLoading) {
-              return Center(child: Assets.raw.loadingAnim.lottie());
-            }
-
-            if (state is DoctorListSuccess) {
-              if (state.doctorList.isEmpty) {
-                return Center(child: Text('No doctors found.'));
+      body: RefreshIndicator(
+        onRefresh: () async {
+          context.read<DoctorListBloc>().add(ResetDoctorListEvent());
+          context.read<DoctorListBloc>().add(GetAllDoctorEvent());
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: BlocConsumer<DoctorListBloc, DoctorListState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              if (state is DoctorListLoading) {
+                return Center(child: Assets.raw.loadingAnim.lottie());
               }
 
-              return ListView.separated(
-                controller: _scrollController,
-                physics: const BouncingScrollPhysics(),
-                itemCount:
-                    state.doctorList.length + (state.isFetchingMore ? 1 : 0),
-                separatorBuilder: (context, index) => const Divider(),
-                itemBuilder: (context, index) {
-                  if (index == state.doctorList.length) {
-                    return const Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                    );
-                  }
-                  return RRJDoctorCard(doctor: state.doctorList[index]);
-                },
-              );
-            }
+              if (state is DoctorListSuccess) {
+                if (state.doctorList.isEmpty) {
+                  return Center(child: Text('No doctors found.'));
+                }
 
-            if (state is DoctorListFailure) {
-              return Center(child: Text(state.message));
-            }
+                return ListView.separated(
+                  controller: _scrollController,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount:
+                      state.doctorList.length + (state.isFetchingMore ? 1 : 0),
+                  separatorBuilder: (context, index) => const Divider(),
+                  itemBuilder: (context, index) {
+                    if (index == state.doctorList.length) {
+                      return const Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      );
+                    }
+                    return RRJDoctorCard(doctor: state.doctorList[index]);
+                  },
+                );
+              }
 
-            return Center(child: Text('No data available.'));
-          },
+              if (state is DoctorListFailure) {
+                return Center(child: Text(state.message));
+              }
+
+              return Center(child: Text('No data available.'));
+            },
+          ),
         ),
       ),
     );

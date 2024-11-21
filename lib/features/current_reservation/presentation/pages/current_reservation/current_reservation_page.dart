@@ -81,7 +81,10 @@ class _CurrentReservationPageState extends State<CurrentReservationPage> {
                         serviceHour: state.data[index].reservationStatus,
                         doctorName: state.data[index].doctorName,
                         onPressed: () {
-                          context.pushNamed(RouteName.currentReservationDetail);
+                          context.pushNamed(
+                            RouteName.currentReservationDetail,
+                            extra: state.data[index].idReservation,
+                          );
                         },
                       );
                     },

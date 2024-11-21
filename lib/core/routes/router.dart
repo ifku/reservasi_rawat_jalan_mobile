@@ -131,7 +131,9 @@ class AppRouter {
                     parentNavigatorKey: _rootNavigatorKey,
                     pageBuilder: (context, state) {
                       return canvas(
-                        child: const CurrentReservationDetailPage(),
+                        child: CurrentReservationDetailPage(
+                          idReservation: state.extra as String,
+                        ),
                         state: state,
                       );
                     },

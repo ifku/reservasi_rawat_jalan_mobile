@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/button/rrj_primary_button.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/components/dialog/show_rrj_dialog.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/gen/assets.gen.dart';
@@ -11,7 +12,9 @@ import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presen
 import 'package:reservasi_rawat_jalan_mobile/features/current_reservation/presentation/widgets/reservation_info_item.dart';
 
 class CurrentReservationDetailPage extends StatefulWidget {
-  const CurrentReservationDetailPage({super.key});
+  final String idReservation;
+
+  const CurrentReservationDetailPage({super.key, required this.idReservation});
 
   @override
   State<CurrentReservationDetailPage> createState() =>
@@ -44,10 +47,12 @@ class _CurrentReservationDetailPageState
               decoration: const BoxDecoration(
                 color: RRJColors.blueDark,
               ),
-              child: const Center(
+              child: Center(
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 60.0),
-                  child: ReservationDetailNumber(),
+                  child: ReservationDetailNumber(
+                    reservationId: widget.idReservation,
+                  ),
                 ),
               ),
             ),
@@ -89,7 +94,10 @@ class _CurrentReservationDetailPageState
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(LocaleKeys.reservationScreen_reservationInformation.tr(),
+                          Text(
+                              LocaleKeys
+                                  .reservationScreen_reservationInformation
+                                  .tr(),
                               style: Theme.of(context).textTheme.bodyLarge),
                           const SizedBox(height: 16.0),
                           Row(
@@ -145,51 +153,92 @@ class _CurrentReservationDetailPageState
               ),
             ),
             Positioned(
-                bottom: MediaQuery.of(context).size.height * 0.12,
-                left: 0,
-                right: 0,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: RRJPrimaryButton(
-                      height: 48.0,
-                      width: MediaQuery.of(context).size.width,
-                      onPressed: () {
-                        showRRJDialog(
-                          context,
-                          child: Container(
-                            height: MediaQuery.of(context).size.height * 0.7,
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.surface,
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(12),
+              bottom: MediaQuery.of(context).size.height * 0.12,
+              left: 0,
+              right: 0,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: RRJPrimaryButton(
+                  height: 48.0,
+                  width: MediaQuery.of(context).size.width,
+                  onPressed: () {
+                    showRRJDialog(
+                      context,
+                      child: Card(
+                        margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              QrImageView(
+                                data: widget.idReservation,
+                                version: QrVersions.auto,
+                                errorStateBuilder: (cxt, err) {
+                                  return Container(
+                                    child: Center(
+                                      child: Text(
+                                        'Uh oh! Something went wrong...',
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
-                            ),
+                              const SizedBox(height: 14.0),
+                              RRJPrimaryButton(
+                                height: 48.0,
+                                width: MediaQuery.of(context).size.width,
+                                foregroundColor:
+                                    Theme.of(context).colorScheme.onPrimary,
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.primary,
+                                side:
+                                    const BorderSide(color: Colors.transparent),
+                                onPressed: () {
+                                  context.pop();
+                                },
+                                child: Text(
+                                  LocaleKeys.reservationScreen_return.tr(),
+                                ),
+                              ),
+                            ],
                           ),
-                        );
-                      },
-                      child: Text(LocaleKeys.reservationScreen_scanCode.tr())),
-                )),
+                        ),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    LocaleKeys.reservationScreen_scanCode.tr(),
+                  ),
+                ),
+              ),
+            ),
             Positioned(
-                bottom: MediaQuery.of(context).size.height * 0.04,
-                left: 0,
-                right: 0,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: RRJPrimaryButton(
-                      height: 48.0,
-                      width: MediaQuery.of(context).size.width,
-                      foregroundColor: Theme.of(context).colorScheme.onSurface,
-                      backgroundColor: Theme.of(context)
-                          .colorScheme
-                          .onSurface
-                          .withOpacity(0.1),
-                      side: const BorderSide(color: Colors.transparent),
-                      onPressed: () {
-                        context.pop();
-                      },
-                      child: Text(LocaleKeys.reservationScreen_return.tr())),
-                )),
+              bottom: MediaQuery.of(context).size.height * 0.04,
+              left: 0,
+              right: 0,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: RRJPrimaryButton(
+                  height: 48.0,
+                  width: MediaQuery.of(context).size.width,
+                  foregroundColor: Theme.of(context).colorScheme.onSurface,
+                  backgroundColor:
+                      Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
+                  side: const BorderSide(color: Colors.transparent),
+                  onPressed: () {
+                    context.pop();
+                  },
+                  child: Text(
+                    LocaleKeys.reservationScreen_return.tr(),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

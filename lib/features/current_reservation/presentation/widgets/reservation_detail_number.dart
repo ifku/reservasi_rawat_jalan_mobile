@@ -4,11 +4,12 @@ import 'package:reservasi_rawat_jalan_mobile/core/gen/locale_keys.g.dart';
 import 'package:reservasi_rawat_jalan_mobile/core/style/color.dart';
 
 class ReservationDetailNumber extends StatelessWidget {
+  final String reservationId;
+
   const ReservationDetailNumber({
     super.key,
+    this.reservationId = "0",
   });
-
-  final int number = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +25,17 @@ class ReservationDetailNumber extends StatelessWidget {
                   color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
           ),
+          const SizedBox(height: 14.0),
           Text(
-            '$number',
+            '$reservationId',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.displayLarge?.copyWith(
                   color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  fontSize: 72,
+                  fontSize: 40,
                 ),
           ),
-          const SizedBox(height: 8.0),
+          const SizedBox(height: 14.0),
           Container(
             height: 24,
             width: MediaQuery.of(context).size.width * 0.75,
