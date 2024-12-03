@@ -9,8 +9,15 @@ plugins {
 
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
+def keystorePropertiesFile = rootProject.file('key.properties')
 if (localPropertiesFile.exists()) {
     localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+if (keystorePropertiesFile.exists()) {
+    keystorePropertiesFile.withReader('UTF-8') { reader ->
         localProperties.load(reader)
     }
 }
@@ -54,12 +61,20 @@ android {
         versionName flutterVersionName
         multiDexEnabled true
     }
-
+    signingConfigs {
+        release {
+            keyAlias = localProperties['keyAlias']
+            keyPassword = localProperties['keyPassword']
+            storeFile = localProperties['storeFile'] ? file(localProperties['storeFile']) : null
+            storePassword = localProperties['storePassword']
+        }
+    }
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.debug
         }
     }
 }

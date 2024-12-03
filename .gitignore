@@ -51,3 +51,4 @@ app.*.map.json
 sonar-project.properties
 tests.output
 .scannerwork
+upload-keystore.jks
